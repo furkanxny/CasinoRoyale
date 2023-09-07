@@ -7,16 +7,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="32d9a9e9-60a7-4628-853e-7d826f3cbd94" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+    <list default="true" id="42436b1b-9b1f-4ddc-8c1d-3a6bc1aed41d" name="Changes" comment="Second push test.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/app.casinoroyale/Controller/GamesControllers/defaultfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/app.casinoroyale/Controller/SportsControllers/defaultfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/app.casinoroyale/Controller/defaultfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/app.casinoroyale/View/Games/defaultfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/app.casinoroyale/View/Sports/defualtfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/java/casinoroyale/CSRApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app.casinoroyale/CSRApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/java/casinoroyale/Controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app.casinoroyale/Controller/HomeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/java/casinoroyale/Controller/UserControllers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app.casinoroyale/Controller/UserControllers.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/java/casinoroyale/Model/User/UserModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app.casinoroyale/Model/User/UserModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/java/casinoroyale/View/Dashboards/SceneBuilder.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/casinoroyale/View/Dashboards/SceneBuilder.fxml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +22,11 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -37,18 +40,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/luke-angelostrazzera/Farmingdale23/ComputerEngineering/CasinoRoyale&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "/Users/luke-angelostrazzera/Farmingdale23/ComputerEngineering/CasinoRoyale/src/main/java/app.casinoroyale/Controller/SportsControllers",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "run.code.analysis.last.selected.profile": "pProject Default"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java/app.casinoroyale/Controller/SportsControllers" />
+      <recent name="$PROJECT_DIR$/src/main/java/app.casinoroyale/Controller/GamesControllers" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main" />
       <recent name="$PROJECT_DIR$/src" />
