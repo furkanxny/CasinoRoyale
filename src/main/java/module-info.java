@@ -1,9 +1,9 @@
-module com.example.casinoroyale {
+module app.casinoroyale {
     requires javafx.controls;
     requires javafx.fxml;
 
     requires org.kordamp.bootstrapfx.core;
 
-    exports casinoroyale;
-    opens casinoroyale to javafx.fxml;
+    exports app.casinoroyale;
+    opens app.casinoroyale to javafx.fxml;
 }
