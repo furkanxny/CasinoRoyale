@@ -14,7 +14,7 @@ public class CSRApplication extends Application {
         this.stage = stage;
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/app.casinoroyale/View/Dashboards/SceneBuilder.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 3200, 2400);
-        stage.setTitle("Casino Royale");
+        stage.setTitle("Chris Mariana");
         stage.setScene(scene);
         stage.show();
 
