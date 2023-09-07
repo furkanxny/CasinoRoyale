@@ -33,16 +33,16 @@
 -->
 
 <?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<fx:root xmlns:fx="http://javafx.com/fxml/1" prefHeight="400.0" prefWidth="640.0" type="VBox"
-         xmlns="http://javafx.com/javafx/20.0.1" fx:controller="app.casinoroyale.Controller.HomeController">
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<VBox xmlns:fx="http://javafx.com/fxml/1" prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/20.0.1">
     <children>
         <MenuBar VBox.vgrow="NEVER">
             <menus>
                 <Menu mnemonicParsing="false" text="Games">
                     <items>
-                        <MenuItem mnemonicParsing="false" onAction="#playBlackJack" text="Black Jack"/>
-                        <MenuItem mnemonicParsing="false" onAction="#playRoulette" text="Roulette"/>
+                        <MenuItem mnemonicParsing="false" text="Black Jack"/>
+                        <MenuItem mnemonicParsing="false" text="Roulette"/>
                         <MenuItem mnemonicParsing="false" text="Horse Racing"/>
                         <MenuItem mnemonicParsing="false" text="Slots"/>
                     </items>
@@ -68,4 +68,4 @@
             </children>
         </AnchorPane>
     </children>
-</fx:root>
+</VBox>

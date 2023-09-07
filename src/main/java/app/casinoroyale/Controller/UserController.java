@@ -1,4 +1,4 @@
 package app.casinoroyale.Controller;
 
-public class UserControllers {
+public class UserController {
 }
