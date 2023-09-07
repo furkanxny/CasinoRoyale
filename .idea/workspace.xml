@@ -8,13 +8,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="42436b1b-9b1f-4ddc-8c1d-3a6bc1aed41d" name="Changes" comment="Second push test.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/app.casinoroyale/Controller/GamesControllers/defaultfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app.casinoroyale/Controller/SportsControllers/defaultfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app.casinoroyale/Controller/defaultfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/app.casinoroyale/View/Games/defaultfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/app.casinoroyale/View/Sports/defualtfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/casinoroyale/View/Dashboards/SceneBuilder.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app.casinoroyale/CSRApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app.casinoroyale/CSRApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/app.casinoroyale/View/Dashboards/SceneBuilder.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/app.casinoroyale/View/Dashboards/HomePage.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,7 +40,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "/Users/luke-angelostrazzera/Farmingdale23/ComputerEngineering/CasinoRoyale/src/main/java/app.casinoroyale/Controller/SportsControllers",
+    "last_opened_file_path": "/Users/luke-angelostrazzera/Farmingdale23/ComputerEngineering/CasinoRoyale/src/main/java/app.casinoroyale/Model/Sports",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.2",
@@ -53,6 +49,8 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java/app.casinoroyale/Model/Sports" />
+      <recent name="$PROJECT_DIR$/src/main/java/app.casinoroyale/Model/Games" />
       <recent name="$PROJECT_DIR$/src/main/java/app.casinoroyale/Controller/SportsControllers" />
       <recent name="$PROJECT_DIR$/src/main/java/app.casinoroyale/Controller/GamesControllers" />
     </key>

@@ -12,7 +12,7 @@ public class CSRApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         this.stage = stage;
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/app.casinoroyale/View/Dashboards/SceneBuilder.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/app.casinoroyale/View/Dashboards/HomePage.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 3200, 2400);
         stage.setTitle("Casino Royale");
         stage.setScene(scene);
