@@ -5,5 +5,6 @@ module com.example.casinoroyale {
     requires org.kordamp.bootstrapfx.core;
 
     opens com.example.casinoroyale to javafx.fxml;
-    exports com.example.casinoroyale;
+    exports casinoroyale;
+    opens casinoroyale to javafx.fxml;
 }
