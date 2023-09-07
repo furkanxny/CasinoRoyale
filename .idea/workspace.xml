@@ -7,21 +7,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="42436b1b-9b1f-4ddc-8c1d-3a6bc1aed41d" name="Changes" comment="Second push test.">
-      <change beforePath="$PROJECT_DIR$/src/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/com/example/casinoroyale/SceneBuilder.fxml" beforeDir="false" />
+    <list default="true" id="32d9a9e9-60a7-4628-853e-7d826f3cbd94" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/java/casinoroyale/CSRApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app.casinoroyale/CSRApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/java/casinoroyale/Controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app.casinoroyale/Controller/HomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/java/casinoroyale/Controller/UserControllers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app.casinoroyale/Controller/UserControllers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/java/casinoroyale/Model/User/UserModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app.casinoroyale/Model/User/UserModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/java/casinoroyale/View/Dashboards/SceneBuilder.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-      </list>
-    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -29,14 +29,7 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="MavenImportPreferences">
-    <option name="importingSettings">
-      <MavenImportingSettings>
-        <option name="workspaceImportEnabled" value="true" />
-      </MavenImportingSettings>
-    </option>
-  </component>
-  <component name="ProjectId" id="2UzAa1N2Hqe8hTH9Uf4ODj6hlU2" />
+  <component name="ProjectId" id="2V3JBzr9p1MndDlA79NZE6z8x46" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
@@ -44,68 +37,46 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "/Users/luke-angelostrazzera/Farmingdale23/ComputerEngineering/CasinoRoyale/src/main/View/Dashboards",
-    "run.code.analysis.last.selected.profile": "pProject Default"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/luke-angelostrazzera/Farmingdale23/ComputerEngineering/CasinoRoyale&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main/View/Dashboards" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/java/casinoroyale" />
-      <recent name="$PROJECT_DIR$/src/java/com/example/casinoroyale" />
-      <recent name="$PROJECT_DIR$/src/java" />
+      <recent name="$PROJECT_DIR$/src/main" />
       <recent name="$PROJECT_DIR$/src" />
-      <recent name="$PROJECT_DIR$/src/main/View/Dashboards" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="42436b1b-9b1f-4ddc-8c1d-3a6bc1aed41d" name="Changes" comment="" />
-      <created>1693932094843</created>
+      <changelist id="32d9a9e9-60a7-4628-853e-7d826f3cbd94" name="Changes" comment="" />
+      <created>1694058698661</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1693932094843</updated>
+      <updated>1694058698661</updated>
     </task>
-    <task id="LOCAL-00001" summary="Initial push.">
-      <created>1693932187590</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1693932187591</updated>
-    </task>
-    <task id="LOCAL-00002" summary="Second push test.">
-      <created>1693932286066</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1693932286066</updated>
-    </task>
-    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ID_ORDER">
+      <list>
+        <option value="Default.Root" />
+        <option value="Default.Author" />
+        <option value="Default.Date" />
+        <option value="Default.Subject" />
+        <option value="Space.CommitStatus" />
+      </list>
     </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="Initial push." />
-    <MESSAGE value="Second push test." />
-    <option name="LAST_COMMIT_MESSAGE" value="Second push test." />
   </component>
 </project>
