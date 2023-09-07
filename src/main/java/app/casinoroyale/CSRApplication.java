@@ -13,10 +13,10 @@ public class CSRApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         this.stage = stage;
-        VBox root = new VBox(); // Assuming VBox is the root type you want
+        VBox root = new VBox();
 
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/app.casinoroyale/View/Dashboards/HomePage.fxml"));
-        fxmlLoader.setRoot(root); // Set the root before loading
+        fxmlLoader.setRoot(root);
         fxmlLoader.load();
         Scene scene = new Scene(root, 3200, 2400);
         stage.setTitle("Casino Royale");

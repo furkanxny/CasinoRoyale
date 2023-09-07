@@ -8,19 +8,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="42436b1b-9b1f-4ddc-8c1d-3a6bc1aed41d" name="Changes" comment="Second push test.">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/app.casinoroyale/View/Games/Roulette.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app.casinoroyale/CSRApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app.casinoroyale/Controller/GamesControllers/defaultfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app.casinoroyale/Controller/HomeController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app.casinoroyale/Controller/SportsControllers/defaultfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app.casinoroyale/Controller/UserControllers.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app.casinoroyale/Controller/defaultfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app.casinoroyale/Model/Games/defaultfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app.casinoroyale/Model/Sports/defaultfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app.casinoroyale/Model/User/UserModel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/app.casinoroyale/View/Dashboards/HomePage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/app.casinoroyale/View/Dashboards/HomePage.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/casinoroyale/CSRApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/casinoroyale/CSRApplication.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
