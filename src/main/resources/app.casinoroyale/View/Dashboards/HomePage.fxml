@@ -39,6 +39,9 @@
     <children>
         <MenuBar VBox.vgrow="NEVER">
             <menus>
+                <Menu mnemonicParsing="false" text="Casino Royale">
+                    <MenuItem mnemonicParsing="false" onAction="#homeDash" text="Home"/>
+                </Menu>
                 <Menu mnemonicParsing="false" text="Games">
                     <items>
                         <MenuItem mnemonicParsing="false" onAction="#playBlackJack" text="Black Jack"/>
