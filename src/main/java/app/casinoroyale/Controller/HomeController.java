@@ -12,13 +12,20 @@ public class HomeController {
     private Stage stage;
 
     public HomeController(){
-        this.stage = stage;
-    }
 
+    }
+    FXMLLoader homeFXML = new FXMLLoader(getClass().getResource("/app.casinoroyale/View/Dashboards/HomePage.fxml"));
+
+    public void homeDash(ActionEvent actionEvent) throws IOException {
+        Scene scene = new Scene(homeFXML.load(), 3200, 2400);
+        stage.setTitle("Casino Royale");
+        stage.setScene(scene);
+        stage.show();
+    }
     public void playBlackJack(ActionEvent actionEvent) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/app.casinoroyale/View/Games/BlackJack.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 3200, 2400);
-        stage.setTitle("Roulette");
+        stage.setTitle("Black Jack");
         stage.setScene(scene);
         stage.show();
     }
@@ -29,4 +36,9 @@ public class HomeController {
         stage.setScene(scene);
         stage.show();
     }
+
+    public void setStage(Stage stage) {
+        this.stage = stage;
+    }
+
 }
