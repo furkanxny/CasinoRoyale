@@ -10,13 +10,13 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class CSRApplication extends Application {
-    private Stage stage;
+    private static Stage stage;
     @Override
     public void start(Stage primaryStage) throws IOException {
         this.stage = primaryStage;
         VBox root = new VBox();
 
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/app.casinoroyale/View/Dashboards/HomePage.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/app.casinoroyale/View/Games/Roulette.fxml"));
         fxmlLoader.setRoot(root);
         fxmlLoader.load();
 
@@ -34,5 +34,8 @@ public class CSRApplication extends Application {
         launch();
     }
 
+    public static Stage getStage() {
+        return stage;
+    }
 
 }

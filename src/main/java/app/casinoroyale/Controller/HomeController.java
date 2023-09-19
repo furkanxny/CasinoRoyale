@@ -4,6 +4,7 @@ import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -17,7 +18,17 @@ public class HomeController {
     FXMLLoader homeFXML = new FXMLLoader(getClass().getResource("/app.casinoroyale/View/Dashboards/HomePage.fxml"));
 
     public void homeDash(ActionEvent actionEvent) throws IOException {
-        Scene scene = new Scene(homeFXML.load(), 3200, 2400);
+        this.stage = stage;
+        VBox root = new VBox();
+
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/app.casinoroyale/View/Dashboards/HomePage.fxml"));
+        fxmlLoader.setRoot(root);
+        fxmlLoader.load();
+
+        HomeController controller = fxmlLoader.getController();
+        controller.setStage(stage);
+
+        Scene scene = new Scene(root, 3200, 2400);
         stage.setTitle("Casino Royale");
         stage.setScene(scene);
         stage.show();

@@ -8,18 +8,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="42436b1b-9b1f-4ddc-8c1d-3a6bc1aed41d" name="Changes" comment="Second push test.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/casinoroyale/Controller/GamesControllers/RouletteController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/app/casinoroyale/Model/DataModels/GameModels/RouletteModel/Ball.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/app/casinoroyale/Model/DataModels/GameModels/RouletteModel/BallColors.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/app/casinoroyale/Model/DataModels/GameModels/RouletteModel/Bet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/app/casinoroyale/Model/DataModels/GameModels/RouletteModel/Roulette.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/app/casinoroyale/Model/DataModels/GameModels/RouletteModel/RouletteWheel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/app/casinoroyale/Model/DataModels/UserModels/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/app/casinoroyale/CSRApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/casinoroyale/CSRApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/casinoroyale/Controller/GamesControllers/defaultfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/casinoroyale/Controller/GamesControllers/RouletteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/casinoroyale/Controller/GamesControllers/RouletteController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/app/casinoroyale/Controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/casinoroyale/Controller/HomeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/casinoroyale/Controller/defaultfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/casinoroyale/Model/Games/defaultfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/casinoroyale/Model/Sports/defaultfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/casinoroyale/Model/User/UserModel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/app.casinoroyale/View/Dashboards/HomePage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/app.casinoroyale/View/Dashboards/HomePage.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/app.casinoroyale/View/Games/Roulette.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/app.casinoroyale/View/Games/Roulette.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/casinoroyale/Model/Services/Games/GamesServices.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/casinoroyale/Model/Services/Games/defaultfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/casinoroyale/Model/Services/Sports/defaultfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/casinoroyale/Model/Services/User/UserModel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/app.casinoroyale/Assets/default file" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/app.casinoroyale/View/Games/Roulette.fxml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,17 +56,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/luke-angelostrazzera/Farmingdale23/ComputerEngineering/CasinoRoyale/src/main/resources/app.casinoroyale/View/Games&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "/Users/luke-angelostrazzera/Farmingdale23/ComputerEngineering/CasinoRoyale",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "run.code.analysis.last.selected.profile": "pProject Default"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/resources/app.casinoroyale/View/Games" />
@@ -72,6 +76,9 @@
       <recent name="$PROJECT_DIR$/src/main/java/app.casinoroyale/Controller/GamesControllers" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources/app/casinoroyale/Assets" />
+      <recent name="$PROJECT_DIR$/src/main/resources/app.casinoroyale/View/Games" />
+      <recent name="$PROJECT_DIR$/src/main/resources/app.casinoroyale/Assets/Roulette" />
       <recent name="$PROJECT_DIR$/src/main" />
       <recent name="$PROJECT_DIR$/src" />
     </key>
@@ -91,7 +98,7 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="32d9a9e9-60a7-4628-853e-7d826f3cbd94" name="Changes" comment="" />
+      <changelist id="42436b1b-9b1f-4ddc-8c1d-3a6bc1aed41d" name="Changes" comment="Second push test." />
       <created>1694058698661</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
