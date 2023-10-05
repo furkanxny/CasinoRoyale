@@ -8,18 +8,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="42436b1b-9b1f-4ddc-8c1d-3a6bc1aed41d" name="Changes" comment="Second push test.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/app.casinoroyale/Controller/GamesControllers/defaultfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app.casinoroyale/Controller/SportsControllers/defaultfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app.casinoroyale/Controller/defaultfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/app.casinoroyale/View/Games/defaultfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/app.casinoroyale/View/Sports/defualtfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/app.casinoroyale/View/Games/HorseRacing.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/casinoroyale/View/Dashboards/SceneBuilder.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app.casinoroyale/CSRApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app.casinoroyale/CSRApplication.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="FxmlFile" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -32,6 +36,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
   <component name="ProjectId" id="2V3JBzr9p1MndDlA79NZE6z8x46" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -40,17 +47,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "/Users/luke-angelostrazzera/Farmingdale23/ComputerEngineering/CasinoRoyale/src/main/java/app.casinoroyale/Controller/SportsControllers",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.2",
-    "run.code.analysis.last.selected.profile": "pProject Default"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;CSR-002&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/luke-angelostrazzera/Farmingdale23/ComputerEngineering/CasinoRoyale/src/main/java/app.casinoroyale/Controller/SportsControllers&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/java/app.casinoroyale/Controller/SportsControllers" />
@@ -67,13 +81,26 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="32d9a9e9-60a7-4628-853e-7d826f3cbd94" name="Changes" comment="" />
+      <changelist id="42436b1b-9b1f-4ddc-8c1d-3a6bc1aed41d" name="Changes" comment="Second push test." />
       <created>1694058698661</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1694058698661</updated>
+      <workItem from="1694102888829" duration="89000" />
+      <workItem from="1694104249917" duration="1733000" />
+      <workItem from="1695140267395" duration="1526000" />
+      <workItem from="1695303986957" duration="169000" />
+      <workItem from="1695312077449" duration="701000" />
+      <workItem from="1695313201152" duration="1259000" />
+      <workItem from="1695862908173" duration="101000" />
+      <workItem from="1695908227258" duration="728000" />
+      <workItem from="1695916898417" duration="1801000" />
+      <workItem from="1696518887122" duration="1460000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.History.Properties">
     <option name="COLUMN_ID_ORDER">
@@ -84,6 +111,29 @@
         <option value="Default.Subject" />
         <option value="Space.CommitStatus" />
       </list>
+    </option>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/main" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
     </option>
   </component>
 </project>
