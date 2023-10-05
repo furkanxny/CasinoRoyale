@@ -1,42 +1,44 @@
 package app.casinoroyale;
 
+import app.casinoroyale.Controller.HomeController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.layout.VBox; // Import the type of your root element
-import javafx.scene.paint.Color;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
+
+import java.io.IOException;
+import java.net.URL;
 
 public class CSRApplication extends Application {
-    private static Stage stage;
 
     @Override
-    public void start(Stage stage) throws Exception {
-        this.stage = stage;
+    public void start(Stage primaryStage) throws IOException {
 
-        // removes the top bar of the application window. (undecorated stage)
-        stage.initStyle(StageStyle.TRANSPARENT);
+        // Print the URL to the console before loading
+        URL resource = getClass().getResource("/app/casinoroyale/View/Games/Roulette.fxml");
+        System.out.println(resource);
+        URL resource2 = getClass().getResource("/app/Assets/Roulette/images/background.png");
+        System.out.println(resource2); // Print the URL to the console before loading
 
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/res.casinoroyale/View/Dashboards/HomePage.fxml"));
-        VBox root = new VBox(); // Create an instance of your root element
-        loader.setRoot(root); // Set the root before loading
-        loader.load();
 
-        Scene scene = new Scene(root);
-        scene.setFill(Color.TRANSPARENT);
+        if (resource == null) {
+            throw new IOException("Cannot load resource: /app/casinoroyale/View/Dashboards/HomePage.fxml");
+        }
 
-        stage.setTitle("Casino");
-        stage.setScene(scene);
-        stage.show();
+        FXMLLoader fxmlLoader = new FXMLLoader(resource);
+        VBox root = fxmlLoader.load(); // Loading the root directly from FXMLLoader
+
+        HomeController controller = fxmlLoader.getController();
+        controller.setStage(primaryStage);
+
+        Scene scene = new Scene(root, 3200, 2400);
+        primaryStage.setTitle("Casino Royale");
+        primaryStage.setScene(scene);
+        primaryStage.show();
     }
 
     public static void main(String[] args) {
         launch();
-    }
-
-    public static Stage getStage() {
-        return stage;
     }
 }

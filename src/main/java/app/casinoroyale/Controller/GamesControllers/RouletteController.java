@@ -116,7 +116,6 @@ public class RouletteController implements Initializable{
         chipXOrigin = chip.getMinX();
         chipYOrigin = chip.getMinY();
 
-        this.stage = CSRApplication.getStage();
 
         initNumbersArrayList();
 
