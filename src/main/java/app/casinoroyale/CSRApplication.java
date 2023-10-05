@@ -16,7 +16,7 @@ public class CSRApplication extends Application {
     public void start(Stage primaryStage) throws IOException {
 
         // Print the URL to the console before loading
-        URL resource = getClass().getResource("/app/casinoroyale/View/Games/Roulette.fxml");
+        URL resource = getClass().getResource("/app/casinoroyale/View/Games/HorseRacing.fxml");
         System.out.println(resource);
         URL resource2 = getClass().getResource("/app/Assets/Roulette/images/background.png");
         System.out.println(resource2); // Print the URL to the console before loading
