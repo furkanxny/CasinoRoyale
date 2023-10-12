@@ -11,6 +11,7 @@ import java.io.IOException;
 import java.net.URL;
 
 public class CSRApplication extends Application {
+    private static Stage stage;
 
     @Override
     public void start(Stage primaryStage) throws IOException {
@@ -28,7 +29,7 @@ public class CSRApplication extends Application {
 
         FXMLLoader fxmlLoader = new FXMLLoader(resource);
         VBox root = fxmlLoader.load(); // Loading the root directly from FXMLLoader
-
+        fxmlLoader.setRoot(root);
         HomeController controller = fxmlLoader.getController();
         controller.setStage(primaryStage);
 
@@ -37,7 +38,9 @@ public class CSRApplication extends Application {
         primaryStage.setScene(scene);
         primaryStage.show();
     }
-
+    public static Stage getStage() {
+        return stage;
+    }
     public static void main(String[] args) {
         launch();
     }
