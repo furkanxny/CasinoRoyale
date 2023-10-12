@@ -13,8 +13,8 @@ import javafx.collections.ObservableList;
 
 public class Bet {
     
-    private ObservableList<Integer> selectedNumbers;
-    private int bet;
+    private final ObservableList<Integer> selectedNumbers;
+    private final int bet;
     
     public Bet(ObservableList<Integer> selectedNumbers, int bet) {
         this.selectedNumbers = selectedNumbers;
