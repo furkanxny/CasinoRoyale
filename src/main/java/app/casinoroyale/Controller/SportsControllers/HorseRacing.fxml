@@ -41,38 +41,38 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml">
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
     <children>
         <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
             <children>
-            <ImageView fx:id="background" fitHeight="400.0" fitWidth="640.0" layoutY="-1.0">
+            <ImageView fitHeight="400.0" fitWidth="640.0" layoutY="-1.0">
                <image>
-                  <Image url="@../../../Assets/HorseRacing/images/background.png" />
+                  <Image url="@../../../../../resources/app/Assets/HorseRacing/images/scene%20bg%20final.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="horse1" fitHeight="77.0" fitWidth="93.0" layoutX="11.0" layoutY="224.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="77.0" fitWidth="93.0" layoutX="11.0" layoutY="224.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../Assets/HorseRacing/images/horse1.png" />
+                  <Image url="@../../../../../resources/app/Assets/HorseRacing/images/horse%201%20cropped.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="horse2" fitHeight="77.0" fitWidth="93.0" layoutX="17.0" layoutY="250.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="77.0" fitWidth="93.0" layoutX="17.0" layoutY="250.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../Assets/HorseRacing/images/horse2.png" />
+                  <Image url="@../../../../../resources/app/Assets/HorseRacing/images/horse%202%20cropped.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="horse3" fitHeight="77.0" fitWidth="93.0" layoutX="11.0" layoutY="279.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="77.0" fitWidth="93.0" layoutX="11.0" layoutY="279.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../Assets/HorseRacing/images/horse3.png" />
+                  <Image url="@../../../../../resources/app/Assets/HorseRacing/images/horse%203%20cropped.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="horse4" fitHeight="77.0" fitWidth="93.0" layoutX="10.0" layoutY="311.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="77.0" fitWidth="93.0" layoutX="10.0" layoutY="311.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../Assets/HorseRacing/images/horse4.png" />
+                  <Image url="@../../../../../resources/app/Assets/HorseRacing/images/horse%204%20cropped.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="horse5" fitHeight="77.0" fitWidth="93.0" layoutX="14.0" layoutY="337.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="77.0" fitWidth="93.0" layoutX="14.0" layoutY="337.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../Assets/HorseRacing/images/horse5.png" />
+                  <Image url="@../../../../../resources/app/Assets/HorseRacing/images/horse%205%20cropped.png" />
                </image>
             </ImageView>
             <Label layoutX="71.0" layoutY="8.0" style="-fx-background-color: white;" text="Enter bet amount: " textFill="#00ff1e">
@@ -80,8 +80,8 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <TextField fx:id="betAmount" layoutX="70.0" layoutY="35.0" />
-            <Button fx:id="startRace" layoutX="362.0" layoutY="8.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="138.0" text="Start Race!" textFill="#00ff20">
+            <TextField layoutX="70.0" layoutY="35.0" />
+            <Button fx:id="startRace" layoutX="251.0" layoutY="8.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="138.0" text="Start Race!" textFill="#00ff20">
                <font>
                   <Font size="18.0" />
                </font>

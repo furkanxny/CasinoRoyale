@@ -8,7 +8,7 @@
 <?import javafx.scene.shape.Ellipse?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" fx:id="mainPane" prefHeight="874.0" prefWidth="1573.0" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.casinoroyale.Controller.GamesControllers.RouletteController">
+<AnchorPane id="AnchorPane" fx:id="mainPane" prefHeight="874.0" prefWidth="1573.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="app.casinoroyale.Controller.GamesControllers.RouletteController">
     <children>
         <ImageView fitHeight="885.0" fitWidth="1579.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="-11.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-6.0" AnchorPane.topAnchor="0.0">
             <image>

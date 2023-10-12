@@ -18,7 +18,13 @@ public class CSRApplication extends Application {
 
         // Print the URL to the console before loading
         URL resource = getClass().getResource("/app/casinoroyale/View/Dashboards/HomePage.fxml");
+
         System.out.println(resource);
+
+        //print url of pictures, make sure they load
+        URL resource3 = getClass().getResource("/app/Assets/HorseRacing/images/scene%bg%final.png");
+        System.out.println(resource3);
+
         URL resource2 = getClass().getResource("/app/Assets/Roulette/images/background.png");
         System.out.println(resource2); // Print the URL to the console before loading
 
@@ -29,9 +35,11 @@ public class CSRApplication extends Application {
 
         FXMLLoader fxmlLoader = new FXMLLoader(resource);
         VBox root = fxmlLoader.load(); // Loading the root directly from FXMLLoader
+
         fxmlLoader.setRoot(root);
         HomeController controller = fxmlLoader.getController();
         controller.setStage(primaryStage);
+
 
         Scene scene = new Scene(root, 3200, 2400);
         primaryStage.setTitle("Casino Royale");
