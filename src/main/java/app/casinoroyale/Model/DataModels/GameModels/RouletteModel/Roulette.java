@@ -17,9 +17,9 @@ public class Roulette  {
 
     private static Roulette instance;
 
-    private ObservableList<Bet> bets = FXCollections.observableArrayList();
+    private final ObservableList<Bet> bets = FXCollections.observableArrayList();
 
-    private RouletteWheel rw;
+    private final RouletteWheel rw;
     
     private int winnings;
 
@@ -78,7 +78,7 @@ public class Roulette  {
     }
 
     public int getRatio(ObservableList<Integer> selectedNumbers) {
-        int ratio = ((int) (36 / selectedNumbers.size()) - 1);
+        int ratio = ((36 / selectedNumbers.size()) - 1);
         System.out.println(ratio);
         return ratio;
     }

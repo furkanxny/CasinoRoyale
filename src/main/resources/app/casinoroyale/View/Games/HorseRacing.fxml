@@ -34,6 +34,9 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -41,11 +44,38 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml">
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.casinoroyale.Controller.HomeController">
     <children>
-        <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+        <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="454.0" prefWidth="698.0" VBox.vgrow="ALWAYS">
             <children>
-            <ImageView fx:id="background" fitHeight="400.0" fitWidth="640.0" layoutY="-1.0">
+                <MenuBar VBox.vgrow="NEVER">
+                    <menus>
+                        <Menu mnemonicParsing="false" text="Casino Royale">
+                            <MenuItem mnemonicParsing="false" text="Home" />
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Games">
+                            <items>
+                                <MenuItem mnemonicParsing="false" text="Black Jack" />
+                                <MenuItem mnemonicParsing="false" text="Roulette" />
+                                <MenuItem mnemonicParsing="false" text="Horse Racing" />
+                                <MenuItem mnemonicParsing="false" text="Slots" />
+                            </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Sports">
+                            <items>
+                                <MenuItem mnemonicParsing="false" text="FootBall" />
+                            </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Bank">
+                            <items>
+                                <MenuItem mnemonicParsing="false" text="Deposit" />
+                                <MenuItem mnemonicParsing="false" text="Withdrawl" />
+                                <MenuItem mnemonicParsing="false" text="P/L" />
+                            </items>
+                        </Menu>
+                    </menus>
+                </MenuBar>
+            <ImageView fx:id="background" fitHeight="374.0" fitWidth="640.0" layoutY="25.0">
                <image>
                   <Image url="@../../../Assets/HorseRacing/images/background.png" />
                </image>
@@ -75,13 +105,13 @@
                   <Image url="@../../../Assets/HorseRacing/images/horse5.png" />
                </image>
             </ImageView>
-            <Label layoutX="71.0" layoutY="8.0" style="-fx-background-color: white;" text="Enter bet amount: " textFill="#00ff1e">
+            <Label layoutX="71.0" layoutY="26.0" style="-fx-background-color: white;" text="Enter bet amount: " textFill="#00ff1e">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <TextField fx:id="betAmount" layoutX="70.0" layoutY="35.0" />
-            <Button fx:id="startRace" layoutX="362.0" layoutY="8.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="138.0" text="Start Race!" textFill="#00ff20">
+            <TextField fx:id="betAmount" layoutX="70.0" layoutY="53.0" />
+            <Button fx:id="startRace" layoutX="364.0" layoutY="26.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="138.0" text="Start Race!" textFill="#00ff20">
                <font>
                   <Font size="18.0" />
                </font>

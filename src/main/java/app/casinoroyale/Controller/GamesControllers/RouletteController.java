@@ -45,6 +45,9 @@ public class RouletteController implements Initializable{
     @FXML
     private void playBlackJack(ActionEvent event) throws IOException {
         HomeController.playBlackJack(event);
+    } @FXML
+    private void playHorseRacing(ActionEvent event) throws IOException {
+        HomeController.playHorseRacing(event);
     }
     @FXML
     private void homeDash(ActionEvent event) throws IOException {
@@ -65,7 +68,7 @@ public class RouletteController implements Initializable{
     @FXML private Rectangle rectangle1;
 
     //Label that hovers over a placed chip.
-    private Label lblChipHover = new Label();
+    private final Label lblChipHover = new Label();
 
     private ImageView selectedImageView;
     @FXML
@@ -78,14 +81,14 @@ public class RouletteController implements Initializable{
 
     private Stage stage;
 
-    private boolean infoOpened = false;
+    private final boolean infoOpened = false;
 
     private int lastAddedAmount = 0;
 
-    private ObservableList<Label> numbers = FXCollections.observableArrayList();
-    private ArrayList<ImageView> chips = new ArrayList<>();
-    private ObservableList<Label> rangeNumbers = FXCollections.observableArrayList();
-    private ObservableList<Pane> streetNumbers = FXCollections.observableArrayList();
+    private final ObservableList<Label> numbers = FXCollections.observableArrayList();
+    private final ArrayList<ImageView> chips = new ArrayList<>();
+    private final ObservableList<Label> rangeNumbers = FXCollections.observableArrayList();
+    private final ObservableList<Pane> streetNumbers = FXCollections.observableArrayList();
 
     int betAmount = 0;
 

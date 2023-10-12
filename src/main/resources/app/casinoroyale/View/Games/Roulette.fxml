@@ -8,8 +8,39 @@
 <?import javafx.scene.shape.Ellipse?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" fx:id="mainPane" prefHeight="874.0" prefWidth="1573.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="app.casinoroyale.Controller.GamesControllers.RouletteController">
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuItem?>
+<AnchorPane id="AnchorPane" fx:id="mainPane" prefHeight="454.0" prefWidth="698.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="app.casinoroyale.Controller.GamesControllers.RouletteController">
     <children>
+
+        <MenuBar>
+            <menus>
+                <Menu mnemonicParsing="false" onAction="#homeDash" text="Casino Royale">
+                    <MenuItem mnemonicParsing="false" onAction="#homeDash" text="Home" />
+                </Menu>
+                <Menu mnemonicParsing="false" text="Games">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#playBlackJack" text="Black Jack" />
+                        <MenuItem mnemonicParsing="false" onAction="#playHorseRacing" text="Horse Racing" />
+                        <MenuItem mnemonicParsing="false" text="Slots" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Sports">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="FootBall" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Bank">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="Deposit" />
+                        <MenuItem mnemonicParsing="false" text="Withdrawl" />
+                        <MenuItem mnemonicParsing="false" text="P/L" />
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+
         <ImageView fitHeight="885.0" fitWidth="1579.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="-11.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-6.0" AnchorPane.topAnchor="0.0">
             <image>
                 <Image url="@../../../Assets/Roulette/images/popup_background.png" />

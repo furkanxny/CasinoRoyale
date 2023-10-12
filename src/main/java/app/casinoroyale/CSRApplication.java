@@ -4,6 +4,7 @@ import app.casinoroyale.Controller.HomeController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
@@ -22,7 +23,7 @@ public class CSRApplication extends Application {
         System.out.println(resource);
 
         //print url of pictures, make sure they load
-        URL resource3 = getClass().getResource("/app/Assets/HorseRacing/images/scene%bg%final.png");
+        URL resource3 = getClass().getResource("/app/Assets/HorseRacing/images/background.png");
         System.out.println(resource3);
 
         URL resource2 = getClass().getResource("/app/Assets/Roulette/images/background.png");
@@ -34,9 +35,8 @@ public class CSRApplication extends Application {
         }
 
         FXMLLoader fxmlLoader = new FXMLLoader(resource);
-        VBox root = fxmlLoader.load(); // Loading the root directly from FXMLLoader
+        AnchorPane root = fxmlLoader.load();
 
-        fxmlLoader.setRoot(root);
         HomeController controller = fxmlLoader.getController();
         controller.setStage(primaryStage);
 
