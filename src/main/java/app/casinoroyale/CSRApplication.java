@@ -20,7 +20,7 @@ public class CSRApplication extends Application {
         System.out.println(resource);
 
         //print url of pictures, make sure they load
-        URL resource3 = getClass().getResource("/app/Assets/HorseRacing/images/scene%bg%final.png");
+        URL resource3 = getClass().getResource("/app/Assets/HorseRacing/images/background.png");
         System.out.println(resource3);
 
         URL resource2 = getClass().getResource("/app/Assets/Roulette/images/background.png");
