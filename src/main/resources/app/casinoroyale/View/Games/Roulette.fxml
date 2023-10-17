@@ -54,7 +54,7 @@
 
         <Pane fx:id="draggablePane" layoutX="15.0" layoutY="18.0" prefHeight="153.0" prefWidth="1558.0">
             <children>
-                <ImageView fitHeight="84.0" fitWidth="80.0" layoutX="1416.0" layoutY="44.0" onMouseClicked="#goBack" onMouseEntered="#highlightRoundButton" onMouseExited="#unHighlightRoundButton" pickOnBounds="true" preserveRatio="true">
+                <ImageView fx:id="btnToolBar" fitHeight="84.0" fitWidth="80.0" layoutX="1416.0" layoutY="44.0" onMouseClicked="#goBack" onMouseEntered="#highlightRoundButton" onMouseExited="#unHighlightRoundButton" pickOnBounds="true" preserveRatio="true">
                     <image>
                         <Image url="@../../../Assets/Roulette/images/btn_toolbar.png" />
                     </image>
@@ -196,6 +196,11 @@
                 <Font size="22.0" />
             </font>
         </Label>
+        <ImageView fx:id="chip0" fitHeight="0" fitWidth="44.0" layoutX="628.0" layoutY="755.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../../../Assets/Roulette/images/jetons/jeton.png" />
+            </image>
+        </ImageView>
         <ImageView fx:id="chip1" fitHeight="51.0" fitWidth="44.0" layoutX="628.0" layoutY="755.0" pickOnBounds="true" preserveRatio="true">
             <image>
                 <Image url="@../../../Assets/Roulette/images/jetons/jeton1.png" />
@@ -446,6 +451,10 @@
         <ImageView fx:id="imgViewTutorial" fitHeight="866.0" fitWidth="1558.0" onMouseClicked="#nextImage" pickOnBounds="true" preserveRatio="true" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0">
             <image>
                 <Image url="@../../../Assets/Roulette/images/roulette/tutorial/1.png" />
+                <Image url="@../../../Assets/Roulette/images/roulette/tutorial/2.png" />
+                <Image url="@../../../Assets/Roulette/images/roulette/tutorial/3.png" />
+                <Image url="@../../../Assets/Roulette/images/roulette/tutorial/4.png" />
+                <Image url="@../../../Assets/Roulette/images/roulette/tutorial/5.png" />
             </image></ImageView>
         <Label layoutX="40.0" layoutY="192.0" text="Winnings" textFill="#ffd353">
             <font>
