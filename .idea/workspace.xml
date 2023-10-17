@@ -9,15 +9,8 @@
   <component name="ChangeListManager">
     <list default="true" id="42436b1b-9b1f-4ddc-8c1d-3a6bc1aed41d" name="Changes" comment="Second push test.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/casinoroyale/CSRApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/casinoroyale/CSRApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/app/casinoroyale/Controller/GamesControllers/RouletteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/casinoroyale/Controller/GamesControllers/RouletteController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/casinoroyale/Controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/casinoroyale/Controller/HomeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/casinoroyale/Model/DataModels/GameModels/RouletteModel/Ball.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/casinoroyale/Model/DataModels/GameModels/RouletteModel/Ball.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/casinoroyale/Model/DataModels/GameModels/RouletteModel/Bet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/casinoroyale/Model/DataModels/GameModels/RouletteModel/Bet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/app/casinoroyale/Model/DataModels/GameModels/RouletteModel/Roulette.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/casinoroyale/Model/DataModels/GameModels/RouletteModel/Roulette.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/app/casinoroyale/View/Dashboards/HomePage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/app/casinoroyale/View/Dashboards/HomePage.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/app/casinoroyale/View/Games/HorseRacing.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/app/casinoroyale/View/Games/HorseRacing.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/app/casinoroyale/View/Games/Roulette.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/app/casinoroyale/View/Games/Roulette.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

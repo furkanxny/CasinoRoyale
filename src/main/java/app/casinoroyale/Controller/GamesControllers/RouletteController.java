@@ -107,12 +107,12 @@ public class RouletteController implements Initializable{
         lblChipHover.setVisible(false);
 
         // Adds the initial chip.
-        //addChip();
+       addChip();
 
-        // Gets the x and y coordinates of the chip's origin.
-        //Bounds chip = chips.get(0).getBoundsInLocal();
-        //chipXOrigin = chip.getMinX();
-        //chipYOrigin = chip.getMinY();
+       // Gets the x and y coordinates of the chip's origin.
+       Bounds chip = chips.get(0).getBoundsInLocal();
+       chipXOrigin = chip.getMinX();
+       chipYOrigin = chip.getMinY();
 
         this.stage = CSRApplication.getStage();
 
@@ -188,7 +188,7 @@ public class RouletteController implements Initializable{
      */
     private void addChip() {
         ImageView chip = new ImageView();
-        chip.setImage(new Image("@../../Assets/Roulette/images/jetons/jeton1.png"));
+        chip.setImage(chip1.getImage());
         mainPane.getChildren().add(chip);
 
         chip.setX(1155);
