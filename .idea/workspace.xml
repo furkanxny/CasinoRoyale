@@ -8,14 +8,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="42436b1b-9b1f-4ddc-8c1d-3a6bc1aed41d" name="Changes" comment="Slots.fxml and SlotsController.java has been added">
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/casinoroyale/Controller/GamesControllers/SlotsController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/app.casinoroyale/View/Games/Slots.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/icons/0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/icons/1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/icons/2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/icons/3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/icons/4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/icons/5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/icons/6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/app.casinoroyale/Assets/Slots/icons/0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/app.casinoroyale/Assets/Slots/icons/1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/app.casinoroyale/Assets/Slots/icons/2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/app.casinoroyale/Assets/Slots/icons/3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/app.casinoroyale/Assets/Slots/icons/4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/app.casinoroyale/Assets/Slots/icons/5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/app.casinoroyale/Assets/Slots/icons/6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/app/Assets/Slots/icons/0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/app/Assets/Slots/icons/1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/app/Assets/Slots/icons/2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/app/Assets/Slots/icons/3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/app/Assets/Slots/icons/4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/app/Assets/Slots/icons/5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/app/Assets/Slots/icons/6.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/casinoroyale/Model/Services/Games/GamesServices.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/casinoroyale/Model/Services/Games/defaultfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/casinoroyale/Model/Services/Sports/defaultfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/casinoroyale/Model/Services/User/UserModel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/casinoroyale/Controller/GamesControllers/SlotsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/casinoroyale/Controller/GamesControllers/SlotsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/casinoroyale/Controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/casinoroyale/Controller/HomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/app.casinoroyale/View/Dashboards/HomePage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/app.casinoroyale/View/Dashboards/HomePage.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/app.casinoroyale/View/Games/Slots.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/app.casinoroyale/View/Games/Slots.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,6 +59,12 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 6
+}]]></component>
   <component name="ProjectId" id="2V3JBzr9p1MndDlA79NZE6z8x46" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -51,6 +75,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "CSR-003",
@@ -58,7 +83,8 @@
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.2",
-    "run.code.analysis.last.selected.profile": "pProject Default"
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "preferences.JavaFX"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -76,6 +102,9 @@
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
     </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="app.casinoroyale.Controller.GamesControllers" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="Run Casino" type="Application" factoryName="Application">
@@ -89,7 +118,7 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="32d9a9e9-60a7-4628-853e-7d826f3cbd94" name="Changes" comment="" />
+      <changelist id="42436b1b-9b1f-4ddc-8c1d-3a6bc1aed41d" name="Changes" comment="Second push test." />
       <created>1694058698661</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -107,5 +136,12 @@
         <option value="Space.CommitStatus" />
       </list>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
