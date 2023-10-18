@@ -8,32 +8,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="42436b1b-9b1f-4ddc-8c1d-3a6bc1aed41d" name="Changes" comment="Slots.fxml and SlotsController.java has been added">
-      <change afterPath="$PROJECT_DIR$/icons/0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/icons/1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/icons/2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/icons/3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/icons/4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/icons/5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/icons/6.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/app.casinoroyale/Assets/Slots/icons/0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/app.casinoroyale/Assets/Slots/icons/1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/app.casinoroyale/Assets/Slots/icons/2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/app.casinoroyale/Assets/Slots/icons/3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/app.casinoroyale/Assets/Slots/icons/4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/app.casinoroyale/Assets/Slots/icons/5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/app.casinoroyale/Assets/Slots/icons/6.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/app/Assets/Slots/icons/0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/app/Assets/Slots/icons/1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/app/Assets/Slots/icons/2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/app/Assets/Slots/icons/3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/app/Assets/Slots/icons/4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/app/Assets/Slots/icons/5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/app/Assets/Slots/icons/6.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/casinoroyale/Controller/GamesControllers/SlotsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/casinoroyale/Controller/GamesControllers/SlotsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/casinoroyale/Controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/casinoroyale/Controller/HomeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/app.casinoroyale/View/Dashboards/HomePage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/app.casinoroyale/View/Dashboards/HomePage.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/app.casinoroyale/View/Games/Slots.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/app.casinoroyale/View/Games/Slots.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/app.casinoroyale/Assets/Slots/icons/0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/app.casinoroyale/Assets/Slots/icons/1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/app.casinoroyale/Assets/Slots/icons/2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/app.casinoroyale/Assets/Slots/icons/3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/app.casinoroyale/Assets/Slots/icons/4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/app.casinoroyale/Assets/Slots/icons/5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/app.casinoroyale/Assets/Slots/icons/6.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,9 +44,9 @@
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 6
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
   <component name="ProjectId" id="2V3JBzr9p1MndDlA79NZE6z8x46" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -73,20 +55,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "CSR-003",
-    "last_opened_file_path": "/Users/luke-angelostrazzera/Farmingdale23/ComputerEngineering/CasinoRoyale/src/main/resources/app.casinoroyale/View/Games",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.2",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "preferences.JavaFX"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;CSR-003&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/luke-angelostrazzera/Farmingdale23/ComputerEngineering/CasinoRoyale/src/main/resources/app.casinoroyale/View/Games&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.JavaFX&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/resources/app.casinoroyale/View/Games" />
@@ -124,6 +106,15 @@
       <option name="presentableId" value="Default" />
       <updated>1694058698661</updated>
     </task>
+    <task id="LOCAL-00001" summary="Slots.fxml and SlotsController.java has been added">
+      <option name="closed" value="true" />
+      <created>1697581181997</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1697581181997</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -139,6 +130,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Slots.fxml and SlotsController.java has been added" />
+    <option name="LAST_COMMIT_MESSAGE" value="Slots.fxml and SlotsController.java has been added" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
