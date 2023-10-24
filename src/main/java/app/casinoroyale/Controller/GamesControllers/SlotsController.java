@@ -242,8 +242,17 @@ public class SlotsController {
         String winningInfo = null;
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Winning Chances");
-        alert.setHeaderText("Winning Chances");
-        alert.setContentText(winningInfo);
+        alert.setHeaderText("Winning Chances \n \n " +
+                "In order to Win at least 2 of the icon match is  required.");
+        alert.setContentText(
+                " Here is the Winning amounts for matching 2 same icons \n\n" +
+                " Watermelon - $2 \n Gonca - $2 \n Bar - $2  " +
+                "\n King - $4 \n Horse Shoe - $4 \n 7 - $4 " +
+                "\nDiomand - $6 \n " +
+                "\n  Here is the Winning amounts for matching 3 same icons:  " +
+                "\n Watermelon - $6 \n Gonca - $6 \n Bar - $6  " +
+                "\nKing - $9 \n Horse Shoe - $9 \n 7 - $9 " +
+                "Diomand - $15" );
         alert.showAndWait();
     }
 }

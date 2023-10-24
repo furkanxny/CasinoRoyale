@@ -7,7 +7,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="42436b1b-9b1f-4ddc-8c1d-3a6bc1aed41d" name="Changes" comment="unnecessary icons file has been deleted">
+    <list default="true" id="42436b1b-9b1f-4ddc-8c1d-3a6bc1aed41d" name="Changes" comment="Info button has been added to display Winning Information on a pop up Alert Window.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/app/casinoroyale/Controller/GamesControllers/SlotsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/casinoroyale/Controller/GamesControllers/SlotsController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/app.casinoroyale/View/Games/Slots.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/app.casinoroyale/View/Games/Slots.fxml" afterDir="false" />
@@ -117,7 +117,15 @@
       <option name="project" value="LOCAL" />
       <updated>1697641398695</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Info button has been added to display Winning Information on a pop up Alert Window.">
+      <option name="closed" value="true" />
+      <created>1698160684816</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1698160684816</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -135,7 +143,8 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Slots.fxml and SlotsController.java has been added" />
     <MESSAGE value="unnecessary icons file has been deleted" />
-    <option name="LAST_COMMIT_MESSAGE" value="unnecessary icons file has been deleted" />
+    <MESSAGE value="Info button has been added to display Winning Information on a pop up Alert Window." />
+    <option name="LAST_COMMIT_MESSAGE" value="Info button has been added to display Winning Information on a pop up Alert Window." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

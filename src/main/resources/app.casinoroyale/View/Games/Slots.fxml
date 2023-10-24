@@ -17,99 +17,109 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane prefHeight="750.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.casinoroyale.Controller.GamesControllers.SlotsController">
-    <center>
-        <Pane prefHeight="599.0" prefWidth="835.0" BorderPane.alignment="CENTER">
-            <children>
-                <GridPane gridLinesVisible="true" layoutX="153.0" layoutY="128.0" prefHeight="248.0" prefWidth="573.0">
-                    <columnConstraints>
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                    </columnConstraints>
-                    <rowConstraints>
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                    </rowConstraints>
-                    <children>
-                        <StackPane prefHeight="100.0" prefWidth="100.0">
-                            <children>
-                                <ImageView fx:id="imageBlock1" fitHeight="160.0" fitWidth="175.0" pickOnBounds="true" preserveRatio="true">
-                                    <image>
-                                        <Image url="@../../Assets/Slots/icons/6.png" />
-                                    </image></ImageView>
-                            </children>
+
+<Pane style="-fx-background-color: #6699CC;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.casinoroyale.Controller.GamesControllers.SlotsController">
+   <children>
+      <BorderPane prefHeight="750.0" prefWidth="1000.0">
+          <center>
+              <Pane prefHeight="599.0" prefWidth="835.0" BorderPane.alignment="CENTER">
+                  <children>
+                      <GridPane gridLinesVisible="true" layoutX="153.0" layoutY="128.0" prefHeight="248.0" prefWidth="573.0">
+                          <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                          <children>
+                              <StackPane prefHeight="100.0" prefWidth="100.0">
+                                  <children>
+                                      <ImageView fx:id="imageBlock1" fitHeight="160.0" fitWidth="175.0" pickOnBounds="true" preserveRatio="true">
+                                          <image>
+                                              <Image url="@../../Assets/Slots/icons/6.png" />
+                                          </image>
+                              </ImageView>
+                                  </children>
+                              </StackPane>
+                              <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="1">
+                                  <children>
+                                      <ImageView fx:id="imageBlock2" fitHeight="160.0" fitWidth="175.0" pickOnBounds="true" preserveRatio="true">
+                                          <image>
+                                              <Image url="@../../Assets/Slots/icons/6.png" />
+                                          </image>
+                              </ImageView>
+                                  </children>
                         </StackPane>
-                        <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="1">
-                            <children>
-                                <ImageView fx:id="imageBlock2" fitHeight="160.0" fitWidth="175.0" pickOnBounds="true" preserveRatio="true">
-                                    <image>
-                                        <Image url="@../../Assets/Slots/icons/6.png" />
-                                    </image></ImageView>
-                            </children></StackPane>
-                        <StackPane prefHeight="336.0" prefWidth="214.0" GridPane.columnIndex="2">
-                            <children>
-                                <ImageView fx:id="imageBlock3" fitHeight="160.0" fitWidth="175.0" pickOnBounds="true" preserveRatio="true">
-                                    <image>
-                                        <Image url="@../../Assets/Slots/icons/6.png" />
-                                    </image></ImageView>
-                            </children></StackPane>
-                    </children>
-                </GridPane>
-                <Button fx:id="spinButton1" layoutX="382.0" layoutY="422.0" mnemonicParsing="false" onAction="#spinButton1Handler" prefHeight="85.0" prefWidth="85.0" text="\$1 SPIN " />
-                <Button fx:id="spinButton2" layoutX="467.0" layoutY="422.0" mnemonicParsing="false" onAction="#spinButton2Handler" prefHeight="85.0" prefWidth="85.0" text="\$2,50 SPIN" />
-                <Button fx:id="spinButton3" layoutX="552.0" layoutY="422.0" mnemonicParsing="false" onAction="#spinButton3Handler" prefHeight="85.0" prefWidth="85.0" text="\$5 SPIN" />
-                <Label fx:id="balance" layoutX="14.0" layoutY="427.0" prefHeight="53.0" prefWidth="98.0" text="BALANCE -" textFill="#f0860c">
-                    <font>
-                        <Font name="Impact" size="24.0" />
-                    </font>
-                </Label>
-                <Text fx:id="balanceText" fill="#7f7f80" layoutX="112.0" layoutY="460.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="127.06439208984375">
-                    <font>
-                        <Font name="Impact" size="20.0" />
-                    </font>
-                </Text>
-                <TextArea fx:id="textArea" prefHeight="60.0" prefWidth="382.0">
-                    <font>
-                        <Font size="12.0" />
-                    </font>
-                </TextArea>
-                <Label fx:id="balance1" layoutX="415.0" layoutY="-20.0" prefHeight="115.0" prefWidth="403.0" text="CASINO ROYALE" textAlignment="JUSTIFY" textFill="#030303">
-                    <font>
-                        <Font name="Impact" size="65.0" />
-                    </font>
-                </Label>
-            <Button fx:id="infoButton" layoutX="916.0" layoutY="21.0" mnemonicParsing="false" onAction="#infoButtonHandler" text="Info" />
-            </children>
-        </Pane>
-    </center>
-    <top>
-        <MenuBar BorderPane.alignment="CENTER">
-            <menus>
-                <Menu mnemonicParsing="false" text="Casino Royale">
-                    <items>
-                        <MenuItem fx:id="homeDash" mnemonicParsing="false" text="Home" />
-                    </items>
-                </Menu>
-                <Menu mnemonicParsing="false" text="Games">
-                    <items>
-                        <MenuItem mnemonicParsing="false" text="Black Jack" />
-                        <MenuItem mnemonicParsing="false" text="Roulette" />
-                        <MenuItem mnemonicParsing="false" text="Horse Racing" />
-                    </items>
-                </Menu>
-                <Menu mnemonicParsing="false" text="Sports">
-                    <items>
-                        <MenuItem mnemonicParsing="false" text="FootBall" />
-                    </items>
-                </Menu>
-                <Menu mnemonicParsing="false" text="Bank">
-                    <items>
-                        <MenuItem mnemonicParsing="false" text="Deposit" />
-                        <MenuItem mnemonicParsing="false" text="Withdrawl" />
-                        <MenuItem mnemonicParsing="false" text="P/L" />
-                    </items>
-                </Menu>
-            </menus>
-        </MenuBar>
-    </top>
-</BorderPane>
+                              <StackPane prefHeight="336.0" prefWidth="214.0" GridPane.columnIndex="2">
+                                  <children>
+                                      <ImageView fx:id="imageBlock3" fitHeight="160.0" fitWidth="175.0" pickOnBounds="true" preserveRatio="true">
+                                          <image>
+                                              <Image url="@../../Assets/Slots/icons/6.png" />
+                                          </image>
+                              </ImageView>
+                                  </children>
+                        </StackPane>
+                          </children>
+                      </GridPane>
+                      <Button fx:id="spinButton1" layoutX="378.0" layoutY="424.0" mnemonicParsing="false" onAction="#spinButton1Handler" prefHeight="83.0" prefWidth="91.0" text="\$1 SPIN " />
+                      <Button fx:id="spinButton2" layoutX="467.0" layoutY="422.0" mnemonicParsing="false" onAction="#spinButton2Handler" prefHeight="85.0" prefWidth="85.0" text="\$2,50 SPIN" />
+                      <Button fx:id="spinButton3" layoutX="552.0" layoutY="422.0" mnemonicParsing="false" onAction="#spinButton3Handler" prefHeight="85.0" prefWidth="85.0" text="\$5 SPIN" />
+                      <Label fx:id="balance" layoutX="14.0" layoutY="427.0" prefHeight="53.0" prefWidth="98.0" text="BALANCE -" textFill="#f0860c">
+                          <font>
+                              <Font name="Impact" size="24.0" />
+                          </font>
+                      </Label>
+                      <Text fx:id="balanceText" fill="#7f7f80" layoutX="112.0" layoutY="460.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="127.06439208984375">
+                          <font>
+                              <Font name="Impact" size="20.0" />
+                          </font>
+                      </Text>
+                      <TextArea fx:id="textArea" prefHeight="60.0" prefWidth="382.0">
+                          <font>
+                              <Font size="12.0" />
+                          </font>
+                      </TextArea>
+                      <Label fx:id="balance1" layoutX="415.0" layoutY="-20.0" prefHeight="115.0" prefWidth="403.0" text="CASINO ROYALE" textAlignment="JUSTIFY" textFill="#030303">
+                          <font>
+                              <Font name="Impact" size="65.0" />
+                          </font>
+                      </Label>
+                  <Button fx:id="infoButton" layoutX="916.0" layoutY="21.0" mnemonicParsing="false" onAction="#infoButtonHandler" text="Info" />
+                  </children>
+              </Pane>
+          </center>
+          <top>
+              <MenuBar BorderPane.alignment="CENTER">
+                  <menus>
+                      <Menu mnemonicParsing="false" text="Casino Royale">
+                          <items>
+                              <MenuItem fx:id="homeDash" mnemonicParsing="false" text="Home" />
+                          </items>
+                      </Menu>
+                      <Menu mnemonicParsing="false" text="Games">
+                          <items>
+                              <MenuItem mnemonicParsing="false" text="Black Jack" />
+                              <MenuItem mnemonicParsing="false" text="Roulette" />
+                              <MenuItem mnemonicParsing="false" text="Horse Racing" />
+                          </items>
+                      </Menu>
+                      <Menu mnemonicParsing="false" text="Sports">
+                          <items>
+                              <MenuItem mnemonicParsing="false" text="FootBall" />
+                          </items>
+                      </Menu>
+                      <Menu mnemonicParsing="false" text="Bank">
+                          <items>
+                              <MenuItem mnemonicParsing="false" text="Deposit" />
+                              <MenuItem mnemonicParsing="false" text="Withdrawl" />
+                              <MenuItem mnemonicParsing="false" text="P/L" />
+                          </items>
+                      </Menu>
+                  </menus>
+              </MenuBar>
+          </top>
+      </BorderPane>
+   </children>
+</Pane>
