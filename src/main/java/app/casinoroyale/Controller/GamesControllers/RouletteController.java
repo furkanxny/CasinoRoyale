@@ -72,7 +72,7 @@ public class RouletteController implements Initializable{
 
     private ImageView selectedImageView;
     @FXML
-    private ImageView imgViewTutorial, btnToolBar;
+    private ImageView imgViewTutorial, goBack, minimize, nextImg;
 
     private double x, y;
     private double mainSceneX, mainSceneY;
@@ -191,8 +191,8 @@ public class RouletteController implements Initializable{
         chip.setImage(chip0.getImage());
         mainPane.getChildren().add(chip);
 
-        chip.setX(1155);
-        chip.setY(588);
+        chip.setX(775);
+        chip.setY(615);
         chip.setFitWidth(44);
         chip.setFitHeight(44);
 
@@ -563,12 +563,12 @@ public class RouletteController implements Initializable{
     @FXML
     private void highlightRoundButton(MouseEvent event) {
         selectedImageView = ((ImageView) event.getSource());
-        selectedImageView.setImage(btnToolBar.getImage());
+        selectedImageView.setImage(nextImg.getImage());
     }
 
     @FXML
     private void unHighlightRoundButton(MouseEvent event) {
-        selectedImageView.setImage(btnToolBar.getImage());
+        selectedImageView.setImage(minimize.getImage());
     }
 
 

@@ -74,7 +74,7 @@ public class Roulette  {
     }
 
     public int getWinning(int bet, int ratio) {
-        return (bet * ratio) + bet;
+        return bet * ratio;
     }
 
     public int getRatio(ObservableList<Integer> selectedNumbers) {
