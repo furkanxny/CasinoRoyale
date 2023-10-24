@@ -389,6 +389,10 @@ public class RouletteController implements Initializable{
         ObservableList<Integer> selectedNumbers = FXCollections.observableArrayList();
 
         switch (range) {
+            case "lbl0":
+                min=0;
+                max=0;
+                break;
             case "lbl1to18":
                 min = 1;
                 max = 18;
@@ -540,7 +544,7 @@ public class RouletteController implements Initializable{
             numbers.add((Label) n);
         }
 
-        rangeNumbers.addAll(lbl1to18, lblEven, lblOdd, lbl19to36, lbl1st12, lbl2nd12, lbl3rd12, lbl2to1Row1, lbl2to1Row2, lbl2to1Row3, lblRed, lblBlack);
+        rangeNumbers.addAll(lbl0, lbl1to18, lblEven, lblOdd, lbl19to36, lbl1st12, lbl2nd12, lbl3rd12, lbl2to1Row1, lbl2to1Row2, lbl2to1Row3, lblRed, lblBlack);
         streetNumbers.addAll(paneStreet1, paneStreet2, paneStreet3, paneStreet4, paneStreet5, paneStreet6, paneStreet7, paneStreet8, paneStreet9, paneStreet10, paneStreet11, paneStreet12);
     }
 

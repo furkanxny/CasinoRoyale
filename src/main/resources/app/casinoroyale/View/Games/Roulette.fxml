@@ -11,7 +11,7 @@
 <?import javafx.scene.shape.Ellipse?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" fx:id="mainPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.casinoroyale.Controller.GamesControllers.RouletteController">
+<AnchorPane id="AnchorPane" fx:id="mainPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" style="-fx-background-color: purple;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.casinoroyale.Controller.GamesControllers.RouletteController">
     <children>
 
         <MenuBar prefHeight="28.0" prefWidth="1440.0">
@@ -40,12 +40,6 @@
                 </Menu>
             </menus>
         </MenuBar>
-
-        <ImageView fitHeight="817.0" fitWidth="1449.0" layoutX="-3.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="22.0" AnchorPane.leftAnchor="-3.0" AnchorPane.rightAnchor="112.0" AnchorPane.topAnchor="27.0">
-            <image>
-                <Image url="@../../../Assets/Roulette/images/popup_background.png" />
-            </image>
-        </ImageView>
         <Label disable="true" layoutX="234.0" layoutY="40.0" prefHeight="102.0" prefWidth="864.0" style="-fx-opacity: 1;" text="Casino Royale - Roulette" textFill="#ffd353" translateY="25.0">
             <font>
                 <Font size="82.0" />
