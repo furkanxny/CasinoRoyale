@@ -78,6 +78,7 @@
                         <Font name="Impact" size="65.0" />
                     </font>
                 </Label>
+            <Button fx:id="infoButton" layoutX="916.0" layoutY="21.0" mnemonicParsing="false" onAction="#infoButtonHandler" text="Info" />
             </children>
         </Pane>
     </center>

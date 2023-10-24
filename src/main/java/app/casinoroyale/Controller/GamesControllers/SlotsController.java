@@ -11,10 +11,7 @@ import java.io.IOException;
 import java.util.Random;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.MenuItem;
-import javafx.scene.control.TextArea;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
@@ -48,9 +45,8 @@ public class SlotsController {
     private static double balanceAmount = 1000.0;
     int multiplier = 0;
     private HomeController HomeController;
-
-    public SlotsController() {
-    }
+    @FXML
+    private Button infoButton;
 
     @FXML
     public void initialize() {
@@ -61,48 +57,24 @@ public class SlotsController {
         balanceInitialize();
     }
 
-    @Deprecated
-    private void playBlackJack(ActionEvent event) throws IOException {
-        this.HomeController.playBlackJack(event);
-    }
-
-    @Deprecated
-    private void playRoulette(ActionEvent event) throws IOException {
-        this.HomeController.playRoulette(event);
-    }
-
-//    @FXML
-//    private void playHorseRacing(ActionEvent event) throws IOException {
-//        this.HomeController.playHorseRacing(event);
-//    }
-
-    @Deprecated
-    private void homeDash(ActionEvent event) throws IOException {
-        this.HomeController.homeDash(event);
-    }
-//app.casinoroyale/Assets/Slots/icons/0.png
-    //app.casinoroyale/Assets/Slots/icons/0.png
     private void initializeImages() {
         int i;
         for(i = 0; i < 7; ++i) {
             this.file[i] = new File("icons/" + String.valueOf(i) + ".png");
         }
-
         for(i = 0; i < 7; ++i) {
             this.pngs[i] = new Image(this.file[i].toURI().toString());
         }
-
-    }
-
-    public void initailizeBetHistoryTF() {
-        this.textArea.setText("Welcome to the Slote Mchine by CASINOROYALE.\nPlease press one of the buttons to spin the Slot Machine!");
     }
 
     private void InitializeSetImages() {
         for(int i = 0; i < 3; ++i) {
             this.imageBlocks[i].setImage(this.pngs[6]);
         }
+    }
 
+    public void initailizeBetHistoryTF() {
+        this.textArea.setText("Welcome to the Slote Mchine by CASINOROYALE.\nPlease press one of the buttons to spin the Slot Machine!");
     }
 
     public void balanceInitialize() {
@@ -243,5 +215,35 @@ public class SlotsController {
             this.imageBlocks[i].setImage(this.pngs[randomize()]);
         }
 
+    }
+
+    @Deprecated
+    private void playBlackJack(ActionEvent event) throws IOException {
+        this.HomeController.playBlackJack(event);
+    }
+
+    @Deprecated
+    private void playRoulette(ActionEvent event) throws IOException {
+        this.HomeController.playRoulette(event);
+    }
+
+//    @FXML
+//    private void playHorseRacing(ActionEvent event) throws IOException {
+//        this.HomeController.playHorseRacing(event);
+//    }
+
+    @Deprecated
+    private void homeDash(ActionEvent event) throws IOException {
+        this.HomeController.homeDash(event);
+    }
+
+    @FXML
+    public void infoButtonHandler(ActionEvent actionEvent) {
+        String winningInfo = null;
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Winning Chances");
+        alert.setHeaderText("Winning Chances");
+        alert.setContentText(winningInfo);
+        alert.showAndWait();
     }
 }
