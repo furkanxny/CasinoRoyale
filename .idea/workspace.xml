@@ -7,10 +7,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="42436b1b-9b1f-4ddc-8c1d-3a6bc1aed41d" name="Changes" comment="Info button has been added to display Winning Information on a pop up Alert Window.">
+    <list default="true" id="42436b1b-9b1f-4ddc-8c1d-3a6bc1aed41d" name="Changes" comment="Info has been added, css style background color has been added.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/casinoroyale/Controller/GamesControllers/SlotsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/casinoroyale/Controller/GamesControllers/SlotsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/app.casinoroyale/View/Games/Slots.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/app.casinoroyale/View/Games/Slots.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,7 +123,15 @@
       <option name="project" value="LOCAL" />
       <updated>1698160684816</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Info has been added, css style background color has been added.">
+      <option name="closed" value="true" />
+      <created>1698164510543</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1698164510543</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -144,7 +150,8 @@
     <MESSAGE value="Slots.fxml and SlotsController.java has been added" />
     <MESSAGE value="unnecessary icons file has been deleted" />
     <MESSAGE value="Info button has been added to display Winning Information on a pop up Alert Window." />
-    <option name="LAST_COMMIT_MESSAGE" value="Info button has been added to display Winning Information on a pop up Alert Window." />
+    <MESSAGE value="Info has been added, css style background color has been added." />
+    <option name="LAST_COMMIT_MESSAGE" value="Info has been added, css style background color has been added." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
