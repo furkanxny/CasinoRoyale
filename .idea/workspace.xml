@@ -7,7 +7,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="42436b1b-9b1f-4ddc-8c1d-3a6bc1aed41d" name="Changes" comment="last push before first merge" />
+    <list default="true" id="42436b1b-9b1f-4ddc-8c1d-3a6bc1aed41d" name="Changes" comment="Commit 05a12cd is being pushed to a new branch CSR-004" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -145,7 +145,15 @@
       <option name="project" value="LOCAL" />
       <updated>1698533257901</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Commit 05a12cd is being pushed to a new branch CSR-004">
+      <option name="closed" value="true" />
+      <created>1698615889411</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1698615889411</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -167,7 +175,8 @@
     <MESSAGE value="Info has been added, css style background color has been added." />
     <MESSAGE value="new color" />
     <MESSAGE value="last push before first merge" />
-    <option name="LAST_COMMIT_MESSAGE" value="last push before first merge" />
+    <MESSAGE value="Commit 05a12cd is being pushed to a new branch CSR-004" />
+    <option name="LAST_COMMIT_MESSAGE" value="Commit 05a12cd is being pushed to a new branch CSR-004" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
