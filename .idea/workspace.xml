@@ -7,18 +7,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="42436b1b-9b1f-4ddc-8c1d-3a6bc1aed41d" name="Changes" comment="Commit 05a12cd is being pushed to a new branch CSR-004">
-      <change afterPath="$PROJECT_DIR$/sound/slotSound.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/app/Assets/Slots/css/$1 png.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/app/Assets/Slots/css/Sping button for Slots machine game.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/app/Assets/Slots/css/info-button png.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/app/Assets/Slots/sound/slotSound.mp3" afterDir="false" />
+    <list default="true" id="42436b1b-9b1f-4ddc-8c1d-3a6bc1aed41d" name="Changes" comment="new spin button css and info button css has been added. textField has been changed into label. Beside 1$ spinn button, other buttons has been disabled.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/casinoroyale/CSRApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/casinoroyale/CSRApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/casinoroyale/Controller/GamesControllers/SlotsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/casinoroyale/Controller/GamesControllers/SlotsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/app.casinoroyale/View/Games/Slots.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/app.casinoroyale/View/Games/Slots.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,7 +53,7 @@
     "ASKED_ADD_EXTERNAL_FILES": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "CSR-004",
+    "git-widget-placeholder": "Merging CSR-004",
     "last_opened_file_path": "/Users/luke-angelostrazzera/Farmingdale23/ComputerEngineering/CasinoRoyale/src/main/resources/app.casinoroyale/View/Games",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
@@ -171,6 +161,17 @@
       </list>
     </option>
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Slots.fxml and SlotsController.java has been added" />
@@ -179,7 +180,8 @@
     <MESSAGE value="Info has been added, css style background color has been added." />
     <MESSAGE value="new color" />
     <MESSAGE value="last push before first merge" />
-    <option name="LAST_COMMIT_MESSAGE" value="last push before first merge" />
+    <MESSAGE value="new spin button css and info button css has been added. textField has been changed into label. Beside 1$ spinn button, other buttons has been disabled." />
+    <option name="LAST_COMMIT_MESSAGE" value="new spin button css and info button css has been added. textField has been changed into label. Beside 1$ spinn button, other buttons has been disabled." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
