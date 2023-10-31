@@ -23,7 +23,7 @@
                     <items>
                         <MenuItem mnemonicParsing="false" onAction="#playBlackJack" text="Black Jack" />
                         <MenuItem mnemonicParsing="false" onAction="#playHorseRacing" text="Horse Racing" />
-                        <MenuItem mnemonicParsing="false" text="Slots" />
+                        <MenuItem mnemonicParsing="false" onAction="#playSlots" text="Slots" />
                     </items>
                 </Menu>
                 <Menu mnemonicParsing="false" text="Sports">
