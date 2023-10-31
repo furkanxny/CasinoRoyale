@@ -34,5 +34,4 @@ public class CSRApplication extends Application {
         launch();
     }
 
-
 }

@@ -15,6 +15,7 @@ import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
+import javafx.scene.media.*;
 
 public class SlotsController {
     @FXML
@@ -36,6 +37,8 @@ public class SlotsController {
     @FXML
     private TextArea textArea;
     @FXML
+    private Label textLabel;
+    @FXML
     private Label balance1;
     @FXML
     private MenuItem homeDash;
@@ -55,7 +58,15 @@ public class SlotsController {
         initailizeBetHistoryTF();
         InitializeSetImages();
         balanceInitialize();
+
     }
+
+//    private void playSound(){
+//        String audioFile = "file:///Users/ozen/Desktop/CasinoRoyale/sound/slotSound.mp3";
+//        Media sound = new Media(audioFile);
+//        MediaPlayer mediaPlayer = new MediaPlayer(sound);
+//    }
+
 
     private void initializeImages() {
         int i;
@@ -74,7 +85,7 @@ public class SlotsController {
     }
 
     public void initailizeBetHistoryTF() {
-        this.textArea.setText("Welcome to the Slote Mchine by CASINOROYALE.\nPlease press one of the buttons to spin the Slot Machine!");
+        this.textLabel.setText("Welcome to the Slote Mchine by CASINOROYALE.\nPlease press one of the buttons to spin the Slot Machine!");
     }
 
     public void balanceInitialize() {
@@ -86,8 +97,8 @@ public class SlotsController {
     }
 
     public void displayTextArea() {
-        this.textArea.clear();
-        this.textArea.setText("Remaining Balance is: $" + balanceAmount);
+        this.textLabel.setText("");
+        this.textLabel.setText("Remaining Balance is: $" + balanceAmount);
     }
 
     private static int randomize() {
@@ -100,9 +111,18 @@ public class SlotsController {
 
     private void slotSound() {
     }
+private void winHistory(){
+    String firstBlock = this.imageBlocks[0].getImage().toString();
+    String secondBlock = this.imageBlocks[1].getImage().toString();
+    String thirdBlock = this.imageBlocks[2].getImage().toString();
+    if (firstBlock.equals(secondBlock) || secondBlock.equals(thirdBlock) || firstBlock.equals(thirdBlock)) {
+        StringBuffer stringBuffer = new StringBuffer();
 
+    }
+}
     @FXML
     public void spinButton1Handler(ActionEvent actionEvent) {
+   // playSound();
         if (balanceAmount >= 1.0) {
             this.spin1();
             this.getMultiplier();
@@ -117,29 +137,29 @@ public class SlotsController {
 
     @FXML
     public void spinButton2Handler(ActionEvent actionEvent) {
-        if (balanceAmount >= 2.5) {
-            this.spin2();
-            this.getMultiplier();
-            this.getResult();
-            this.displayBalance();
-            this.displayTextArea();
-        } else {
-            this.balanceText.setText("You Don't have enough credit!");
-        }
+//        if (balanceAmount >= 2.5) {
+//            this.spin2();
+//            this.getMultiplier();
+//            this.getResult();
+//            this.displayBalance();
+//            this.displayTextArea();
+//        } else {
+//            this.balanceText.setText("You Don't have enough credit!");
+//        }
 
     }
 
     @FXML
     public void spinButton3Handler(ActionEvent actionEvent) {
-        if (balanceAmount >= 5.0) {
-            this.spin3();
-            this.getMultiplier();
-            this.getResult();
-            this.displayBalance();
-            this.displayTextArea();
-        } else {
-            this.balanceText.setText("You Don't have enough credit!");
-        }
+//        if (balanceAmount >= 5.0) {
+//            this.spin3();
+//            this.getMultiplier();
+//            this.getResult();
+//            this.displayBalance();
+//            this.displayTextArea();
+//        } else {
+//            this.balanceText.setText("You Don't have enough credit!");
+//        }
 
     }
 
@@ -197,6 +217,7 @@ public class SlotsController {
             this.imageBlocks[i].setImage(this.pngs[randomize()]);
         }
 
+
     }
 
     private void spin2() {
@@ -246,13 +267,13 @@ public class SlotsController {
                 "In order to Win at least 2 of the icon match is  required.");
         alert.setContentText(
                 " Here is the Winning amounts for matching 2 same icons \n\n" +
-                " Watermelon - $2 \n Gonca - $2 \n Bar - $2  " +
-                "\n King - $4 \n Horse Shoe - $4 \n 7 - $4 " +
-                "\nDiomand - $6 \n " +
-                "\n  Here is the Winning amounts for matching 3 same icons:  " +
-                "\n Watermelon - $6 \n Gonca - $6 \n Bar - $6  " +
-                "\nKing - $9 \n Horse Shoe - $9 \n 7 - $9 " +
-                "Diomand - $15" );
+                "                     Watermelon - $2 \n                     Gonca - $2 \n                     Bar - $2  " +
+                "\n                     King - $4 \n                     Horse Shoe - $4 \n                     7 - $4 " +
+                "\n                     Diomand - $6 \n " +
+                "\n Here is the Winning amounts for matching 3 same icons  " +
+                "\n\n                     Watermelon - $6 \n                     Gonca - $6 \n                     Bar - $6  " +
+                "\n                     King - $9 \n                     Horse Shoe - $9 \n                     7 - $9 " +
+                "\n                     Diomand - $15" );
         alert.showAndWait();
     }
 }
