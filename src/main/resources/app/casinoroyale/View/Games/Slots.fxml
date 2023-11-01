@@ -6,7 +6,6 @@
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
@@ -17,11 +16,11 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<Pane style="-fx-background-color: #6699CC;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.casinoroyale.Controller.GamesControllers.SlotsController">
+<Pane prefHeight="766.0" prefWidth="999.0" style="-fx-background-color: #6699CC;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.casinoroyale.Controller.GamesControllers.SlotsController">
    <children>
       <BorderPane prefHeight="750.0" prefWidth="1000.0">
           <center>
-              <Pane prefHeight="599.0" prefWidth="968.0" BorderPane.alignment="CENTER">
+              <Pane prefHeight="780.0" prefWidth="1109.0" BorderPane.alignment="CENTER">
                   <children>
                       <GridPane gridLinesVisible="true" layoutX="279.0" layoutY="154.0" prefHeight="248.0" prefWidth="573.0">
                           <columnConstraints>
@@ -52,30 +51,18 @@
                       </GridPane>
                       <Button fx:id="spinButton1" layoutX="485.0" layoutY="488.0" maxHeight="50.0" maxWidth="50.0" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" onAction="#spinButton1Handler" prefHeight="50.0" prefWidth="50.0">
                      <graphic>
-                        <ImageView fitHeight="70.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../../../app/Assets/Slots/css/Sping%20button%20for%20Slots%20machine%20game.png" />
-                           </image>
-                        </ImageView>
+                        <ImageView fx:id="buttonImageView1" fitHeight="70.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true" />
                      </graphic></Button>
-                      <Button fx:id="spinButton2" disable="true" layoutX="627.0" layoutY="487.0" maxHeight="50.0" maxWidth="50.0" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" onAction="#spinButton2Handler" prefHeight="85.0" prefWidth="85.0" text="\$2,50 SPIN">
+                      <Button fx:id="spinButton2" layoutX="627.0" layoutY="487.0" maxHeight="50.0" maxWidth="50.0" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" onAction="#spinButton2Handler" prefHeight="85.0" prefWidth="85.0" text="\$2,50 SPIN">
                      <graphic>
-                        <ImageView fitHeight="70.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../../../app/Assets/Slots/css/Sping%20button%20for%20Slots%20machine%20game.png" />
-                           </image>
-                        </ImageView>
+                        <ImageView fx:id="buttonImageView2" fitHeight="70.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true" />
                      </graphic>
                      <padding>
                         <Insets right="71.0" />
                      </padding></Button>
-                      <Button fx:id="spinButton3" disable="true" layoutX="758.0" layoutY="486.0" maxHeight="50.0" maxWidth="50.0" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" onAction="#spinButton3Handler" prefHeight="85.0" prefWidth="85.0" text="\$5 SPIN">
+                      <Button fx:id="spinButton3" layoutX="758.0" layoutY="486.0" maxHeight="50.0" maxWidth="50.0" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" onAction="#spinButton3Handler" prefHeight="85.0" prefWidth="85.0" text="\$5 SPIN">
                      <graphic>
-                        <ImageView fitHeight="70.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../../../app/Assets/Slots/css/Sping%20button%20for%20Slots%20machine%20game.png" />
-                           </image>
-                        </ImageView>
+                        <ImageView fx:id="buttonImageView3" fitHeight="70.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true" />
                      </graphic>
                      <padding>
                         <Insets right="72.0" />
@@ -97,11 +84,7 @@
                       </Label>
                   <Button fx:id="infoButton" layoutX="936.0" layoutY="37.0" maxHeight="5.0" maxWidth="5.0" minHeight="5.0" minWidth="5.0" mnemonicParsing="false" onAction="#infoButtonHandler" prefHeight="5.0" prefWidth="5.0" text="Info">
                      <graphic>
-                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../../../app/Assets/Slots/css/info-button%20png.png" />
-                           </image>
-                        </ImageView>
+                        <ImageView fx:id="infoButtonImage" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" />
                      </graphic>
                      <padding>
                         <Insets right="50.0" />
@@ -111,11 +94,7 @@
                         <Insets left="20.0" />
                      </padding>
                   </Label>
-                  <ImageView fitHeight="50.0" fitWidth="29.0" layoutX="494.0" layoutY="443.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../app/Assets/Slots/css/$1%20png.png" />
-                     </image>
-                  </ImageView>
+                  <ImageView fx:id="button1ImageView" fitHeight="50.0" fitWidth="29.0" layoutX="494.0" layoutY="443.0" pickOnBounds="true" preserveRatio="true" />
                   </children>
               </Pane>
           </center>

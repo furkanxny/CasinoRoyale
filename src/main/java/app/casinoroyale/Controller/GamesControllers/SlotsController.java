@@ -25,11 +25,21 @@ public class SlotsController {
     @FXML
     private ImageView imageBlock3;
     @FXML
+    private ImageView buttonImageView1;
+    @FXML
+    private ImageView buttonImageView2;
+    @FXML
+    private ImageView buttonImageView3;
+    @FXML
     private Button spinButton1;
     @FXML
     private Button spinButton2;
     @FXML
     private Button spinButton3;
+    @FXML
+    private ImageView infoButtonImage;
+    @FXML
+    private ImageView button1ImageView;
     @FXML
     private Label balance;
     @FXML
@@ -58,14 +68,8 @@ public class SlotsController {
         initailizeBetHistoryTF();
         InitializeSetImages();
         balanceInitialize();
-
+        InitializeButtonImages();
     }
-
-//    private void playSound(){
-//        String audioFile = "file:///Users/ozen/Desktop/CasinoRoyale/sound/slotSound.mp3";
-//        Media sound = new Media(audioFile);
-//        MediaPlayer mediaPlayer = new MediaPlayer(sound);
-//    }
 
 
     private void initializeImages() {
@@ -82,6 +86,21 @@ public class SlotsController {
         for(int i = 0; i < 3; ++i) {
             this.imageBlocks[i].setImage(this.pngs[6]);
         }
+    }
+
+    private void InitializeButtonImages(){
+        File dollarPngFile = new File("css/1dollar.png");
+        File buttonPngFile = new File("css/spin.png");
+        File infoPngFile = new File("css/infoButton.png");
+        Image image1 = new Image(dollarPngFile.toURI().toString());
+        Image image2 = new Image(buttonPngFile.toURI().toString());
+        Image image3 = new Image(infoPngFile.toURI().toString());
+        this.buttonImageView1.setImage(image2);
+        this.buttonImageView2.setImage(image2);
+        this.buttonImageView3.setImage(image2);
+        this.button1ImageView.setImage(image1);
+        this.infoButtonImage.setImage(image3);
+
     }
 
     public void initailizeBetHistoryTF() {
