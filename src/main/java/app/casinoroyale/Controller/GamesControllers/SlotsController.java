@@ -31,25 +31,13 @@ public class SlotsController {
     @FXML
     private ImageView buttonImageView3;
     @FXML
-    private Button spinButton1;
-    @FXML
-    private Button spinButton2;
-    @FXML
-    private Button spinButton3;
-    @FXML
     private ImageView infoButtonImage;
     @FXML
     private ImageView button1ImageView;
     @FXML
-    private Label balance;
-    @FXML
     private Text balanceText;
     @FXML
-    private TextArea textArea;
-    @FXML
     private Label textLabel;
-    @FXML
-    private Label balance1;
     @FXML
     private MenuItem homeDash;
     private ImageView[] imageBlocks;
@@ -58,8 +46,6 @@ public class SlotsController {
     private static double balanceAmount = 1000.0;
     int multiplier = 0;
     private HomeController HomeController;
-    @FXML
-    private Button infoButton;
 
     @FXML
     public void initialize() {
@@ -70,7 +56,6 @@ public class SlotsController {
         balanceInitialize();
         InitializeButtonImages();
     }
-
 
     private void initializeImages() {
         int i;
@@ -89,17 +74,24 @@ public class SlotsController {
     }
 
     private void InitializeButtonImages(){
-        File dollarPngFile = new File("css/1dollar.png");
-        File buttonPngFile = new File("css/spin.png");
-        File infoPngFile = new File("css/infoButton.png");
-        Image image1 = new Image(dollarPngFile.toURI().toString());
-        Image image2 = new Image(buttonPngFile.toURI().toString());
-        Image image3 = new Image(infoPngFile.toURI().toString());
-        this.buttonImageView1.setImage(image2);
-        this.buttonImageView2.setImage(image2);
-        this.buttonImageView3.setImage(image2);
-        this.button1ImageView.setImage(image1);
-        this.infoButtonImage.setImage(image3);
+        File[] dollarPngFileArry = new File[3];
+        dollarPngFileArry[0] = new File("css/1dollar.png");
+        dollarPngFileArry[1] = new File("css/spin.png");
+        dollarPngFileArry[2] = new File("css/infoButton.png");
+
+        Image[] buttonImageArry = new Image[3];
+        buttonImageArry[0] = new Image(dollarPngFileArry[0].toURI().toString());
+        buttonImageArry[1] = new Image(dollarPngFileArry[1].toURI().toString());
+        buttonImageArry[2] = new Image(dollarPngFileArry[2].toURI().toString());
+
+        ImageView[] buttonImageViewArry = new ImageView[3];
+        buttonImageViewArry[0] = buttonImageView1;
+        buttonImageViewArry[1] = buttonImageView2;
+        buttonImageViewArry[2] = buttonImageView3;
+
+        for(int i = 0; i < 3; i++) {buttonImageViewArry[i].setImage(buttonImageArry[1]);}
+        this.button1ImageView.setImage(buttonImageArry[0]);
+        this.infoButtonImage.setImage(buttonImageArry[2]);
 
     }
 
@@ -128,15 +120,15 @@ public class SlotsController {
         return a;
     }
 
-    private void slotSound() {
-    }
+//    private void slotSound() {
+//    }
+
 private void winHistory(){
     String firstBlock = this.imageBlocks[0].getImage().toString();
     String secondBlock = this.imageBlocks[1].getImage().toString();
     String thirdBlock = this.imageBlocks[2].getImage().toString();
     if (firstBlock.equals(secondBlock) || secondBlock.equals(thirdBlock) || firstBlock.equals(thirdBlock)) {
         StringBuffer stringBuffer = new StringBuffer();
-
     }
 }
     @FXML
@@ -254,7 +246,6 @@ private void winHistory(){
         for(int i = 0; i < 3; ++i) {
             this.imageBlocks[i].setImage(this.pngs[randomize()]);
         }
-
     }
 
     @Deprecated

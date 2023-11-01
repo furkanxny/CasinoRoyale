@@ -49,25 +49,25 @@
                         </StackPane>
                           </children>
                       </GridPane>
-                      <Button fx:id="spinButton1" layoutX="485.0" layoutY="488.0" maxHeight="50.0" maxWidth="50.0" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" onAction="#spinButton1Handler" prefHeight="50.0" prefWidth="50.0">
+                      <Button layoutX="485.0" layoutY="488.0" maxHeight="50.0" maxWidth="50.0" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" onAction="#spinButton1Handler" prefHeight="50.0" prefWidth="50.0">
                      <graphic>
                         <ImageView fx:id="buttonImageView1" fitHeight="70.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true" />
                      </graphic></Button>
-                      <Button fx:id="spinButton2" layoutX="627.0" layoutY="487.0" maxHeight="50.0" maxWidth="50.0" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" onAction="#spinButton2Handler" prefHeight="85.0" prefWidth="85.0" text="\$2,50 SPIN">
+                      <Button layoutX="627.0" layoutY="487.0" maxHeight="50.0" maxWidth="50.0" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" onAction="#spinButton2Handler" prefHeight="85.0" prefWidth="85.0" text="\$2,50 SPIN">
                      <graphic>
                         <ImageView fx:id="buttonImageView2" fitHeight="70.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true" />
                      </graphic>
                      <padding>
                         <Insets right="71.0" />
                      </padding></Button>
-                      <Button fx:id="spinButton3" layoutX="758.0" layoutY="486.0" maxHeight="50.0" maxWidth="50.0" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" onAction="#spinButton3Handler" prefHeight="85.0" prefWidth="85.0" text="\$5 SPIN">
+                      <Button layoutX="758.0" layoutY="486.0" maxHeight="50.0" maxWidth="50.0" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" onAction="#spinButton3Handler" prefHeight="85.0" prefWidth="85.0" text="\$5 SPIN">
                      <graphic>
                         <ImageView fx:id="buttonImageView3" fitHeight="70.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true" />
                      </graphic>
                      <padding>
                         <Insets right="72.0" />
                      </padding></Button>
-                      <Label fx:id="balance" layoutX="14.0" layoutY="427.0" prefHeight="68.0" prefWidth="144.0" text="BALANCE -" textFill="#f0860c">
+                      <Label layoutX="14.0" layoutY="427.0" prefHeight="68.0" prefWidth="144.0" text="BALANCE -" textFill="#f0860c">
                           <font>
                               <Font name="Impact" size="36.0" />
                           </font>
@@ -77,12 +77,12 @@
                               <Font name="Impact" size="30.0" />
                           </font>
                       </Text>
-                      <Label fx:id="balance1" layoutX="360.0" prefHeight="148.0" prefWidth="494.0" text="CASINO ROYALE" textAlignment="JUSTIFY" textFill="#030303">
+                      <Label layoutX="360.0" prefHeight="148.0" prefWidth="494.0" text="CASINO ROYALE" textAlignment="JUSTIFY" textFill="#030303">
                           <font>
                               <Font name="Impact" size="65.0" />
                           </font>
                       </Label>
-                  <Button fx:id="infoButton" layoutX="936.0" layoutY="37.0" maxHeight="5.0" maxWidth="5.0" minHeight="5.0" minWidth="5.0" mnemonicParsing="false" onAction="#infoButtonHandler" prefHeight="5.0" prefWidth="5.0" text="Info">
+                  <Button layoutX="936.0" layoutY="37.0" maxHeight="5.0" maxWidth="5.0" minHeight="5.0" minWidth="5.0" mnemonicParsing="false" onAction="#infoButtonHandler" prefHeight="5.0" prefWidth="5.0" text="Info">
                      <graphic>
                         <ImageView fx:id="infoButtonImage" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" />
                      </graphic>
