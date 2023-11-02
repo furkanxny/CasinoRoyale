@@ -174,45 +174,90 @@ private void winHistory(){
 
     }
 
+
+
     private double getMultiplier() {
-        if (this.pngs[0].toString() == this.imageBlocks[0].getImage().toString() || this.pngs[1].toString() == this.imageBlocks[0].getImage().toString() || this.pngs[2].toString() == this.imageBlocks[0].getImage().toString()) {
-            this.multiplier = 1;
+        String b1 = this.imageBlocks[0].getImage().toString();
+        String b2 = this.imageBlocks[1].getImage().toString();
+        String b3 = this.imageBlocks[2].getImage().toString();
+
+        String img1 = pngs[0].toString();
+        String img2 = pngs[1].toString();
+        String img3 = pngs[2].toString();
+        String img4 = pngs[3].toString();
+        String img5 = pngs[4].toString();
+        String img6 = pngs[5].toString();
+        String img7 = pngs[6].toString();
+
+        if(b1.equals(b2) && b2.equals(b3)){
+            if (b1.equals(img1) || b1.equals(img2) || b1.equals(img3)){
+                this.multiplier = 5;
+            }
+            if(b1.equals(img4)|| b1.equals(img5)|| b1.equals(img6)){
+                this.multiplier = 7;
+            }
+            if(b1.equals(img7)){
+                this.multiplier = 10;
+            }
         }
 
-        if (this.pngs[3].toString() == this.imageBlocks[0].getImage().toString() || this.pngs[4].toString() == this.imageBlocks[0].getImage().toString() || this.pngs[5].toString() == this.imageBlocks[0].getImage().toString()) {
-            this.multiplier = 3;
+        else if (b1.equals(b2) && !b1.equals(b3)){
+            if (b1.equals(img1) || b1.equals(img2) || b1.equals(img3)){
+                this.multiplier = 1;
+            }
+            if(b1.equals(img4)|| b1.equals(img5)|| b1.equals(img6)){
+                this.multiplier = 3;
+            }
+            if(b1.equals(img7)){
+                this.multiplier = 5;
+            }
         }
 
-        if (this.imageBlocks[1].getImage().toString() == this.imageBlocks[2].getImage().toString() && this.pngs[0].toString() == this.imageBlocks[2].getImage().toString() || this.pngs[1].toString() == this.imageBlocks[2].getImage().toString() || this.pngs[2].toString() == this.imageBlocks[2].getImage().toString()) {
-            this.multiplier = 1;
+        else if(b2.equals(b3) && !b1.equals(b3)){
+            if (b2.equals(img1) || b2.equals(img2) || b2.equals(img3)){
+                this.multiplier = 1;
+            }
+            if(b2.equals(img4)|| b2.equals(img5)|| b2.equals(img6)){
+                this.multiplier = 3;
+            }
+            if(b2.equals(img7)){
+                this.multiplier = 5;
+            }
         }
 
-        if ((this.imageBlocks[1].getImage().toString() != this.imageBlocks[2].getImage().toString() || this.pngs[3].toString() != this.imageBlocks[2].getImage().toString()) && this.pngs[4].toString() != this.imageBlocks[2].getImage().toString() && this.pngs[5].toString() != this.imageBlocks[2].getImage().toString()) {
-            this.multiplier = 7;
-        } else {
-            this.multiplier = 3;
-        }
 
-        return (double)this.multiplier;
+        else if(b1.equals(b3) && !b1.equals(b2)){
+            if (b1.equals(img1) || b1.equals(img2) || b1.equals(img3)){
+                this.multiplier = 1;
+            }
+            if(b1.equals(img4)|| b1.equals(img5)|| b1.equals(img6)){
+                this.multiplier = 3;
+            }
+            if(b1.equals(img7)){
+                this.multiplier = 5;
+            }}
+                else {multiplier = 1;}
+
+            return multiplier;
     }
 
     private double getResult() {
-        String firstBlock = this.imageBlocks[0].getImage().toString();
-        String secondBlock = this.imageBlocks[1].getImage().toString();
-        String thirdBlock = this.imageBlocks[2].getImage().toString();
-        if (firstBlock.equals(secondBlock) && secondBlock.equals(thirdBlock)) {
+        String block1 = this.imageBlocks[0].getImage().toString();
+        String block2 = this.imageBlocks[1].getImage().toString();
+        String block3 = this.imageBlocks[2].getImage().toString();
+        if (block1.equals(block2) && block2.equals(block3)) {
             balanceAmount += (double)(10 * this.multiplier);
         }
 
-        if (firstBlock.equals(secondBlock) && !secondBlock.equals(thirdBlock)) {
+        if (block1.equals(block2) && !block2.equals(block3)) {
             balanceAmount += (double)(3 * this.multiplier);
         }
 
-        if (firstBlock.equals(thirdBlock) && !secondBlock.equals(thirdBlock)) {
+        if (block1.equals(block3) && !block2.equals(block3)) {
             balanceAmount += (double)(3 * this.multiplier);
         }
 
-        if (secondBlock.equals(thirdBlock) && !thirdBlock.equals(firstBlock)) {
+        if (block2.equals(block3) && !block3.equals(block1)) {
             balanceAmount += (double)(3 * this.multiplier);
         } else {
             balanceAmount = balanceAmount;
@@ -223,26 +268,20 @@ private void winHistory(){
 
     private void spin1() {
         --balanceAmount;
-
         for(int i = 0; i < 3; ++i) {
             this.imageBlocks[i].setImage(this.pngs[randomize()]);
         }
-
-
     }
 
     private void spin2() {
         balanceAmount -= 2.5;
-
         for(int i = 0; i < 3; ++i) {
             this.imageBlocks[i].setImage(this.pngs[randomize()]);
         }
-
     }
 
     private void spin3() {
         balanceAmount -= 5.0;
-
         for(int i = 0; i < 3; ++i) {
             this.imageBlocks[i].setImage(this.pngs[randomize()]);
         }
