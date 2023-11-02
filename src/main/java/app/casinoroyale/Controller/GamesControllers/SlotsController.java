@@ -39,13 +39,19 @@ public class SlotsController {
     @FXML
     private Label textLabel;
     @FXML
+    private TextArea winInfoArea;
+    @FXML
     private MenuItem homeDash;
+    @FXML
+    private Button button1$;
     private ImageView[] imageBlocks;
     Image[] pngs = new Image[8];
     File[] file = new File[7];
     private static double balanceAmount = 1000.0;
-    int multiplier = 0;
+    static double winAmount = 0;
+    static int multiplier = 0;
     private HomeController HomeController;
+
 
     @FXML
     public void initialize() {
@@ -55,6 +61,8 @@ public class SlotsController {
         InitializeSetImages();
         balanceInitialize();
         InitializeButtonImages();
+
+
     }
 
     private void initializeImages() {
@@ -120,17 +128,7 @@ public class SlotsController {
         return a;
     }
 
-//    private void slotSound() {
-//    }
 
-private void winHistory(){
-    String firstBlock = this.imageBlocks[0].getImage().toString();
-    String secondBlock = this.imageBlocks[1].getImage().toString();
-    String thirdBlock = this.imageBlocks[2].getImage().toString();
-    if (firstBlock.equals(secondBlock) || secondBlock.equals(thirdBlock) || firstBlock.equals(thirdBlock)) {
-        StringBuffer stringBuffer = new StringBuffer();
-    }
-}
     @FXML
     public void spinButton1Handler(ActionEvent actionEvent) {
    // playSound();
@@ -140,6 +138,7 @@ private void winHistory(){
             this.getResult();
             this.displayBalance();
             this.displayTextArea();
+            this.printPlayHistoryAmount();
         } else {
             this.balanceText.setText("You Don't have enough credit!");
         }
@@ -174,6 +173,43 @@ private void winHistory(){
 
     }
 
+    private void printPlayHistoryAmount(){
+        String a = "", b = "", c = "";
+
+        String[] imgStr = new String[7];
+        for(int i = 0; i < 7; i++){
+            imgStr[i] = pngs[i].toString();
+        }
+        String b1 = this.imageBlocks[0].getImage().toString();
+        String b2 = this.imageBlocks[1].getImage().toString();
+        String b3 = this.imageBlocks[2].getImage().toString();
+
+        String[] pngD = {"WATERMELON", "GONCA", "BAR", "KING", "HORSESHOE", "SEVEN", "DIOMAND"};
+
+        for(int i = 0; i < 7; i++) {
+            if (b1.equals(imgStr[i])){
+                a = pngD[i];
+            }
+        }
+        for(int i = 0; i < 7; i++) {
+            if (b2.equals(imgStr[i])){
+                b = pngD[i];
+            }
+        }
+        for(int i = 0; i < 7; i++) {
+            if (b3.equals(imgStr[i])){
+                c = pngD[i];
+            }
+        }
+        String pngsOrder = a + " " + b + " " + " " + c;
+        this.winInfoArea.clear();
+        String winAmountString = "";
+        if(b1.equals(b2) || b1.equals(b3) || b2.equals(b3)) {
+             winAmountString = ( "You Won: " + winAmount);
+        }
+        this.winInfoArea.setText(pngsOrder + "\n" + winAmountString);
+        System.out.println(pngsOrder);
+    }
 
 
     private double getMultiplier() {
@@ -191,13 +227,13 @@ private void winHistory(){
 
         if(b1.equals(b2) && b2.equals(b3)){
             if (b1.equals(img1) || b1.equals(img2) || b1.equals(img3)){
-                this.multiplier = 5;
+                this.multiplier = 1;
             }
             if(b1.equals(img4)|| b1.equals(img5)|| b1.equals(img6)){
-                this.multiplier = 7;
+                this.multiplier = 3;
             }
             if(b1.equals(img7)){
-                this.multiplier = 10;
+                this.multiplier = 5;
             }
         }
 
@@ -242,27 +278,33 @@ private void winHistory(){
     }
 
     private double getResult() {
+
         String block1 = this.imageBlocks[0].getImage().toString();
         String block2 = this.imageBlocks[1].getImage().toString();
         String block3 = this.imageBlocks[2].getImage().toString();
         if (block1.equals(block2) && block2.equals(block3)) {
-            balanceAmount += (double)(10 * this.multiplier);
+            winAmount = (double)(10 * this.multiplier);
+            balanceAmount += this.winAmount;
         }
 
         if (block1.equals(block2) && !block2.equals(block3)) {
-            balanceAmount += (double)(3 * this.multiplier);
+            winAmount = (double)(3 * this.multiplier);
+            balanceAmount += this.winAmount;
         }
 
         if (block1.equals(block3) && !block2.equals(block3)) {
-            balanceAmount += (double)(3 * this.multiplier);
+            winAmount = (double)(3 * this.multiplier);
+            balanceAmount += this.winAmount;
         }
 
         if (block2.equals(block3) && !block3.equals(block1)) {
-            balanceAmount += (double)(3 * this.multiplier);
+            winAmount = (double)(3 * this.multiplier);
+            balanceAmount += this.winAmount;
         } else {
-            balanceAmount = balanceAmount;
+            balanceAmount = this.balanceAmount;
         }
-
+        System.out.println("Multipiler is: " + multiplier);
+        System.out.println("WIN AMOUNT: " + this.winAmount);
         return balanceAmount;
     }
 
@@ -271,6 +313,7 @@ private void winHistory(){
         for(int i = 0; i < 3; ++i) {
             this.imageBlocks[i].setImage(this.pngs[randomize()]);
         }
+
     }
 
     private void spin2() {
