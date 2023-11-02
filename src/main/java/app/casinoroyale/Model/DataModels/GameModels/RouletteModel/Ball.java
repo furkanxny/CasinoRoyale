@@ -11,9 +11,9 @@ package app.casinoroyale.Model.DataModels.GameModels.RouletteModel;
 
 public class Ball {
 
-    private int number;
-    private String color;
-    private int indexInWheel;
+    private final int number;
+    private final String color;
+    private final int indexInWheel;
 
     public Ball(int number, int indexInWheel) {
         this.indexInWheel = indexInWheel;

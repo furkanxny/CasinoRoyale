@@ -35,6 +35,21 @@ public class HomeController {
         stage.setScene(scene);
         stage.show();
     }
+    public void playHorseRacing(ActionEvent actionEvent) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/app/casinoroyale/View/Games/HorseRacing.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 3200, 2400);
+        stage.setTitle("Horse Racing");
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public void playSlots(ActionEvent actionEvent) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/app/casinoroyale/View/Games/Slots.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 3200, 2400);
+        stage.setTitle("Slots");
+        stage.setScene(scene);
+        stage.show();
+    }
 
     public void setStage(Stage stage) {
         this.stage = stage;

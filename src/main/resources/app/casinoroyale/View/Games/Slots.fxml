@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<Pane style="-fx-background-color: #6699CC;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.casinoroyale.Controller.GamesControllers.SlotsController">
+   <children>
+      <BorderPane prefHeight="750.0" prefWidth="1000.0">
+          <center>
+              <Pane prefHeight="599.0" prefWidth="968.0" BorderPane.alignment="CENTER">
+                  <children>
+                      <GridPane gridLinesVisible="true" layoutX="279.0" layoutY="154.0" prefHeight="248.0" prefWidth="573.0">
+                          <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                          <children>
+                              <StackPane prefHeight="100.0" prefWidth="100.0">
+                                  <children>
+                                      <ImageView fx:id="imageBlock1" fitHeight="160.0" fitWidth="175.0" pickOnBounds="true" preserveRatio="true" />
+                                  </children>
+                              </StackPane>
+                              <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="1">
+                                  <children>
+                                      <ImageView fx:id="imageBlock2" fitHeight="160.0" fitWidth="175.0" pickOnBounds="true" preserveRatio="true" />
+                                  </children>
+                        </StackPane>
+                              <StackPane prefHeight="336.0" prefWidth="214.0" GridPane.columnIndex="2">
+                                  <children>
+                                      <ImageView fx:id="imageBlock3" fitHeight="160.0" fitWidth="175.0" pickOnBounds="true" preserveRatio="true" />
+                                  </children>
+                        </StackPane>
+                          </children>
+                      </GridPane>
+                      <Button fx:id="spinButton1" layoutX="485.0" layoutY="488.0" maxHeight="50.0" maxWidth="50.0" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" onAction="#spinButton1Handler" prefHeight="50.0" prefWidth="50.0">
+                     <graphic>
+                        <ImageView fitHeight="70.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../app/Assets/Slots/css/Sping%20button%20for%20Slots%20machine%20game.png" />
+                           </image>
+                        </ImageView>
+                     </graphic></Button>
+                      <Button fx:id="spinButton2" disable="true" layoutX="627.0" layoutY="487.0" maxHeight="50.0" maxWidth="50.0" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" onAction="#spinButton2Handler" prefHeight="85.0" prefWidth="85.0" text="\$2,50 SPIN">
+                     <graphic>
+                        <ImageView fitHeight="70.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../app/Assets/Slots/css/Sping%20button%20for%20Slots%20machine%20game.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <padding>
+                        <Insets right="71.0" />
+                     </padding></Button>
+                      <Button fx:id="spinButton3" disable="true" layoutX="758.0" layoutY="486.0" maxHeight="50.0" maxWidth="50.0" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" onAction="#spinButton3Handler" prefHeight="85.0" prefWidth="85.0" text="\$5 SPIN">
+                     <graphic>
+                        <ImageView fitHeight="70.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../app/Assets/Slots/css/Sping%20button%20for%20Slots%20machine%20game.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <padding>
+                        <Insets right="72.0" />
+                     </padding></Button>
+                      <Label fx:id="balance" layoutX="14.0" layoutY="427.0" prefHeight="68.0" prefWidth="144.0" text="BALANCE -" textFill="#f0860c">
+                          <font>
+                              <Font name="Impact" size="36.0" />
+                          </font>
+                      </Label>
+                      <Text fx:id="balanceText" fill="#7f7f80" layoutX="169.0" layoutY="470.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="127.06439208984375">
+                          <font>
+                              <Font name="Impact" size="30.0" />
+                          </font>
+                      </Text>
+                      <Label fx:id="balance1" layoutX="360.0" prefHeight="148.0" prefWidth="494.0" text="CASINO ROYALE" textAlignment="JUSTIFY" textFill="#030303">
+                          <font>
+                              <Font name="Impact" size="65.0" />
+                          </font>
+                      </Label>
+                  <Button fx:id="infoButton" layoutX="936.0" layoutY="37.0" maxHeight="5.0" maxWidth="5.0" minHeight="5.0" minWidth="5.0" mnemonicParsing="false" onAction="#infoButtonHandler" prefHeight="5.0" prefWidth="5.0" text="Info">
+                     <graphic>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../app/Assets/Slots/css/info-button%20png.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <padding>
+                        <Insets right="50.0" />
+                     </padding></Button>
+                  <Label fx:id="textLabel" layoutY="-1.0" prefHeight="82.0" prefWidth="341.0" text="RESULTS">
+                     <padding>
+                        <Insets left="20.0" />
+                     </padding>
+                  </Label>
+                  <ImageView fitHeight="50.0" fitWidth="29.0" layoutX="494.0" layoutY="443.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../app/Assets/Slots/css/$1%20png.png" />
+                     </image>
+                  </ImageView>
+                  </children>
+              </Pane>
+          </center>
+          <top>
+              <MenuBar BorderPane.alignment="CENTER">
+                  <menus>
+                      <Menu mnemonicParsing="false" text="Casino Royale">
+                          <items>
+                              <MenuItem fx:id="homeDash" mnemonicParsing="false" text="Home" />
+                          </items>
+                      </Menu>
+                      <Menu mnemonicParsing="false" text="Games">
+                          <items>
+                              <MenuItem mnemonicParsing="false" text="Black Jack" />
+                              <MenuItem mnemonicParsing="false" text="Roulette" />
+                              <MenuItem mnemonicParsing="false" text="Horse Racing" />
+                          </items>
+                      </Menu>
+                      <Menu mnemonicParsing="false" text="Sports">
+                          <items>
+                              <MenuItem mnemonicParsing="false" text="FootBall" />
+                          </items>
+                      </Menu>
+                      <Menu mnemonicParsing="false" text="Bank">
+                          <items>
+                              <MenuItem mnemonicParsing="false" text="Deposit" />
+                              <MenuItem mnemonicParsing="false" text="Withdrawl" />
+                              <MenuItem mnemonicParsing="false" text="P/L" />
+                          </items>
+                      </Menu>
+                  </menus>
+              </MenuBar>
+          </top>
+      </BorderPane>
+   </children>
+</Pane>
