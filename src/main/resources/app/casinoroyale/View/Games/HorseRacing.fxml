@@ -33,6 +33,7 @@
 -->
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
@@ -41,12 +42,13 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.casinoroyale.Controller.HomeController">
+<VBox prefHeight="754.0" prefWidth="1102.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.casinoroyale.Controller.GamesControllers.HorseController">
     <children>
-        <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="454.0" prefWidth="698.0" VBox.vgrow="ALWAYS">
+        <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="828.0" prefWidth="1356.0" VBox.vgrow="ALWAYS">
             <children>
                 <MenuBar VBox.vgrow="NEVER">
                     <menus>
@@ -75,47 +77,55 @@
                         </Menu>
                     </menus>
                 </MenuBar>
-            <ImageView fx:id="background" fitHeight="374.0" fitWidth="640.0" layoutY="25.0">
+            <ImageView fx:id="background" fitHeight="754.0" fitWidth="1238.0" layoutX="-8.0">
                <image>
                   <Image url="@../../../Assets/HorseRacing/images/background.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="horse1" fitHeight="77.0" fitWidth="93.0" layoutX="11.0" layoutY="224.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../Assets/HorseRacing/images/horse1.png" />
-               </image>
-            </ImageView>
-            <ImageView fx:id="horse2" fitHeight="77.0" fitWidth="93.0" layoutX="17.0" layoutY="250.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../Assets/HorseRacing/images/horse2.png" />
-               </image>
-            </ImageView>
-            <ImageView fx:id="horse3" fitHeight="77.0" fitWidth="93.0" layoutX="11.0" layoutY="279.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../Assets/HorseRacing/images/horse3.png" />
-               </image>
-            </ImageView>
-            <ImageView fx:id="horse4" fitHeight="77.0" fitWidth="93.0" layoutX="10.0" layoutY="311.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../Assets/HorseRacing/images/horse4.png" />
-               </image>
-            </ImageView>
-            <ImageView fx:id="horse5" fitHeight="77.0" fitWidth="93.0" layoutX="14.0" layoutY="337.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../Assets/HorseRacing/images/horse5.png" />
-               </image>
-            </ImageView>
-            <Label layoutX="71.0" layoutY="26.0" style="-fx-background-color: white;" text="Enter bet amount: " textFill="#00ff1e">
+            <Label layoutX="209.0" layoutY="33.0" prefHeight="34.0" prefWidth="114.0" style="-fx-background-color: white;" text="Bet Amount:">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <TextField fx:id="betAmount" layoutX="70.0" layoutY="53.0" />
-            <Button fx:id="startRace" layoutX="364.0" layoutY="26.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="138.0" text="Start Race!" textFill="#00ff20">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Button>
+            <TextField fx:id="betAmountIn" layoutX="209.0" layoutY="67.0" prefHeight="34.0" prefWidth="114.0" />
+                <Button fx:id="startRace" layoutX="362.0" layoutY="33.0" mnemonicParsing="false" onAction="#startRaceAction" prefHeight="51.0" prefWidth="149.0" text="Start Race!">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                </Button>
+            <ComboBox fx:id="horseSelect" layoutX="14.0" layoutY="33.0" prefHeight="34.0" prefWidth="178.0" promptText="Select a Horse" visibleRowCount="5" />
+            <Label fx:id="resultLabel" layoutX="362.0" layoutY="188.0" prefHeight="74.0" prefWidth="433.0" />
+            <Pane fx:id="racePane" layoutX="3.0" layoutY="392.0" prefHeight="315.0" prefWidth="902.0">
+               <children>
+                  <ImageView fx:id="horse1" fitHeight="77.0" fitWidth="93.0" layoutX="47.0" pickOnBounds="true" preserveRatio="true" scaleX="1.5" scaleY="1.5">
+                     <image>
+                        <Image url="@../../../Assets/HorseRacing/images/horse1.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="horse2" fitHeight="77.0" fitWidth="93.0" layoutX="47.0" layoutY="53.0" pickOnBounds="true" preserveRatio="true" scaleX="1.5" scaleY="1.5">
+                     <image>
+                        <Image url="@../../../Assets/HorseRacing/images/horse2.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="horse3" fitHeight="77.0" fitWidth="93.0" layoutX="47.0" layoutY="107.0" pickOnBounds="true" preserveRatio="true" scaleX="1.5" scaleY="1.5">
+                     <image>
+                        <Image url="@../../../Assets/HorseRacing/images/horse3.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="horse4" fitHeight="77.0" fitWidth="93.0" layoutX="47.0" layoutY="160.0" pickOnBounds="true" preserveRatio="true" scaleX="1.5" scaleY="1.5">
+                     <image>
+                        <Image url="@../../../Assets/HorseRacing/images/horse4.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="horse5" fitHeight="77.0" fitWidth="93.0" layoutX="47.0" layoutY="227.0" pickOnBounds="true" preserveRatio="true" scaleX="1.5" scaleY="1.5">
+                     <image>
+                        <Image url="@../../../Assets/HorseRacing/images/horse5.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="finishLine" fitHeight="381.0" fitWidth="28.0" layoutX="908.0" layoutY="-69.0" pickOnBounds="true" preserveRatio="true" />
+               </children>
+            </Pane>
+            <Label fx:id="balanceLabel" layoutX="545.0" layoutY="33.0" prefHeight="51.0" prefWidth="101.0" text="Balance: $1000.0" />
             </children>
         </AnchorPane>
     </children>
