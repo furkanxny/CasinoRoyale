@@ -65,7 +65,7 @@ public class Horse {
             double newPosX = imageView.getLayoutX() + speed;
             if (newPosX >= finishLine) {
                 imageView.setLayoutX(finishLine);
-                stopMoving();  // New method to stop the animation
+                stopRace();  // Stop this horse's animation
             } else {
                 imageView.setLayoutX(newPosX);
             }
@@ -74,9 +74,10 @@ public class Horse {
         moveHorseAnimation.play();
     }
 
-    public void stopMoving() {
+    public void stopRace() {
         if (moveHorseAnimation != null) {
             moveHorseAnimation.stop();
         }
     }
+
 }

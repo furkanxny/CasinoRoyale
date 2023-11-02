@@ -94,7 +94,7 @@
                     </font>
                 </Button>
             <ComboBox fx:id="horseSelect" layoutX="14.0" layoutY="33.0" prefHeight="34.0" prefWidth="178.0" promptText="Select a Horse" visibleRowCount="5" />
-            <Label fx:id="resultLabel" layoutX="362.0" layoutY="188.0" prefHeight="73.0" prefWidth="238.0" />
+            <Label fx:id="resultLabel" layoutX="362.0" layoutY="188.0" prefHeight="74.0" prefWidth="433.0" />
             <Pane fx:id="racePane" layoutX="3.0" layoutY="392.0" prefHeight="315.0" prefWidth="902.0">
                <children>
                   <ImageView fx:id="horse1" fitHeight="77.0" fitWidth="93.0" layoutX="47.0" pickOnBounds="true" preserveRatio="true" scaleX="1.5" scaleY="1.5">

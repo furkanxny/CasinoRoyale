@@ -42,11 +42,35 @@ public class HorseController {
         populateHorses();
         updateComboBox();
         balanceLabel.setText("Balance: $" + balance);
+        checkFinishLine = new Timeline();
     }
 
     @FXML
     public void startRaceAction(ActionEvent event) {
-        resetHorses();
+        double betAmount;
+        try {
+            betAmount = Double.parseDouble(betAmountIn.getText());
+            if (betAmount < 1) {
+                resultLabel.setText("Please enter a bet amount of at least 1.");
+                return;
+            }
+        } catch (NumberFormatException e) {
+            resultLabel.setText("Invalid bet amount entered.");
+            return;
+        }
+
+        if (betAmount > balance) {
+            resultLabel.setText("Insufficient balance for the bet.");
+            return;
+        }
+
+        String selectedHorseName = getSelectedHorseName();
+        if (selectedHorseName == null) {
+            resultLabel.setText("Please select a horse to bet on.");
+            return;
+        }
+
+       // resetHorses();
 
         for (Horse horse : horses) {
             horse.startRace(racePane.getPrefWidth() - horse.getImageView().getFitWidth());
@@ -54,28 +78,42 @@ public class HorseController {
 
         startRace.setDisable(true);
 
-        // Initializing the variable here
-        Timeline checkFinishLine = new Timeline();
+        // Assuming checkFinishLine is already initialized somewhere else in your class
+        checkFinishLine.getKeyFrames().clear(); // Clear any existing keyframes before adding new ones
 
         checkFinishLine.getKeyFrames().add(new KeyFrame(Duration.millis(50), actionEvent -> {
             Horse winner = getWinner();
             if (winner != null) {
-                if (winner.getName().equals(getSelectedHorseName())) {
-                    resultLabel.setText("Congratulations! " + winner.getName() + " won! Your payout is $" + calculatePayout(winner));
-                    balance += calculatePayout(winner); // Add to the balance
-                } else {
-                    resultLabel.setText("Sorry, " + winner.getName() + " won! You lost.");
-                    balance -= Double.parseDouble(betAmountIn.getText()); // Subtract from the balance
-                }
-                updateBalanceLabel();
-                startRace.setDisable(false);
-                checkFinishLine.stop();
+                stopAllHorses();
+                handleRaceFinish(winner, betAmount);
             }
         }));
 
         checkFinishLine.setCycleCount(Timeline.INDEFINITE);
-        checkFinishLine.play();
+        checkFinishLine.playFromStart();
     }
+
+    private void handleRaceFinish(Horse winner, double betAmount) {
+        String selectedHorseName = getSelectedHorseName();
+        if (winner.getName().equals(selectedHorseName)) {
+            double payout = calculatePayout(winner);
+            resultLabel.setText("Congratulations! " + winner.getName() + " won! Your payout is $" + payout);
+            balance += payout;
+        } else {
+            resultLabel.setText("Sorry, " + winner.getName() + " won! You lost.");
+            balance -= betAmount;
+        }
+        updateBalanceLabel();
+        startRace.setDisable(false);
+        checkFinishLine.stop();
+
+        resetHorses(); // Reset horses and odds after the race is completed
+        updateComboBox(); // Update the combo box with new odds after reset
+    }
+
+
+
+
 
     private void updateBalanceLabel() {
         balanceLabel.setText("Balance: $" + balance);
@@ -83,7 +121,14 @@ public class HorseController {
 
     private String getSelectedHorseName() {
         String selectedHorseDetails = horseSelect.getSelectionModel().getSelectedItem();
-        return selectedHorseDetails.split(" ")[0];  // Extract horse name assuming the format is "Horse X (Y/1)"
+        if (selectedHorseDetails != null) {
+            String[] parts = selectedHorseDetails.split(" ");
+            // This assumes that the horse's name is always two words: "Horse" followed by a number
+            if (parts.length >= 2) {
+                return parts[0] + " " + parts[1];
+            }
+        }
+        return null; // Return null if no horse is selected or if the format is wrong
     }
 
     private void populateHorses() {
@@ -105,16 +150,30 @@ public class HorseController {
     }
 
     private void updateComboBox() {
+        horseSelect.getItems().clear(); // Clear the previous items
         for (Horse horse : horses) {
             horseSelect.getItems().add(horse.getName() + " (" + horse.getOdds() + ")");
         }
     }
 
+    private void stopAllHorses() {
+        for (Horse horse : horses) {
+            horse.stopRace();
+        }
+    }
+
     private void resetHorses() {
+        randomizeOdds(); // Randomize the odds for each horse
         for (Horse horse : horses) {
             horse.getImageView().setLayoutX(0);
-            horse.setOdds(); // Make sure this function updates the odds for the horse
             horse.setSpeed(horse.generateSpeed());
+        }
+        updateComboBox(); // Update the combo box with the new odds
+    }
+
+    private void randomizeOdds() {
+        for (Horse horse : horses) {
+            horse.setOdds();
         }
     }
 
