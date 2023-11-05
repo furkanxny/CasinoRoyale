@@ -45,8 +45,8 @@ public class SlotsController {
     @FXML
     private Button button1$;
     private ImageView[] imageBlocks;
-    Image[] pngs = new Image[8];
-    File[] file = new File[7];
+    Image[] pngs = new Image[12];
+    File[] file = new File[11];
     private static double balanceAmount = 1000.0;
     static double winAmount = 0;
     static int multiplier = 0;
@@ -67,17 +67,17 @@ public class SlotsController {
 
     private void initializeImages() {
         int i;
-        for(i = 0; i < 7; ++i) {
+        for(i = 0; i < 11; ++i) {
             this.file[i] = new File("icons/" + String.valueOf(i) + ".png");
         }
-        for(i = 0; i < 7; ++i) {
+        for(i = 0; i < 11; ++i) {
             this.pngs[i] = new Image(this.file[i].toURI().toString());
         }
     }
 
     private void InitializeSetImages() {
         for(int i = 0; i < 3; ++i) {
-            this.imageBlocks[i].setImage(this.pngs[6]);
+            this.imageBlocks[i].setImage(this.pngs[10]);
         }
     }
 
@@ -121,7 +121,7 @@ public class SlotsController {
     }
 
     private static int randomize() {
-        int max = 6;
+        int max = 10;
         int min = 0;
         new Random();
         int a = min + (int)(Math.random() * (double)(max - min + 1));
@@ -150,7 +150,7 @@ public class SlotsController {
 //        if (balanceAmount >= 2.5) {
 //            this.spin2();
 //            this.getMultiplier();
-//            this.getResult();
+//            this.getResult();ƒ
 //            this.displayBalance();
 //            this.displayTextArea();
 //        } else {
@@ -176,27 +176,27 @@ public class SlotsController {
     private void printPlayHistoryAmount(){
         String a = "", b = "", c = "";
 
-        String[] imgStr = new String[7];
-        for(int i = 0; i < 7; i++){
+        String[] imgStr = new String[11];
+        for(int i = 0; i < 11; i++){
             imgStr[i] = pngs[i].toString();
         }
         String b1 = this.imageBlocks[0].getImage().toString();
         String b2 = this.imageBlocks[1].getImage().toString();
         String b3 = this.imageBlocks[2].getImage().toString();
 
-        String[] pngD = {"WATERMELON", "GONCA", "BAR", "KING", "HORSESHOE", "SEVEN", "DIOMAND"};
+        String[] pngD = {"WATERMELON", "GONCA", "BAR", "KING", "HORSESHOE", "SEVEN", "GOLD", "DRAGON", "PUMPKIN", "GUN",  "KING"};
 
-        for(int i = 0; i < 7; i++) {
+        for(int i = 0; i < 11; i++) {
             if (b1.equals(imgStr[i])){
                 a = pngD[i];
             }
         }
-        for(int i = 0; i < 7; i++) {
+        for(int i = 0; i < 11; i++) {
             if (b2.equals(imgStr[i])){
                 b = pngD[i];
             }
         }
-        for(int i = 0; i < 7; i++) {
+        for(int i = 0; i < 11; i++) {
             if (b3.equals(imgStr[i])){
                 c = pngD[i];
             }
@@ -224,6 +224,11 @@ public class SlotsController {
         String img5 = pngs[4].toString();
         String img6 = pngs[5].toString();
         String img7 = pngs[6].toString();
+        String img8 = pngs[7].toString();
+        String img9 = pngs[8].toString();
+        String img10 = pngs[9].toString();
+        String img11 = pngs[10].toString();
+
 
         if(b1.equals(b2) && b2.equals(b3)){
             if (b1.equals(img1) || b1.equals(img2) || b1.equals(img3)){
@@ -232,8 +237,11 @@ public class SlotsController {
             if(b1.equals(img4)|| b1.equals(img5)|| b1.equals(img6)){
                 this.multiplier = 3;
             }
-            if(b1.equals(img7)){
+            if(b1.equals(img7) || b1.equals(img8) || b1.equals(img9)){
                 this.multiplier = 5;
+            }
+            if(b1.equals(img10)){
+                this.multiplier = 7;
             }
         }
 
@@ -244,8 +252,11 @@ public class SlotsController {
             if(b1.equals(img4)|| b1.equals(img5)|| b1.equals(img6)){
                 this.multiplier = 3;
             }
-            if(b1.equals(img7)){
+            if(b1.equals(img7) || b1.equals(img8) || b1.equals(img9)){
                 this.multiplier = 5;
+            }
+            if(b1.equals(img10)){
+                this.multiplier = 7;
             }
         }
 
@@ -256,8 +267,11 @@ public class SlotsController {
             if(b2.equals(img4)|| b2.equals(img5)|| b2.equals(img6)){
                 this.multiplier = 3;
             }
-            if(b2.equals(img7)){
+            if(b2.equals(img7) || b2.equals(img8) || b2.equals(img9)){
                 this.multiplier = 5;
+            }
+            if(b2.equals(img10)){
+                this.multiplier = 7;
             }
         }
 
@@ -269,9 +283,13 @@ public class SlotsController {
             if(b1.equals(img4)|| b1.equals(img5)|| b1.equals(img6)){
                 this.multiplier = 3;
             }
-            if(b1.equals(img7)){
+            if(b1.equals(img7) || b1.equals(img8) || b1.equals(img9)){
                 this.multiplier = 5;
-            }}
+            }
+            if(b1.equals(img10)){
+                this.multiplier = 7;
+            }
+        }
                 else {multiplier = 1;}
 
             return multiplier;
