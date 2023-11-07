@@ -14,15 +14,14 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
 
-<Pane prefHeight="766.0" prefWidth="999.0" style="-fx-background-color: #6699CC;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.casinoroyale.Controller.GamesControllers.SlotsController">
+<Pane prefHeight="766.0" prefWidth="999.0" style="-fx-background-color: CCE5FF;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.casinoroyale.Controller.GamesControllers.SlotsController">
    <children>
       <BorderPane prefHeight="750.0" prefWidth="1000.0">
           <center>
               <Pane prefHeight="780.0" prefWidth="1109.0" BorderPane.alignment="CENTER">
                   <children>
-                      <GridPane gridLinesVisible="true" layoutX="280.0" layoutY="166.0" prefHeight="125.0" prefWidth="400.0">
+                      <GridPane gridLinesVisible="true" layoutX="300.0" layoutY="160.0" prefHeight="150.0" prefWidth="600.0">
                           <columnConstraints>
                               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -34,17 +33,17 @@
                           <children>
                               <StackPane prefHeight="100.0" prefWidth="100.0">
                                   <children>
-                                      <ImageView fx:id="imageBlock1" fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" />
+                                      <ImageView fx:id="imageBlock1" fitHeight="140.0" fitWidth="190.0" pickOnBounds="true" preserveRatio="true" />
                                   </children>
                               </StackPane>
                               <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="1">
                                   <children>
-                                      <ImageView fx:id="imageBlock2" fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" />
+                                      <ImageView fx:id="imageBlock2" fitHeight="140.0" fitWidth="190.0" pickOnBounds="true" preserveRatio="true" />
                                   </children>
                         </StackPane>
                               <StackPane prefHeight="336.0" prefWidth="214.0" GridPane.columnIndex="2">
                                   <children>
-                                      <ImageView fx:id="imageBlock3" fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" />
+                                      <ImageView fx:id="imageBlock3" fitHeight="140.0" fitWidth="190.0" pickOnBounds="true" preserveRatio="true" />
                                   </children>
                         </StackPane>
                           </children>
@@ -52,53 +51,7 @@
                         <Insets />
                      </opaqueInsets>
                       </GridPane>
-                      <Button fx:id="button1$" layoutX="728.0" layoutY="633.0" maxHeight="50.0" maxWidth="50.0" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" onAction="#spinButton1Handler" prefHeight="50.0" prefWidth="50.0">
-                     <graphic>
-                        <ImageView fx:id="buttonImageView1" fitHeight="70.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true" />
-                     </graphic></Button>
-                      <Button layoutX="827.0" layoutY="637.0" maxHeight="50.0" maxWidth="50.0" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" onAction="#spinButton2Handler" prefHeight="85.0" prefWidth="85.0" text="\$2,50 SPIN">
-                     <graphic>
-                        <ImageView fx:id="buttonImageView2" fitHeight="70.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true" />
-                     </graphic>
-                     <padding>
-                        <Insets right="71.0" />
-                     </padding></Button>
-                      <Button layoutX="912.0" layoutY="644.0" maxHeight="50.0" maxWidth="50.0" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" onAction="#spinButton3Handler" prefHeight="85.0" prefWidth="85.0" text="\$5 SPIN">
-                     <graphic>
-                        <ImageView fx:id="buttonImageView3" fitHeight="70.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true" />
-                     </graphic>
-                     <padding>
-                        <Insets right="72.0" />
-                     </padding></Button>
-                      <Label layoutX="38.0" layoutY="597.0" prefHeight="68.0" prefWidth="144.0" text="BALANCE -" textFill="#f0860c">
-                          <font>
-                              <Font name="Impact" size="36.0" />
-                          </font>
-                      </Label>
-                      <Text fx:id="balanceText" fill="#7f7f80" layoutX="262.0" layoutY="628.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="330.06439208984375">
-                          <font>
-                              <Font name="Impact" size="30.0" />
-                          </font>
-                      </Text>
-                      <Label layoutX="360.0" prefHeight="148.0" prefWidth="494.0" text="CASINO ROYALE" textAlignment="JUSTIFY" textFill="#030303">
-                          <font>
-                              <Font name="Impact" size="65.0" />
-                          </font>
-                      </Label>
-                  <Button layoutX="936.0" layoutY="37.0" maxHeight="5.0" maxWidth="5.0" minHeight="5.0" minWidth="5.0" mnemonicParsing="false" onAction="#infoButtonHandler" prefHeight="5.0" prefWidth="5.0" text="Info">
-                     <graphic>
-                        <ImageView fx:id="infoButtonImage" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" />
-                     </graphic>
-                     <padding>
-                        <Insets right="50.0" />
-                     </padding></Button>
-                  <Label fx:id="textLabel" layoutY="-1.0" prefHeight="82.0" prefWidth="341.0" text="RESULTS">
-                     <padding>
-                        <Insets left="20.0" />
-                     </padding>
-                  </Label>
-                  <ImageView fx:id="button1ImageView" fitHeight="50.0" fitWidth="29.0" layoutX="739.0" layoutY="574.0" pickOnBounds="true" preserveRatio="true" />
-                  <GridPane gridLinesVisible="true" layoutX="280.0" layoutY="290.0" prefHeight="125.0" prefWidth="400.0">
+                  <GridPane gridLinesVisible="true" layoutX="300.0" layoutY="310.0" prefHeight="150.0" prefWidth="600.0">
                      <columnConstraints>
                         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -110,22 +63,22 @@
                      <children>
                         <StackPane prefHeight="100.0" prefWidth="100.0">
                            <children>
-                              <ImageView fx:id="imageBlock4" fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" />
+                              <ImageView fx:id="imageBlock4" fitHeight="140.0" fitWidth="190.0" pickOnBounds="true" preserveRatio="true" />
                            </children>
                         </StackPane>
                         <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="1">
                            <children>
-                              <ImageView fx:id="imageBlock5" fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" />
+                              <ImageView fx:id="imageBlock5" fitHeight="140.0" fitWidth="190.0" pickOnBounds="true" preserveRatio="true" />
                            </children>
                         </StackPane>
                         <StackPane prefHeight="336.0" prefWidth="214.0" GridPane.columnIndex="2">
                            <children>
-                              <ImageView fx:id="imageBlock6" fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" />
+                              <ImageView fx:id="imageBlock6" fitHeight="140.0" fitWidth="190.0" pickOnBounds="true" preserveRatio="true" />
                            </children>
                         </StackPane>
                      </children>
                   </GridPane>
-                  <GridPane gridLinesVisible="true" layoutX="280.0" layoutY="414.0" prefHeight="125.0" prefWidth="400.0">
+                  <GridPane gridLinesVisible="true" layoutX="300.0" layoutY="460.0" prefHeight="150.0" prefWidth="600.0">
                      <columnConstraints>
                         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -137,17 +90,17 @@
                      <children>
                         <StackPane prefHeight="100.0" prefWidth="100.0">
                            <children>
-                              <ImageView fx:id="imageBlock7" fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" />
+                              <ImageView fx:id="imageBlock7" fitHeight="140.0" fitWidth="190.0" pickOnBounds="true" preserveRatio="true" />
                            </children>
                         </StackPane>
                         <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="1">
                            <children>
-                              <ImageView fx:id="imageBlock8" fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" />
+                              <ImageView fx:id="imageBlock8" fitHeight="140.0" fitWidth="190.0" pickOnBounds="true" preserveRatio="true" />
                            </children>
                         </StackPane>
                         <StackPane prefHeight="336.0" prefWidth="214.0" GridPane.columnIndex="2">
                            <children>
-                              <ImageView fx:id="imageBlock9" fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" />
+                              <ImageView fx:id="imageBlock9" fitHeight="140.0" fitWidth="190.0" pickOnBounds="true" preserveRatio="true" />
                            </children>
                         </StackPane>
                      </children>
@@ -155,7 +108,70 @@
                         <Insets />
                      </opaqueInsets>
                   </GridPane>
-                  <Label fx:id="aTextLabel" layoutX="1.0" layoutY="77.0" prefHeight="72.0" prefWidth="285.0" text="Win amount and multiplier" />
+                  <Label fx:id="aTextLabel" layoutX="170.0" layoutY="22.0" prefHeight="59.0" prefWidth="95.0" text="\$50" textFill="#13752a">
+                     <font>
+                        <Font name="Impact" size="28.0" />
+                     </font></Label>
+                  <Label layoutX="20.0" prefHeight="49.0" prefWidth="104.0" text="BALANCE">
+                     <font>
+                        <Font name="Avenir Next Condensed Bold" size="28.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="260.0" prefHeight="46.0" prefWidth="101.0" text="LAST BET">
+                     <font>
+                        <Font name="Avenir Next Condensed Bold" size="28.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="170.0" prefHeight="46.0" prefWidth="53.0" text="WIN">
+                     <font>
+                        <Font name="Avenir Next Condensed Bold" size="28.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="289.0" layoutY="33.0" text="\$3" textFill="#da2c2c">
+                     <font>
+                        <Font name="Impact" size="28.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="textLabel" layoutX="15.0" layoutY="24.0" prefHeight="55.0" prefWidth="132.0" text="\$100" textFill="#ff830e">
+                     <padding>
+                        <Insets left="20.0" />
+                     </padding>
+                     <font>
+                        <Font name="Impact" size="28.0" />
+                     </font>
+                  </Label>
+                      <Button fx:id="button1$" layoutX="420.0" layoutY="660.0" maxHeight="50.0" maxWidth="50.0" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" onAction="#spinButton1Handler" prefHeight="50.0" prefWidth="50.0">
+                     <graphic>
+                        <ImageView fx:id="buttonImageView1" fitHeight="70.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true" />
+                     </graphic></Button>
+                      <Button layoutX="580.0" layoutY="660.0" maxHeight="50.0" maxWidth="50.0" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" onAction="#spinButton2Handler" prefHeight="85.0" prefWidth="85.0" text="\$2,50 SPIN">
+                     <graphic>
+                        <ImageView fx:id="buttonImageView2" fitHeight="70.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true" />
+                     </graphic>
+                     <padding>
+                        <Insets right="71.0" />
+                     </padding></Button>
+                      <Button layoutX="740.0" layoutY="660.0" maxHeight="50.0" maxWidth="50.0" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" onAction="#spinButton3Handler" prefHeight="85.0" prefWidth="85.0" text="\$5 SPIN">
+                     <graphic>
+                        <ImageView fx:id="buttonImageView3" fitHeight="70.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true" />
+                     </graphic>
+                     <padding>
+                        <Insets right="72.0" />
+                     </padding></Button>
+                  <Button layoutX="936.0" layoutY="37.0" maxHeight="5.0" maxWidth="5.0" minHeight="5.0" minWidth="5.0" mnemonicParsing="false" onAction="#infoButtonHandler" prefHeight="5.0" prefWidth="5.0" text="Info">
+                     <graphic>
+                        <ImageView fx:id="infoButtonImage" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" />
+                     </graphic>
+                     <padding>
+                        <Insets right="50.0" />
+                     </padding></Button>
+                  <ImageView fx:id="button1ImageView" fitHeight="50.0" fitWidth="29.0" layoutX="430.0" layoutY="620.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fx:id="slotsW" fitHeight="216.0" fitWidth="373.0" layoutX="400.0" layoutY="-33.0" pickOnBounds="true" preserveRatio="true" />
+                  <Label fx:id="historyTF" layoutX="20.0" layoutY="160.0" prefHeight="204.0" prefWidth="254.0" text="                                  BET HISTORY ">
+                     <font>
+                        <Font name="Impact" size="14.0" />
+                     </font>
+                  </Label>
                   </children>
               </Pane>
           </center>
