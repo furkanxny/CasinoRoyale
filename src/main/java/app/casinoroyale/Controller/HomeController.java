@@ -45,7 +45,7 @@ public class HomeController {
 
     public void playSlots(ActionEvent actionEvent) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/app/casinoroyale/View/Games/Slots.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 3200, 2400);
+        Scene scene = new Scene(fxmlLoader.load(), 2600, 2400);
         stage.setTitle("Slots");
         stage.setScene(scene);
         stage.show();
