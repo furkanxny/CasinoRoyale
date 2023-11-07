@@ -65,7 +65,7 @@ public class SlotsController {
     String req = "";    //most repeated png string.
     int freq = 0;       //most repeated png count.
     private static double balanceAmount = 100.0;    //Balance variable to keep track of balance after each spinn.
-    private static double winAmount = 0;                    //WinAmount variable that is used to display win amount after each spinn.
+    private static double winAmount = 5;                    //WinAmount variable that is used to display win amount after each spinn.
     private static int multiplier = 0;                      //multiplier variable that holds the multiplier value according to outcome of the pngs.
     private HomeController HomeController;
     ArrayList<String> resultArrList = new ArrayList<String>();  //resultArrList that hold the String list for outcome of the pngs.
@@ -160,12 +160,13 @@ public class SlotsController {
 
     @FXML
     public void spinButton1Handler(ActionEvent actionEvent) {
-        if (balanceAmount >= 1.0) {
+        if (balanceAmount >= 3.0) {
             this.spin1();
             this.printPlayHistoryAmount();
             this.setMostRepeated();
             this.getMultiplier();
             this.win();
+            //this.setWinAmount();
             this.displayBalance();
             this.displayTextArea();
             this.displayMult();
@@ -253,27 +254,48 @@ public class SlotsController {
         }
 
     }
-    private double win() { //win method that will determine the most repeated png in the ImageView obejcts from the resultArrList.
 
-
+    public void setWinAmount(){
         if (freq == 3) {    //if most repeated png count is 3, multiply it by 2.
-            balanceAmount += multiplier * 2;
             winAmount = multiplier * 2;
         }
         if (freq == 4) {    //if most repeated png count is 4, multiply it by 2.
-            balanceAmount += multiplier * 3;
             winAmount = multiplier * 3;
         }
         if (freq == 5) {     //if most repeated png count is 5, multiply it by 2.
-            balanceAmount += multiplier * 5;
+
             winAmount = multiplier * 5;
         }
         if (freq == 6) {     //if most repeated png count is 6, multiply it by 2.
-            balanceAmount += multiplier * 7;
+
             winAmount = multiplier * 5;
         } else {
-            balanceAmount = balanceAmount;
             winAmount = 0;
+        }
+
+    }
+    private double win() { //win method that will determine the most repeated png in the ImageView obejcts from the resultArrList.
+            winAmount = 0;
+
+        if (freq == 3) {    //if most repeated png count is 3, multiply it by 2.
+            balanceAmount += multiplier * 2;
+            winAmount += multiplier * 2;
+
+        }
+        if (freq == 4) {    //if most repeated png count is 4, multiply it by 2.
+            balanceAmount += multiplier * 3;
+            winAmount += multiplier * 3;
+        }
+        if (freq == 5) {     //if most repeated png count is 5, multiply it by 2.
+            balanceAmount += multiplier * 5;
+            winAmount += multiplier * 5;
+        }
+        if (freq == 6) {     //if most repeated png count is 6, multiply it by 2.
+            balanceAmount += multiplier * 7;
+            winAmount += multiplier * 7;
+        } else {
+            balanceAmount = balanceAmount;
+            winAmount += 0;
         }
 
         System.out.println(freq + " " + req);                           //print out the most repeated png string and count.
@@ -287,7 +309,7 @@ public class SlotsController {
 
 
     private void spin1() {      //spin1 method that will assign the ImageView objects with randomize method and set new pngs to imageBlocks randomly.
-        --balanceAmount;
+        balanceAmount = balanceAmount-3;
         for (int i = 0; i < 3; ++i) {
             this.imageBlocksArry[i].setImage(this.pngsArry[randomize()]);
         }
