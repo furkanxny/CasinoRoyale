@@ -1,12 +1,9 @@
 package app.casinoroyale.Controller.GamesControllers;
-
 import app.casinoroyale.Controller.HomeController;
-
 import java.io.File;
 import java.io.IOException;
 import java.util.*;
 import java.util.stream.Collectors;
-//import javafx.scene.media.MediaView;
 import app.casinoroyale.Model.DataModels.UserModels.Player;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -17,63 +14,31 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.text.Text;
-
+import static app.casinoroyale.Controller.GamesControllers.SlotGameLogic.setResults;
 
 public class SlotsController {
     @FXML
-    private ImageView imageBlock1;
+    private ImageView imageBlock1, imageBlock2, imageBlock3, imageBlock4, imageBlock5, imageBlock6, imageBlock7, imageBlock8, imageBlock9,
+            buttonImageView1, buttonImageView2, buttonImageView3, infoButtonImage, button1ImageView, slotsW;
     @FXML
-    private ImageView imageBlock2;
-    @FXML
-    private ImageView imageBlock3;
-    @FXML
-    private ImageView imageBlock4;
-    @FXML
-    private ImageView imageBlock5;
-    @FXML
-    private ImageView imageBlock6;
-    @FXML
-    private ImageView imageBlock7;
-    @FXML
-    private ImageView imageBlock8;
-    @FXML
-    private ImageView imageBlock9;
-    @FXML
-    private ImageView buttonImageView1;
-    @FXML
-    private ImageView buttonImageView2;
-    @FXML
-    private ImageView buttonImageView3;
-    @FXML
-    private ImageView infoButtonImage;
-    @FXML
-    private ImageView button1ImageView;
-    @FXML
-    private Label aTextLabel;
-    @FXML
-    private Label textLabel;
+    private Label aTextLabel, textLabel, historyTF;
     @FXML
     private MenuItem homeDash;
     @FXML
     private Button button1$;
-    @FXML
-    private ImageView slotsW;
-    @FXML
-    private Label historyTF;
-    @FXML
-    //private MediaView mediaView;
     private ImageView[] imageBlocksArry;    //an ImageView array that holds the 9 ImageView(ImageBlock) objects.
     Image[] pngsArry = new Image[15];       //an Image array that holds all the png images.
     File[] fileArry = new File[14];         //an File array that holds the location of Images.
-    String req = "";    //most repeated png string.
-    int freq = 0;       //most repeated png count.
-    private static double balanceAmount = 100.0;    //Balance variable to keep track of balance after each spinn.
-    private static double winAmount = 5;                    //WinAmount variable that is used to display win amount after each spinn.
-    private static int multiplier = 0;                      //multiplier variable that holds the multiplier value according to outcome of the pngs.
     private HomeController HomeController;
     ArrayList<String> resultArrList = new ArrayList<String>();  //resultArrList that hold the String list for outcome of the pngs.
-
     private Player player;
+    private int executionCount = 0;
+    private final int totalExecutions = 8;
+
+
+
+
+
     @Deprecated
     private void playBlackJack(ActionEvent event) throws IOException {
         this.HomeController.playBlackJack(event);
@@ -97,13 +62,12 @@ public class SlotsController {
         this.initializeImages();
         initailizeBetHistoryTF();
         this.InitializeSetImages();
-        balanceInitialize();
         InitializeButtonImages();
         setaTextLabelInitialiaze();
         initializeSlotsW();
     }
 
-    private void initializeSlotsW(){
+    private void initializeSlotsW() {
         File sFile = new File("src/main/resources/app/Assets/Slots/css/slotsW.png");
         Image sImage = new Image(sFile.toURI().toString());
         slotsW.setImage(sImage);
@@ -156,55 +120,32 @@ public class SlotsController {
     }
 
     public void initailizeBetHistoryTF() {  //Initailize the betHistoryTF to beginning prompt.
-        this.textLabel.setText("$" +balanceAmount + "");
+        this.textLabel.setText("$$$$");
     }
 
-    public void balanceInitialize() { //Initailize the beginning balance and display it.
 
-    }
-
-    public void displayBalance() {//Initailize the beginning balance and display it.
-
-    }
-
-    public void displayMult() { //Display multiplier and winAmount.
-        this.aTextLabel.setText("$" + winAmount);
-    }
-
-    public void setaTextLabelInitialiaze(){
+    public void setaTextLabelInitialiaze() {
         this.aTextLabel.setText("$$$");
-    }
-
-    public void displayTextArea() { //Display balance and display it.
-        this.textLabel.setText("");
-        this.textLabel.setText("$" + balanceAmount);
-    }
-
-    private static int randomize() { //Randomize method that will return a value between 0-12.
-        int max = 13;
-        int min = 0;
-        new Random();
-        int a = min + (int) (Math.random() * (double) (max - min + 1));
-        return a;
     }
 
 
     @FXML
     public void spinButton1Handler(ActionEvent actionEvent) {
-        if (balanceAmount >= 3.0) {
-            this.spin1();
-            this.printPlayHistoryAmount();
-            this.setMostRepeated();
-            this.getMultiplier();
-            this.win();
-            //this.setWinAmount();
-            this.displayBalance();
-            this.displayTextArea();
-            this.displayMult();
+      spin();
 
-        } else {
-            this.historyTF.setText("You don't have enough credits to Play!!");
-        }
+    }
+
+
+
+    public void spin(){
+        SlotGameView.updateSlotsImages(imageBlocksArry, pngsArry);
+        SlotGameLogic.setResults(resultArrList, pngsArry, imageBlocksArry);
+        SlotGameView.printResults(resultArrList, historyTF);
+        SlotGameLogic.setMostRepeated(resultArrList);
+        SlotGameLogic.setMultiplier();
+        SlotGameLogic.setWinnings();
+        SlotGameLogic.displayWinAmount(aTextLabel);
+        SlotGameLogic.displayBalanceAmount(textLabel);
     }
 
     @FXML
@@ -215,169 +156,9 @@ public class SlotsController {
     public void spinButton3Handler(ActionEvent actionEvent) {
     }
 
-
-    public void setMostRepeated() {
-        req = "";
-        freq = 0;
-        for (int i = 0; i < resultArrList.size(); i++) {
-            int counter = 0;
-            for (int j = 1 + i; j < resultArrList.size(); j++) {
-                if (resultArrList.get(i).equals(resultArrList.get(j))) {
-                    counter++;
-                }
-            }
-            if (counter + 1 >= freq) {
-                freq = counter + 1;
-                req = resultArrList.get(i);
-            }
-        }
-    }
-
-    public void printPlayHistoryAmount() {  //printPlayHistoryAmount method that will set the String list for outcome of the pngs.
-        String[] icons = {"WATERMELON", " SHAMROCK ", "   BAR   ", "  LEMON  " , "HORSESHOE", "   STAR   ","   GOLD   ",   "   SEVEN   ",
-                 "  PUMPKIN  ",  "   GUN   ","  DRAGON  ",  "  HOTDOG  ", "   KING   "," DIOMAND "};
-
-
-        String[] imgStr1 = new String[14];  //String array that will hold the toString value of pngs for comparing.
-        for (int i = 0; i < 14; i++) {
-            imgStr1[i] = pngsArry[i].toString();
-        }
-
-        String[] imageBlocksCompare = new String[9];    //String array that will hold the toString value of Images that is set to the ImagesViews for comparing.
-        for (int i = 0; i < 9; i++) {
-            imageBlocksCompare[i] = this.imageBlocksArry[i].getImage().toString();
-        }
-
-        resultArrList.clear();  // Clear the resultArrList so past outcome of pngs will be deleted.
-        for (int i = 0; i < imageBlocksCompare.length; i++) {   //Load resultArrList with outcome.
-            for (int j = 0; j < 14; j++) {
-                if (imageBlocksCompare[i].equals(imgStr1[j])) {
-                    resultArrList.add(icons[j]);
-                }
-            }
-
-        }
-        //Put the outcome to the final String pngsOrder, so it can be used to print the current outcome if needed.
-        String pngsOrder = resultArrList.get(0) + " " + resultArrList.get(1) + " " + resultArrList.get(2) +
-                "\n" + resultArrList.get(3) + " " + resultArrList.get(4) + " " + resultArrList.get(5) +
-                "\n" + resultArrList.get(6) + " " + resultArrList.get(7) + " " + resultArrList.get(8) + "\n";
-        System.out.println(pngsOrder);
-        historyTF.setText(pngsOrder);
-    }
-
-    public void getMultiplier() {
-        if (req == "WATERMELON" || req == " SHAMROCK " || req == "   BAR   " || req == "   LEMON   ") {    //If most repeated png is one of the given string multiplier is set to 1.
-            multiplier = 1;
-        }
-        if (req == "HORSESHOE" || req == "   STAR   " || req == "   GOLD   ") {    //If most repeated png is one of the given string multiplier is set to 3.
-            multiplier = 3;
-        }
-
-        if (req == "   SEVEN   " || req == "  PUMPKIN  " || req == "   GUN   ") {     //If most repeated png is one of the given string multiplier is set to 5.
-            multiplier = 5;
-        }
-
-        if (req == "  DRAGON  " || req == "  HOTDOG  " || req == "  KING  ") {      //If most repeated png is one of the given string multiplier is set to 7.
-            multiplier = 7;
-        }
-        if (req == " DIOMAND ") {                                         //If most repeated png is one of the given string multiplier is set to 10.
-            multiplier = 10;
-        }
-    }
-
-    public void setWinAmount() {
-        if (freq == 3) {    //if most repeated png count is 3, multiply it by 2.
-            winAmount = multiplier * 2;
-        }
-        if (freq == 4) {    //if most repeated png count is 4, multiply it by 2.
-            winAmount = multiplier * 3;
-        }
-        if (freq == 5) {     //if most repeated png count is 5, multiply it by 2.
-
-            winAmount = multiplier * 5;
-        }
-        if (freq == 6) {     //if most repeated png count is 6, multiply it by 2.
-
-            winAmount = multiplier * 5;
-        } else {
-            winAmount = 0;
-        }
-    }
-
-    //win method that will determine the most repeated png in the ImageView obejcts from the resultArrList.
-    private double win() {
-        winAmount = 0;
-
-        if (freq == 3) {    //if most repeated png count is 3, multiply it by 2.
-            balanceAmount += multiplier * 2;
-            winAmount += multiplier * 2;
-        }
-        if (freq == 4) {    //if most repeated png count is 4, multiply it by 3.
-            balanceAmount += multiplier * 3;
-            winAmount += multiplier * 3;
-        }
-        if (freq == 5) {     //if most repeated png count is 5, multiply it by 5.
-            balanceAmount += multiplier * 5;
-            winAmount += multiplier * 5;
-        }
-        if (freq == 6) {     //if most repeated png count is 6, multiply it by 7.
-            balanceAmount += multiplier * 7;
-            winAmount += multiplier * 7;
-        }
-
-        if(freq == 7) {     //if most repeated png count is 7, multiply it by 9.
-            balanceAmount += multiplier * 9;
-            winAmount += multiplier * 9;
-        }
-    else {
-            balanceAmount = balanceAmount;
-            winAmount += 0;
-        }
-
-        //System.out.println(freq + " " + req);                           //print out the most repeated png string and count.
-        //System.out.println("Multiplier is: " + multiplier);
-        return winAmount;
-    }
-
-    //spin1 method that will assign the ImageView objects with randomize method and set new pngs to imageBlocks randomly.
-    private void spin1() {
-        balanceAmount = balanceAmount - 3;
-        for (int i = 0; i < 3; ++i) {
-            this.imageBlocksArry[i].setImage(this.pngsArry[randomize()]);
-        }
-        for (int i = 3; i < 6; ++i) {
-            this.imageBlocksArry[i].setImage(this.pngsArry[randomize()]);
-        }
-        for (int i = 6; i < 9; ++i) {
-            this.imageBlocksArry[i].setImage(this.pngsArry[randomize()]);
-        }
-    }
-
-
-    private void spin2() {
-    }
-
-    private void spin3() {
-    }
-
-
-    //infoButtonHandler method that will create a Alert object and let it display the rules for the slot machine game if user clicks the 'i' icon.
-    @FXML               //##############################3
+    //If users clicks infoButton button it will call the infoButtonHandler and the methods inside.
+    @FXML
     public void infoButtonHandler(ActionEvent actionEvent) {
-        String winningInfo = null;
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Winning Chances");
-        alert.setHeaderText("Winning Chances \n \n " +
-                "In order to Win at least 2 of the icon match is  required.");
-        alert.setContentText(
-                " Here is the Winning amounts for matching 2 same icons \n\n" +
-                        "                     Watermelon - $2 \n                     Gonca - $2 \n                     Bar - $2  " +
-                        "\n                     King - $4 \n                     Horse Shoe - $4 \n                     7 - $4 " +
-                        "\n                     Diomand - $6 \n " +
-                        "\n Here is the Winning amounts for matching 3 same icons  " +
-                        "\n\n                     Watermelon - $6 \n                     Gonca - $6 \n                     Bar - $6  " +
-                        "\n                     King - $9 \n                     Horse Shoe - $9 \n                     7 - $9 " +
-                        "\n                     Diomand - $15");
-        alert.showAndWait();
+        SlotGameView.infoButton();
     }
 }
