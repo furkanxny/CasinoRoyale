@@ -123,4 +123,9 @@ public class SlotGameView {
                         "\n\n $10          DIOMAND");
         alert.showAndWait();
     }
+
+
+    public static void exitButton(){
+        Platform.exit();
+    }
 }

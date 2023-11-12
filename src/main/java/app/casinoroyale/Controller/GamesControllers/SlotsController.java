@@ -1,4 +1,5 @@
 package app.casinoroyale.Controller.GamesControllers;
+
 import app.casinoroyale.Controller.HomeController;
 
 import java.awt.event.KeyListener;
@@ -23,7 +24,7 @@ import static com.sun.java.accessibility.util.AWTEventMonitor.addKeyListener;
 public class SlotsController {
     @FXML
     private ImageView imageBlock1, imageBlock2, imageBlock3, imageBlock4, imageBlock5, imageBlock6, imageBlock7, imageBlock8, imageBlock9,
-            buttonImageView1, buttonImageView2, buttonImageView3, infoButtonImage, button1ImageView, slotsW;
+            buttonImageView1, buttonImageView2, buttonImageView3, infoButtonImage, button1ImageView, slotsW, exitButtonImage;
     @FXML
     private ImageView i1, i2, i3, i4, i5, i6, i7, i8, i9, i10, i11, i12, i13, i14, i15, i16, i17, i18, i19, i20,
             i21, i22, i23, i24, i25, i26, i27, i28, i29, i30, i31, i32, i33, i34, i35;
@@ -80,13 +81,13 @@ public class SlotsController {
         initializeLastBetLabel();
     }
 
-    private void initializeJackpotImages(){
-        for(int i = 0; i < 35; i++){
+    private void initializeJackpotImages() {
+        for (int i = 0; i < 35; i++) {
             jackpotArry[i].setImage(pngsArry[7]);
         }
     }
 
-    private void initializeWelcomeLabel(){
+    private void initializeWelcomeLabel() {
         welcomeLabel.setText("   WELCOME \n          TO \n         THE \n        SLOT \n   MACHINE");
     }
 
@@ -120,13 +121,14 @@ public class SlotsController {
     }
 
     private void InitializeButtonImages() {     //Initialize pngs and files for the style of the buttons.
-        File[] dollarPngFileArry = new File[3];
+        File[] dollarPngFileArry = new File[4];
         dollarPngFileArry[0] = new File("src/main/resources/app/Assets/Slots/css/1dollar.png");
         dollarPngFileArry[1] = new File("src/main/resources/app/Assets/Slots/css/spin.png");
         dollarPngFileArry[2] = new File("src/main/resources/app/Assets/Slots/css/infoButton.png");
+        dollarPngFileArry[3] = new File("src/main/resources/app/Assets/Slots/css/exitButton.png");
 
-        Image[] buttonImageArry = new Image[3];
-        for (int i = 0; i < 3; i++) {
+        Image[] buttonImageArry = new Image[4];
+        for (int i = 0; i < 4; i++) {
             buttonImageArry[i] = new Image(dollarPngFileArry[i].toURI().toString());
         }
 
@@ -134,12 +136,14 @@ public class SlotsController {
         buttonImageViewArry[0] = buttonImageView1;
         buttonImageViewArry[1] = buttonImageView2;
         buttonImageViewArry[2] = buttonImageView3;
+        //buttonImageViewArry[3] = exitButtonImage;
 
         for (int i = 0; i < 3; i++) {
             buttonImageViewArry[i].setImage(buttonImageArry[1]);
         }
         this.button1ImageView.setImage(buttonImageArry[0]);
         this.infoButtonImage.setImage(buttonImageArry[2]);
+        this.exitButtonImage.setImage(buttonImageArry[3]);
     }
 
     public void initailizeBetHistoryTF() {  //Initailize the betHistoryTF to beginning prompt.
@@ -151,30 +155,30 @@ public class SlotsController {
         this.aTextLabel.setText("$$$");
     }
 
-    public void initializeLastBetLabel(){this.lastBetLabel.setText("$$");}
+    public void initializeLastBetLabel() {
+        this.lastBetLabel.setText("$$");
+    }
 
     @FXML
     public void spinButton1Handler(ActionEvent actionEvent) {
-      spin();
+        spin();
 
     }
-
-
-
-    public void spin(){
+    
+            public void spin() {
         welcomeLabel.setText("");
         lastBetLabel.setText("$3");
-        for(int i =0; i < 1; i++){
-        Player.getInstance().setAccountBalance(bet1.getAmount());
-        SlotGameView.updateSlotsImages(imageBlocksArry, pngsArry);
-        SlotGame.setResults(resultArrList, pngsArry, imageBlocksArry);
-        SlotGameView.printResults(resultArrList, historyTF, winText);
-        SlotGame.setMostRepeated(resultArrList);
-        SlotGame.setMultiplier();
-        SlotGame.setWinnings();
-        SlotGame.displayWinAmount(aTextLabel);
-        SlotGame.displayBalanceAmount(textLabel);
-    }
+        for (int i = 0; i < 1; i++) {
+            Player.getInstance().setAccountBalance(bet1.getAmount());
+            SlotGameView.updateSlotsImages(imageBlocksArry, pngsArry);
+            SlotGame.setResults(resultArrList, pngsArry, imageBlocksArry);
+            SlotGameView.printResults(resultArrList, historyTF, winText);
+            SlotGame.setMostRepeated(resultArrList);
+            SlotGame.setMultiplier();
+            SlotGame.setWinnings();
+            SlotGame.displayWinAmount(aTextLabel);
+            SlotGame.displayBalanceAmount(textLabel);
+        }
     }
 
     @FXML
@@ -191,5 +195,12 @@ public class SlotsController {
     @FXML
     public void infoButtonHandler(ActionEvent actionEvent) {
         SlotGameView.infoButton();
+    }
+
+    @FXML
+    void exitButtonHandler(ActionEvent event) {
+
+        SlotGameView.exitButton();
+
     }
 }

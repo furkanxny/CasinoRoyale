@@ -158,7 +158,7 @@
                      <padding>
                         <Insets right="72.0" />
                      </padding></Button>
-                  <Button layoutX="1300.0" layoutY="37.0" maxHeight="5.0" maxWidth="5.0" minHeight="5.0" minWidth="5.0" mnemonicParsing="false" onAction="#infoButtonHandler" prefHeight="5.0" prefWidth="5.0" text="Info">
+                  <Button layoutX="1200.0" layoutY="37.0" maxHeight="5.0" maxWidth="5.0" minHeight="5.0" minWidth="5.0" mnemonicParsing="false" onAction="#infoButtonHandler" prefHeight="5.0" prefWidth="5.0" text="Info">
                      <graphic>
                         <ImageView fx:id="infoButtonImage" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" />
                      </graphic>
@@ -247,6 +247,14 @@
                         <Font name="Impact" size="62.0" />
                      </font>
                   </Label>
+                  <Button layoutX="1300.0" layoutY="37.0" maxHeight="10.0" maxWidth="10.0" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#exitButtonHandler" prefHeight="10.0" prefWidth="10.0" text="exit">
+                     <graphic>
+                        <ImageView fx:id="exitButtonImage" fitHeight="65.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true" />
+                     </graphic>
+                     <padding>
+                        <Insets right="50.0" />
+                     </padding>
+                  </Button>
                   </children>
               </Pane>
           </center>
