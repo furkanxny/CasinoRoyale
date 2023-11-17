@@ -140,24 +140,10 @@
                         <Font name="Impact" size="38.0" />
                      </font>
                   </Label>
-                      <Button fx:id="button1$" layoutX="480.0" layoutY="660.0" maxHeight="50.0" maxWidth="50.0" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" onAction="#spinButton1Handler" prefHeight="50.0" prefWidth="50.0" translateX="-60.0">
+                      <Button fx:id="button1$" layoutX="683.0" layoutY="636.0" maxHeight="50.0" maxWidth="50.0" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" onAction="#spinButton" prefHeight="50.0" prefWidth="50.0" translateX="-60.0">
                      <graphic>
                         <ImageView fx:id="buttonImageView1" fitHeight="70.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true" />
                      </graphic></Button>
-                      <Button layoutX="680.0" layoutY="660.0" maxHeight="50.0" maxWidth="50.0" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" onAction="#spinButton2Handler" prefHeight="85.0" prefWidth="85.0" text="\$2,50 SPIN" translateX="-60.0">
-                     <graphic>
-                        <ImageView fx:id="buttonImageView2" fitHeight="70.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true" />
-                     </graphic>
-                     <padding>
-                        <Insets right="71.0" />
-                     </padding></Button>
-                      <Button layoutX="880.0" layoutY="660.0" maxHeight="50.0" maxWidth="50.0" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" onAction="#spinButton3Handler" prefHeight="85.0" prefWidth="85.0" text="\$5 SPIN" translateX="-60.0">
-                     <graphic>
-                        <ImageView fx:id="buttonImageView3" fitHeight="70.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true" />
-                     </graphic>
-                     <padding>
-                        <Insets right="72.0" />
-                     </padding></Button>
                   <Button layoutX="1200.0" layoutY="37.0" maxHeight="5.0" maxWidth="5.0" minHeight="5.0" minWidth="5.0" mnemonicParsing="false" onAction="#infoButtonHandler" prefHeight="5.0" prefWidth="5.0" text="Info">
                      <graphic>
                         <ImageView fx:id="infoButtonImage" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" />
@@ -165,8 +151,7 @@
                      <padding>
                         <Insets right="50.0" />
                      </padding></Button>
-                  <ImageView fx:id="button1ImageView" disable="true" fitHeight="50.0" fitWidth="29.0" layoutX="448.0" layoutY="616.0" pickOnBounds="true" preserveRatio="true" />
-                  <ImageView fx:id="slotsW" fitHeight="435.0" fitWidth="1071.0" layoutX="470.0" layoutY="-145.0" pickOnBounds="true" preserveRatio="true" translateX="-40.0" />
+                  <ImageView fx:id="jackpotImageView" fitHeight="435.0" fitWidth="1071.0" layoutX="470.0" layoutY="-145.0" pickOnBounds="true" preserveRatio="true" translateX="-40.0" />
                   <Label fx:id="historyTF" layoutX="20.0" layoutY="400.0" prefHeight="300.0" prefWidth="300.0">
                      <font>
                         <Font name="Impact" size="16.0" />
