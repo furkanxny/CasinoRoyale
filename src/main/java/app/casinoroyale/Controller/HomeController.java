@@ -98,46 +98,6 @@ public class HomeController {
         stage.setScene(scene);
         stage.show();
     }
-    @FXML
-    @Deprecated
-    void openBlackjack(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/app/casinoroyale/View/Games/BlackJack.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 3200, 2400);
-        stage.setTitle("Black Jack");
-        stage.setScene(scene);
-        stage.show();
-    }
-
-    @FXML
-    @Deprecated
-    void openHorserace(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/app/casinoroyale/View/Games/HorseRacing.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 3200, 2400);
-        stage.setTitle("Horse Racing");
-        stage.setScene(scene);
-        stage.show();
-    }
-
-    @FXML
-    @Deprecated
-    void openRouletta(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/app/casinoroyale/View/Games/Roulette.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 3200, 2400);
-        stage.setTitle("Roulette");
-        stage.setScene(scene);
-        stage.show();
-    }
-
-    @FXML
-    @Deprecated
-    void openSlots(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/app/casinoroyale/View/Games/Slots.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 2600, 2400);
-        stage.setTitle("Slots");
-        stage.setScene(scene);
-        stage.show();
-    }
-
     public void setStage(Stage stage) {
         this.stage = stage;
     }

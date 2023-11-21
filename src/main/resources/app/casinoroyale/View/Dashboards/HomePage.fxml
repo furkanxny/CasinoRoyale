@@ -72,7 +72,7 @@
                         </Menu>
                     </menus>
                 </MenuBar>
-            <Button layoutX="80.0" layoutY="518.0" maxHeight="5.0" maxWidth="5.0" minHeight="5.0" minWidth="5.0" mnemonicParsing="false" onAction="#openSlots" prefHeight="5.0" prefWidth="5.0" text="SLOTS">
+            <Button layoutX="80.0" layoutY="518.0" maxHeight="5.0" maxWidth="5.0" minHeight="5.0" minWidth="5.0" mnemonicParsing="false" onAction="#playSlots" prefHeight="5.0" prefWidth="5.0" text="SLOTS">
                <graphic>
                   <ImageView fx:id="slotsImageView" fitHeight="295.0" fitWidth="490.0" pickOnBounds="true" preserveRatio="true" />
                </graphic>
@@ -80,7 +80,7 @@
                   <Insets right="150.0" />
                </padding>
             </Button>
-            <Button layoutX="480.0" layoutY="520.0" maxHeight="5.0" maxWidth="5.0" minHeight="5.0" minWidth="5.0" mnemonicParsing="false" onAction="#openRouletta" prefHeight="5.0" prefWidth="5.0" text="ROULETTA">
+            <Button layoutX="480.0" layoutY="520.0" maxHeight="5.0" maxWidth="5.0" minHeight="5.0" minWidth="5.0" mnemonicParsing="false" onAction="#playRoulette" prefHeight="5.0" prefWidth="5.0" text="ROULETTA">
                <graphic>
                   <ImageView fx:id="rouletteImageView" fitHeight="234.0" fitWidth="349.0" pickOnBounds="true" preserveRatio="true" />
                </graphic>
@@ -88,7 +88,7 @@
                   <Insets right="150.0" />
                </padding>
             </Button>
-            <Button layoutX="1195.0" layoutY="507.0" maxHeight="5.0" maxWidth="5.0" minHeight="5.0" minWidth="5.0" mnemonicParsing="false" onAction="#openHorserace" prefHeight="5.0" prefWidth="5.0" text="HORSE RACE">
+            <Button layoutX="1195.0" layoutY="507.0" maxHeight="5.0" maxWidth="5.0" minHeight="5.0" minWidth="5.0" mnemonicParsing="false" onAction="#playHorseRacing" prefHeight="5.0" prefWidth="5.0" text="HORSE RACE">
                <graphic>
                   <ImageView fx:id="blackjackImageView" fitHeight="305.0" fitWidth="310.0" pickOnBounds="true" preserveRatio="true" />
                </graphic>
@@ -96,7 +96,7 @@
                   <Insets right="150.0" />
                </padding>
             </Button>
-            <Button layoutX="830.0" layoutY="521.0" maxHeight="5.0" maxWidth="5.0" minHeight="3.0" minWidth="3.0" mnemonicParsing="false" onAction="#openBlackjack" prefHeight="3.0" prefWidth="3.0" text="BLACKJACK">
+            <Button layoutX="830.0" layoutY="521.0" maxHeight="5.0" maxWidth="5.0" minHeight="3.0" minWidth="3.0" mnemonicParsing="false" onAction="#playBlackJack" prefHeight="3.0" prefWidth="3.0" text="BLACKJACK">
                <graphic>
                   <ImageView fx:id="horseraceImageView" fitHeight="335.0" fitWidth="395.0" pickOnBounds="true" preserveRatio="true" />
                </graphic>
