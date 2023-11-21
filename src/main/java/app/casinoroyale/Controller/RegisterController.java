@@ -4,8 +4,12 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 
-    interface regex{
+import java.io.File;
+
+interface regex{
         String regexUserName = "\\b[A-Z][a-zA-Z]+";
         String regexEmail = "[a-z0-9]+@[a-z0-9]+.[0-z]{2,6}";
         String regexPassword =
@@ -29,6 +33,7 @@ public class RegisterController {
     private String email;
     private String password;
     private String passwordConfirmation;
+
 
     public void registerButtonHandler(ActionEvent event) {
     }
