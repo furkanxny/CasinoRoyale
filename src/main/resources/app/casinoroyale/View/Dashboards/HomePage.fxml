@@ -32,25 +32,22 @@
   OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.casinoroyale.Controller.HomeController">
+<AnchorPane prefHeight="766.0" prefWidth="1500.0" style="-fx-background-color: FFFDD0;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.casinoroyale.Controller.HomeController">
     <children>
-        <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="454.0" prefWidth="698.0" VBox.vgrow="ALWAYS">
+        <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="766.0" prefWidth="1500.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" VBox.vgrow="ALWAYS">
             <children>
                 <MenuBar VBox.vgrow="NEVER">
                     <menus>
-                        <Menu mnemonicParsing="false" onAction="#homeDash"  text="Casino Royale">
+                        <Menu mnemonicParsing="false" onAction="#homeDash" text="Casino Royale">
                             <MenuItem mnemonicParsing="false" onAction="#homeDash" text="Home" />
                         </Menu>
                         <Menu mnemonicParsing="false" text="Games">
@@ -75,6 +72,39 @@
                         </Menu>
                     </menus>
                 </MenuBar>
+            <Button layoutX="80.0" layoutY="518.0" maxHeight="5.0" maxWidth="5.0" minHeight="5.0" minWidth="5.0" mnemonicParsing="false" onAction="#openSlots" prefHeight="5.0" prefWidth="5.0" text="SLOTS">
+               <graphic>
+                  <ImageView fx:id="slotsImageView" fitHeight="295.0" fitWidth="490.0" pickOnBounds="true" preserveRatio="true" />
+               </graphic>
+               <padding>
+                  <Insets right="150.0" />
+               </padding>
+            </Button>
+            <Button layoutX="480.0" layoutY="520.0" maxHeight="5.0" maxWidth="5.0" minHeight="5.0" minWidth="5.0" mnemonicParsing="false" onAction="#openRouletta" prefHeight="5.0" prefWidth="5.0" text="ROULETTA">
+               <graphic>
+                  <ImageView fx:id="rouletteImageView" fitHeight="234.0" fitWidth="349.0" pickOnBounds="true" preserveRatio="true" />
+               </graphic>
+               <padding>
+                  <Insets right="150.0" />
+               </padding>
+            </Button>
+            <Button layoutX="1195.0" layoutY="507.0" maxHeight="5.0" maxWidth="5.0" minHeight="5.0" minWidth="5.0" mnemonicParsing="false" onAction="#openHorserace" prefHeight="5.0" prefWidth="5.0" text="HORSE RACE">
+               <graphic>
+                  <ImageView fx:id="blackjackImageView" fitHeight="305.0" fitWidth="310.0" pickOnBounds="true" preserveRatio="true" />
+               </graphic>
+               <padding>
+                  <Insets right="150.0" />
+               </padding>
+            </Button>
+            <Button layoutX="830.0" layoutY="521.0" maxHeight="5.0" maxWidth="5.0" minHeight="3.0" minWidth="3.0" mnemonicParsing="false" onAction="#openBlackjack" prefHeight="3.0" prefWidth="3.0" text="BLACKJACK">
+               <graphic>
+                  <ImageView fx:id="horseraceImageView" fitHeight="335.0" fitWidth="395.0" pickOnBounds="true" preserveRatio="true" />
+               </graphic>
+               <padding>
+                  <Insets right="150.0" />
+               </padding>
+            </Button>
+            <ImageView fx:id="casionoImageView" fitHeight="564.0" fitWidth="1401.0" layoutX="440.0" layoutY="-80.0" pickOnBounds="true" preserveRatio="true" />
             </children>
         </AnchorPane>
     </children>
