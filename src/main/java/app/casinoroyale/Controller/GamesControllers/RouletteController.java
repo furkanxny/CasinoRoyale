@@ -1,5 +1,6 @@
 package app.casinoroyale.Controller.GamesControllers;
 import app.casinoroyale.CSRApplication;
+import app.casinoroyale.Controller.HomeController;
 import app.casinoroyale.Model.DataModels.GameModels.RouletteModel.Bet;
 import app.casinoroyale.Model.DataModels.GameModels.RouletteModel.Roulette;
 import javafx.application.Platform;
@@ -38,23 +39,24 @@ import java.io.IOException;
 
 public class RouletteController implements Initializable{
 
-    private app.casinoroyale.Controller.HomeController HomeController;
+    private app.casinoroyale.Controller.HomeController homeController;
 
     public RouletteController(){
+       this.homeController = new HomeController();
     }
     @FXML
     private void playBlackJack(ActionEvent event) throws IOException {
-        HomeController.playBlackJack(event);
+        homeController.playBlackJack(event);
     } @FXML
     private void playHorseRacing(ActionEvent event) throws IOException {
-        HomeController.playHorseRacing(event);
+        homeController.playHorseRacing(event);
     }@FXML
     private void playSlots(ActionEvent event) throws IOException {
-        HomeController.playSlots(event);
+        homeController.playSlots(event);
     }
     @FXML
     private void homeDash(ActionEvent event) throws IOException {
-        HomeController.homeDash(event);
+        homeController.homeDash(event);
     }
 
 
