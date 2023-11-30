@@ -5,11 +5,8 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-
 import java.util.ArrayList;
 import java.util.Random;
-import java.util.Timer;
-import java.util.TimerTask;
 
 public class SlotGameView {
     static SlotGame slotGame = new SlotGame();
@@ -44,35 +41,28 @@ public class SlotGameView {
         historyTF.setText(String.valueOf(pngsOrder));
 
         Platform.runLater(()->{
-        winOrder.setLength(0);
-        if(slotGame.getFreq() >= 3) {
+            winOrder.setLength(0);
+            if(slotGame.getFreq() >= 3) {
 
                 winOrder.append(slotGame.getReq() + "  ");
 
 
-            winOrder.append("\n\n"+"Value - "+ slotGame.getMultiplier()+"\n"+ "Multiplier - "+ slotGame.getIconValue() );
+                winOrder.append("\n\n"+"Value - "+ slotGame.getMultiplier()+"\n"+ "Multiplier - "+ slotGame.getIconValue() );
 
 
-            winText.setText(String.valueOf(winOrder));
-        }
-        else winText.setText("");
-
-    });}
-
-
-    public static void spin(ImageView[] imageViewArry, Image[] imageArry) {
-        new Thread(() -> {
-            try {
-                for (int i = 0; i < 9; i++) {
-                    imageViewArry[i].setImage(imageArry[randomize()]);
-                    // Update image views here
-                    Thread.sleep(200); // 200 milliseconds delay
-                }
-            } catch (InterruptedException e) {
-                Thread.currentThread().interrupt();
+                winText.setText(String.valueOf(winOrder));
             }
-        }).start();
+            else winText.setText("");
+
+        });}
+
+
+    public static void spin(ImageView[] imageViewArray, Image[] imageArray) {
+        for (int i = 0; i < 9; i++) {
+            imageViewArray[i].setImage(imageArray[randomize()]);
+        }
     }
+
 
 
     public static void infoButton() {

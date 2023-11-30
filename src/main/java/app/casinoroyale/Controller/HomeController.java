@@ -52,7 +52,6 @@ public class HomeController {
         horseraceImageView.setImage(horseRaceImage);
         blackjackImageView.setImage(blackJackImage);
         casionoImageView.setImage(casinoImage);
-
     }
 
     FXMLLoader homeFXML = new FXMLLoader(getClass().getResource("/app/casinoroyale/View/Dashboards/HomePage.fxml"));
