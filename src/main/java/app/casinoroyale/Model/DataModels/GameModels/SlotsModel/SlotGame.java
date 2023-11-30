@@ -101,10 +101,10 @@ public class SlotGame {
             multiplier = 4;
         }
 
-        if (Objects.equals(req, "DRAGON") || Objects.equals(req, "HOTDOG") || Objects.equals(req, "KING")) {
+        if (Objects.equals(req, "DRAGON") || Objects.equals(req, "HOTDOG") ) {
             multiplier = 5;
         }
-        if (Objects.equals(req, "SEVEN")) {
+        if (Objects.equals(req, "SEVEN") || Objects.equals(req, "KING")) {
             multiplier = 20;
         }
         System.out.println("MULTIPLIER: " + multiplier);
