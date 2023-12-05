@@ -6,13 +6,14 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 
 import java.io.File;
 import java.io.IOException;
 
 public class HomeController {
-    private Stage stage;
+    private Stage stage = new Stage();
     @FXML
     private ImageView slotsImageView;
     @FXML
@@ -59,33 +60,35 @@ public class HomeController {
 
 
 
-
+    javafx.geometry.Rectangle2D screenSize = Screen.getPrimary().getBounds();
+    double screenWidth = screenSize.getWidth();
+    double screenHeight = screenSize.getHeight();
 
     FXMLLoader homeFXML = new FXMLLoader(getClass().getResource("/app/casinoroyale/View/Dashboards/HomePage.fxml"));
 
     public void homeDash(ActionEvent actionEvent) throws IOException {
-        Scene scene = new Scene(homeFXML.load(), 3200, 2400);
+        Scene scene = new Scene(homeFXML.load(), screenWidth * 0.8, screenHeight * 0.8);
         stage.setTitle("Casino Royale");
         stage.setScene(scene);
         stage.show();
     }
     public void playBlackJack(ActionEvent actionEvent) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/app/casinoroyale/View/Games/BlackJack.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 3200, 2400);
+        Scene scene = new Scene(fxmlLoader.load(), screenWidth * 0.8, screenHeight * 0.8);
         stage.setTitle("Black Jack");
         stage.setScene(scene);
         stage.show();
     }
     public void playRoulette(ActionEvent actionEvent) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/app/casinoroyale/View/Games/Roulette.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 3200, 2400);
+        Scene scene = new Scene(fxmlLoader.load(), screenWidth * 0.8, screenHeight * 0.8);
         stage.setTitle("Roulette");
         stage.setScene(scene);
         stage.show();
     }
     public void playHorseRacing(ActionEvent actionEvent) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/app/casinoroyale/View/Games/HorseRacing.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 3200, 2400);
+        Scene scene = new Scene(fxmlLoader.load(), screenWidth * 0.8, screenHeight * 0.8);
         stage.setTitle("Horse Racing");
         stage.setScene(scene);
         stage.show();
@@ -93,7 +96,7 @@ public class HomeController {
 
     public void playSlots(ActionEvent actionEvent) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/app/casinoroyale/View/Games/Slots.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 2600, 2400);
+        Scene scene = new Scene(fxmlLoader.load(), screenWidth * 0.8, screenHeight * 0.8);
         stage.setTitle("Slots");
         stage.setScene(scene);
         stage.show();

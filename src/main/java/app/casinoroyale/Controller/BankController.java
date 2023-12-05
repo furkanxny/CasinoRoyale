@@ -54,6 +54,7 @@ public class BankController {
         });
     }
 
+    /**
     @FXML
     private void showWithdrawDialog(ActionEvent event) {
         TextInputDialog withdrawDialog = new TextInputDialog();
@@ -78,7 +79,7 @@ public class BankController {
             }
         });
     }
-
+**/
     private void showErrorMessage(String message) {
         Alert errorAlert = new Alert(Alert.AlertType.ERROR);
         errorAlert.setTitle("Error");
