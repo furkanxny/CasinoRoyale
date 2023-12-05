@@ -18,7 +18,7 @@ public class HomeController {
 
 
 
-    private final BlackJackPlayer blackJackPlayer = new BlackJackPlayer();
+    private final BlackJackPlayer blackJackPlayer;
     private static Stage primaryStage;
 
     private Stage stage = new Stage();
@@ -43,6 +43,7 @@ public class HomeController {
 
     public HomeController(){
         this.stage.show();
+        this.blackJackPlayer = new BlackJackPlayer();
     }
 
 
@@ -82,7 +83,8 @@ public class HomeController {
     }
 
     public void playBlackJack(ActionEvent actionEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/app/casinoroyale/View/Games/Playroom-bet-view.fxml"));
+
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/app/casinoroyale/View/Games/playroom-bet-view.fxml"));
         Scene betViewScene = new Scene(fxmlLoader.load());
         PlayroomBetController betController = fxmlLoader.getController();
         betController.loadContents(blackJackPlayer);
@@ -90,9 +92,7 @@ public class HomeController {
         primaryStage = stage;
         stage.setTitle("Blackjack Game");
         stage.setScene(betViewScene);
-
         stage.show();
-
     }
 
     public void playRoulette(ActionEvent actionEvent) throws IOException {
