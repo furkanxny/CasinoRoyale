@@ -33,7 +33,7 @@ public class SlotsController {
     File[] fileArray = new File[14];
     private HomeController HomeController;
     ArrayList<String> resultArrList = new ArrayList<>();
-    Bet bet1 = new Bet(-5);
+    Bet bet1 = new Bet(-4);
     private int executionCount = 0;
     private final int totalExecutions = 5;
     private int jackpotImagesCounter = 1;
@@ -101,7 +101,7 @@ public class SlotsController {
 
     public void initializeBetHistoryTF() {  //Initialize the betHistoryTF to beginning prompt.
         SlotGame.displayBalanceAmount(textLabel);
-        lastBetLabel.setText("$5");
+        lastBetLabel.setText("$4");
     }
 
     public void setTextLabelInitialiaze() {
@@ -188,7 +188,7 @@ public class SlotsController {
     }
 
     public void attrb(){
-        lastBetLabel.setText("$3");
+        lastBetLabel.setText("$4");
         welcomeLabel.setText("");
     }
 
