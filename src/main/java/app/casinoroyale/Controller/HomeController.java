@@ -1,5 +1,7 @@
 package app.casinoroyale.Controller;
 
+import app.casinoroyale.Model.DataModels.GameModels.BlackJackModel.role.BlackJackPlayer;
+import app.casinoroyale.Controller.GamesControllers.BlackJackController.PlayroomBetController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -12,7 +14,13 @@ import java.io.File;
 import java.io.IOException;
 
 public class HomeController {
+
+
+    private final BlackJackPlayer blackJackPlayer = new BlackJackPlayer();
+    private static Stage primaryStage;
+
     private Stage stage = new Stage();
+
     @FXML
     private ImageView slotsImageView;
     @FXML
@@ -24,10 +32,12 @@ public class HomeController {
     @FXML
     private ImageView casionoImageView;
 
+
     @FXML
     public void initialize() {
         initializeImages();
     }
+
 
     public HomeController(){
         this.stage.show();
@@ -35,6 +45,7 @@ public class HomeController {
 
 
     public void initializeImages(){
+
         File roulette = new File("src/main/resources/app/Assets/HomePage/Games/roulette.png");
         File slots = new File("src/main/resources/app/Assets/HomePage/Games/slots.png");
         File horseRace = new File("src/main/resources/app/Assets/HomePage/Games/horseracing.png");
@@ -62,19 +73,29 @@ public class HomeController {
         stage.setScene(scene);
 
     }
+
     public void playBlackJack(ActionEvent actionEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/app/casinoroyale/View/Games/BlackJack.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 3200, 2400);
-        stage.setTitle("Black Jack");
-        stage.setScene(scene);
+
+
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/app/casinoroyale/View/Games/Playroom-bet-view.fxml"));
+        Scene betViewScene = new Scene(fxmlLoader.load());
+        PlayroomBetController betController = fxmlLoader.getController();
+        betController.loadContents(blackJackPlayer);
+
+        primaryStage = stage;
+        stage.setTitle("Blackjack Game");
+        stage.setScene(betViewScene);
+        stage.show();
 
     }
+
     public void playRoulette(ActionEvent actionEvent) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/app/casinoroyale/View/Games/Roulette.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 3200, 2400);
         stage.setTitle("Roulette");
         stage.setScene(scene);
     }
+
     public void playHorseRacing(ActionEvent actionEvent) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/app/casinoroyale/View/Games/HorseRacing.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 3200, 2400);
@@ -88,8 +109,12 @@ public class HomeController {
         stage.setTitle("Slots");
         stage.setScene(scene);
     }
+
+    public static Stage getPrimaryStage() {
+        return primaryStage;
+    }
+
     public void setStage(Stage stage) {
         this.stage = stage;
     }
-
 }
