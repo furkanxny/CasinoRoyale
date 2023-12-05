@@ -1,5 +1,7 @@
 package app.casinoroyale.Controller;
 
+import app.casinoroyale.Model.DataModels.GameModels.BlackJackModel.role.BlackJackPlayer;
+import app.casinoroyale.Controller.GamesControllers.BlackJackController.PlayroomBetController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -13,7 +15,14 @@ import java.io.File;
 import java.io.IOException;
 
 public class HomeController {
+
+
+
+    private final BlackJackPlayer blackJackPlayer = new BlackJackPlayer();
+    private static Stage primaryStage;
+
     private Stage stage = new Stage();
+
     @FXML
     private ImageView slotsImageView;
     @FXML
@@ -25,16 +34,20 @@ public class HomeController {
     @FXML
     private ImageView casionoImageView;
 
+
     @FXML
     public void initialize() {
         initializeImages();
     }
 
+
     public HomeController(){
+        this.stage.show();
     }
 
 
     public void initializeImages(){
+
         File roulette = new File("src/main/resources/app/Assets/HomePage/Games/roulette.png");
         File slots = new File("src/main/resources/app/Assets/HomePage/Games/slots.png");
         File horseRace = new File("src/main/resources/app/Assets/HomePage/Games/horseracing.png");
@@ -52,17 +65,12 @@ public class HomeController {
         horseraceImageView.setImage(horseRaceImage);
         blackjackImageView.setImage(blackJackImage);
         casionoImageView.setImage(casinoImage);
-
     }
-
-
-
-
-
 
     javafx.geometry.Rectangle2D screenSize = Screen.getPrimary().getBounds();
     double screenWidth = screenSize.getWidth();
     double screenHeight = screenSize.getHeight();
+
 
     FXMLLoader homeFXML = new FXMLLoader(getClass().getResource("/app/casinoroyale/View/Dashboards/HomePage.fxml"));
 
@@ -70,28 +78,35 @@ public class HomeController {
         Scene scene = new Scene(homeFXML.load(), screenWidth * 0.8, screenHeight * 0.8);
         stage.setTitle("Casino Royale");
         stage.setScene(scene);
-        stage.show();
+
     }
+
     public void playBlackJack(ActionEvent actionEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/app/casinoroyale/View/Games/BlackJack.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), screenWidth * 0.8, screenHeight * 0.8);
-        stage.setTitle("Black Jack");
-        stage.setScene(scene);
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/app/casinoroyale/View/Games/Playroom-bet-view.fxml"));
+        Scene betViewScene = new Scene(fxmlLoader.load());
+        PlayroomBetController betController = fxmlLoader.getController();
+        betController.loadContents(blackJackPlayer);
+
+        primaryStage = stage;
+        stage.setTitle("Blackjack Game");
+        stage.setScene(betViewScene);
+
         stage.show();
+
     }
+
     public void playRoulette(ActionEvent actionEvent) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/app/casinoroyale/View/Games/Roulette.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), screenWidth * 0.8, screenHeight * 0.8);
         stage.setTitle("Roulette");
         stage.setScene(scene);
-        stage.show();
     }
+
     public void playHorseRacing(ActionEvent actionEvent) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/app/casinoroyale/View/Games/HorseRacing.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), screenWidth * 0.8, screenHeight * 0.8);
         stage.setTitle("Horse Racing");
         stage.setScene(scene);
-        stage.show();
     }
 
     public void playSlots(ActionEvent actionEvent) throws IOException {
@@ -99,10 +114,13 @@ public class HomeController {
         Scene scene = new Scene(fxmlLoader.load(), screenWidth * 0.8, screenHeight * 0.8);
         stage.setTitle("Slots");
         stage.setScene(scene);
-        stage.show();
     }
+
+    public static Stage getPrimaryStage() {
+        return primaryStage;
+    }
+
     public void setStage(Stage stage) {
         this.stage = stage;
     }
-
 }

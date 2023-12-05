@@ -58,12 +58,12 @@ public class SlotGame {
             balanceAmount += multiplier * iconValue;
             winAmount = multiplier * iconValue;
         }
-       else if (freq == 6) {
+        else if (freq == 6) {
             iconValue =25;
             balanceAmount += multiplier * iconValue;
             winAmount = multiplier * iconValue;
         }
-       else if (freq == 7) {
+        else if (freq == 7) {
             iconValue =35;
             balanceAmount += multiplier * iconValue;
             winAmount = multiplier * iconValue;

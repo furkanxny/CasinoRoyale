@@ -9,12 +9,21 @@ public class LoginController {
     @javafx.fxml.FXML
     private TextField passwordTF;
 
-    private String email;
-    private String password;
-
     public void signInButtonHandler(ActionEvent event) {
+//        String email = emailTF.getText();
+//        String password = passwordTF.getText();
+//
+//        FirebaseAuth.getInstance().signInWithEmailAndPassword(email, password)
+//                .addOnCompleteListener(task -> {
+//                    if (task.isSuccessful()) {
+//                        //Switch to HomePage.fxml.
+//                    } else {
+//
+//                    }
+//                });
     }
 
     public void registerButtonHandler(ActionEvent event) {
+        //switch to RegisterPage.fxml if user doesn't have an account yet.
     }
 }
