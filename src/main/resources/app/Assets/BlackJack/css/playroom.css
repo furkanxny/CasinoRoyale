@@ -1,0 +1,71 @@
+.root {
+    -fx-background-color: #0d8040ff;
+    -fx-background-image: url("../../../img/woodframe.png")
+}
+
+.balance-text {
+    -fx-font-size: 14pt;
+    -fx-font-family: "Roboto Slab";
+    -fx-font-weight: bold;
+    -fx-fill: #efefefef;
+}
+
+.point-text {
+    -fx-font-size: 12pt;
+    -fx-font-family: "Roboto Slab";
+    -fx-fill: #111111ff;
+}
+
+.win-banner-text {
+    -fx-font-size: 12pt;
+    -fx-font-family: "Roboto Slab";
+    -fx-fill: #111111ff;
+}
+
+.lose-banner-text {
+    -fx-font-size: 12pt;
+    -fx-font-family: "Roboto Slab";
+    -fx-fill: #efefefef;
+}
+
+.button {
+    -fx-pref-width: 100pt;
+
+    -fx-border-width: 2;
+    -fx-border-color: cyan;
+    -fx-background-color: transparent;
+
+    -fx-font-family: "Roboto Slab";
+    -fx-font-size: 12pt;
+    -fx-text-fill: cyan;
+}
+
+.chip-button {
+    -fx-pref-width: 50pt;
+
+    -fx-border-width: 2;
+    -fx-border-color: cyan;
+    -fx-background-color: transparent;
+
+    -fx-font-family: "Roboto Slab";
+    -fx-font-size: 12pt;
+    -fx-text-fill: cyan;
+}
+
+.button:hover {
+    -fx-background-color: #00484848;
+}
+
+.button:pressed {
+    -fx-background-color: #efefef22;
+}
+
+.button:disabled {
+    -fx-opacity: 0.4;
+    -fx-background-color: #1d1d1d1d;
+}
+.table {
+  -fx-background-image: url("../../../../Assets/BlackJack/images/greenfelt.jpg");
+  -fx-background-size: cover;
+}
+
