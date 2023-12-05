@@ -6,6 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -31,7 +32,11 @@ public class CSRApplication extends Application {
         controller.setStage(primaryStage);
 
 
-        Scene scene = new Scene(root, 3200, 2400);
+        javafx.geometry.Rectangle2D screenSize = Screen.getPrimary().getBounds();
+        double screenWidth = screenSize.getWidth();
+        double screenHeight = screenSize.getHeight();
+
+        Scene scene = new Scene(root, screenWidth * 0.8, screenHeight * 0.8);
         primaryStage.setTitle("Casino Royale");
         primaryStage.setScene(scene);
         primaryStage.show();

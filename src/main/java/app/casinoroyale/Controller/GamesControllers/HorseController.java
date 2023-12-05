@@ -35,7 +35,8 @@ public class HorseController {
     @FXML
     private Label balanceLabel;
 
-   private app.casinoroyale.Controller.HomeController HomeController;
+   private final app.casinoroyale.Controller.HomeController HomeController = new HomeController();
+
 
 
 
@@ -53,10 +54,13 @@ public class HorseController {
     private void homeDash(ActionEvent event) throws IOException {
         HomeController.homeDash(event);
     }
+
+
 //    @FXML
 //    private void launchBank(ActionEvent event) throws IOException {
 //        HomeController.launchBank(event);
 //    }
+
 
 
     private List<Horse> horses = new ArrayList<>();
