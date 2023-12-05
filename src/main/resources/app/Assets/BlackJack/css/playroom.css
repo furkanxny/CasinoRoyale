@@ -1,6 +1,5 @@
 .root {
     -fx-background-color: #0d8040ff;
-    -fx-background-image: url("../../../img/woodframe.png")
 }
 
 .balance-text {
@@ -65,7 +64,6 @@
     -fx-background-color: #1d1d1d1d;
 }
 .table {
-  -fx-background-image: url("../../../../Assets/BlackJack/images/greenfelt.jpg");
   -fx-background-size: cover;
 }
 
