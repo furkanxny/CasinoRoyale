@@ -8,6 +8,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="42436b1b-9b1f-4ddc-8c1d-3a6bc1aed41d" name="Changes" comment="Second push test.">
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_11_14_23,_11_38_AM_[Changes]/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_11_14_23,_11_38_AM_[Changes]1/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_11_14_23__11_38_AM__Changes_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/$1 png.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/1dollar.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/Sping button for Slots machine game.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/SpinnButton.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/info-button png.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/infoButton.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/spin.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/icons/10.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/icons/7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/icons/8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/icons/9.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/node_modules/.package-lock.json" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/node_modules/@firebase/analytics-compat/CHANGELOG.md" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/node_modules/@firebase/analytics-compat/README.md" afterDir="false" />
@@ -9108,13 +9122,71 @@
       <change afterPath="$PROJECT_DIR$/node_modules/wrap-ansi/readme.md" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/app/casinoroyale/Controller/LoginController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/app/casinoroyale/Controller/RegisterController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/app/casinoroyale/Model/DataModels/GameModels/SlotsModel/Bet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/app/casinoroyale/Model/DataModels/GameModels/SlotsModel/SlotGame.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/app/casinoroyale/Model/DataModels/GameModels/SlotsModel/SlotGameView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/app/Assets/HomePage/CSS/background.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/app/Assets/HomePage/Casino/CasinoPng.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/app/Assets/HomePage/Casino/casino.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/app/Assets/HomePage/Casino/regis.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/app/Assets/HomePage/CasinoPng.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/app/Assets/HomePage/Games/bj.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/app/Assets/HomePage/Games/bj1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/app/Assets/HomePage/Games/blackjack.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/app/Assets/HomePage/Games/blackjack.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/app/Assets/HomePage/Games/blackjack1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/app/Assets/HomePage/Games/horseracing.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/app/Assets/HomePage/Games/horseracing1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/app/Assets/HomePage/Games/roulette.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/app/Assets/HomePage/Games/slotButton.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/app/Assets/HomePage/Games/slotButton1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/app/Assets/HomePage/Games/slots.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/app/Assets/HomePage/Games/slots1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/app/Assets/HomePage/SlotsPNG.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/app/Assets/HomePage/blackjack.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/app/Assets/HomePage/blackjackPng.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/app/Assets/HomePage/horseracing.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/app/Assets/HomePage/horseracingPNG.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/app/Assets/HomePage/r.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/app/Assets/HomePage/roulette.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/app/Assets/HomePage/roulettePng.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/app/Assets/HomePage/slots.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/app/Assets/Register/register.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/app/Assets/Register/registeration.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/app/Assets/Slots/css/1dollar.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/app/Assets/Slots/css/background.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/app/Assets/Slots/css/exitButton.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/app/Assets/Slots/css/infoButton.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/app/Assets/Slots/css/slotsTitle.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/app/Assets/Slots/css/slotsW.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/app/Assets/Slots/css/spin.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/app/Assets/Slots/css/spinButton.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/app/Assets/Slots/icons/10.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/app/Assets/Slots/icons/11.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/app/Assets/Slots/icons/12.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/app/Assets/Slots/icons/13.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/app/Assets/Slots/icons/7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/app/Assets/Slots/icons/8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/app/Assets/Slots/icons/9.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/app/casinoroyale/View/Dashboards/LoginPage.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/app/casinoroyale/View/Dashboards/RegisterPage.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/app/casinoroyale/CSRApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/casinoroyale/CSRApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/casinoroyale/Controller/BankController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/casinoroyale/Controller/BankController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/casinoroyale/Controller/GamesControllers/HorseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/casinoroyale/Controller/GamesControllers/HorseController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/casinoroyale/Controller/GamesControllers/RouletteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/casinoroyale/Controller/GamesControllers/RouletteController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/app/casinoroyale/Controller/GamesControllers/SlotsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/casinoroyale/Controller/GamesControllers/SlotsController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/app/casinoroyale/Controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/casinoroyale/Controller/HomeController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/app/casinoroyale/Model/DataModels/GameModels/RouletteModel/Roulette.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/casinoroyale/Model/DataModels/GameModels/RouletteModel/Roulette.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/app/Assets/Slots/icons/3.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/app/Assets/Slots/icons/3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/app/Assets/Slots/icons/5.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/app/Assets/Slots/icons/5.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/app/Assets/Slots/icons/6.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/app/Assets/Slots/icons/6.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/app/casinoroyale/View/Dashboards/HomePage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/app/casinoroyale/View/Dashboards/HomePage.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/app/casinoroyale/View/Dashboards/LoginPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/app/casinoroyale/View/Dashboards/LoginPage.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/app/casinoroyale/View/Games/Roulette.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/app/casinoroyale/View/Games/Roulette.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/app/casinoroyale/View/Games/Slots.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/app/casinoroyale/View/Games/Slots.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

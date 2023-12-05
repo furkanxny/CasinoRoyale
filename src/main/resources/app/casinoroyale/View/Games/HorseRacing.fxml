@@ -48,35 +48,7 @@
 
 <VBox prefHeight="754.0" prefWidth="1102.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.casinoroyale.Controller.GamesControllers.HorseController">
     <children>
-        <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="828.0" prefWidth="1356.0" VBox.vgrow="ALWAYS">
-            <children>
-                <MenuBar VBox.vgrow="NEVER">
-                    <menus>
-                        <Menu mnemonicParsing="false" text="Casino Royale">
-                            <MenuItem mnemonicParsing="false" text="Home" />
-                        </Menu>
-                        <Menu mnemonicParsing="false" text="Games">
-                            <items>
-                                <MenuItem mnemonicParsing="false" text="Black Jack" />
-                                <MenuItem mnemonicParsing="false" text="Roulette" />
-                                <MenuItem mnemonicParsing="false" text="Horse Racing" />
-                                <MenuItem mnemonicParsing="false" text="Slots" />
-                            </items>
-                        </Menu>
-                        <Menu mnemonicParsing="false" text="Sports">
-                            <items>
-                                <MenuItem mnemonicParsing="false" text="FootBall" />
-                            </items>
-                        </Menu>
-                        <Menu mnemonicParsing="false" text="Bank">
-                            <items>
-                                <MenuItem mnemonicParsing="false" text="Deposit" />
-                                <MenuItem mnemonicParsing="false" text="Withdrawl" />
-                                <MenuItem mnemonicParsing="false" text="P/L" />
-                            </items>
-                        </Menu>
-                    </menus>
-                </MenuBar>
+        <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="576.0" prefWidth="1075.0" VBox.vgrow="ALWAYS">
             <ImageView fx:id="background" fitHeight="754.0" fitWidth="1238.0" layoutX="-8.0">
                <image>
                   <Image url="@../../../Assets/HorseRacing/images/background.png" />
@@ -125,8 +97,37 @@
                   <ImageView fx:id="finishLine" fitHeight="381.0" fitWidth="28.0" layoutX="908.0" layoutY="-69.0" pickOnBounds="true" preserveRatio="true" />
                </children>
             </Pane>
-            <Label fx:id="balanceLabel" layoutX="545.0" layoutY="33.0" prefHeight="51.0" prefWidth="101.0" text="Balance: $1000.0" />
-            </children>
+            <Label fx:id="balanceLabel" layoutX="545.0" layoutY="33.0" prefHeight="51.0" prefWidth="101.0" text="Balance: " />
+            <Button fx:id="showInstructions" layoutX="661.0" layoutY="33.0" mnemonicParsing="false" onAction="#showInstructions" prefHeight="34.0" prefWidth="150.0" text="How To Play" />
+
+
+                <MenuBar prefHeight="28.0" prefWidth="1102.0">
+                    <menus>
+                        <Menu mnemonicParsing="false" onAction="#homeDash" text="Casino Royale">
+                            <MenuItem mnemonicParsing="false" onAction="#homeDash" text="Home" />
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Games">
+                            <items>
+                                <MenuItem mnemonicParsing="false" onAction="#playBlackJack" text="Black Jack" />
+                                <MenuItem mnemonicParsing="false" onAction="#playRoulette" text="Roulette" />
+                                <MenuItem mnemonicParsing="false" onAction="#playSlots" text="Slots" />
+                            </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Sports">
+                            <items>
+                                <MenuItem mnemonicParsing="false" text="FootBall" />
+                            </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Bank">
+                            <items>
+                                <MenuItem mnemonicParsing="false" text="Deposit" />
+                                <MenuItem mnemonicParsing="false" text="Withdrawl" />
+                                <MenuItem mnemonicParsing="false" text="P/L" />
+                            </items>
+                        </Menu>
+                    </menus>
+                </MenuBar>
+
         </AnchorPane>
     </children>
 </VBox>

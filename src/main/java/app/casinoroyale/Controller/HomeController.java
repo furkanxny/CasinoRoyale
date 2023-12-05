@@ -15,6 +15,7 @@ import java.io.IOException;
 
 public class HomeController {
 
+
     private final BlackJackPlayer blackJackPlayer;
     private static Stage primaryStage;
     private Stage stage;
@@ -22,6 +23,9 @@ public class HomeController {
     public HomeController() {
         this.blackJackPlayer = new BlackJackPlayer();
     }
+
+
+    private Stage stage = new Stage();
 
     @FXML
     private ImageView slotsImageView;
@@ -40,7 +44,14 @@ public class HomeController {
         initializeImages();
     }
 
-    public void initializeImages() {
+
+    public HomeController(){
+        this.stage.show();
+    }
+
+
+    public void initializeImages(){
+
         File roulette = new File("src/main/resources/app/Assets/HomePage/Games/roulette.png");
         File slots = new File("src/main/resources/app/Assets/HomePage/Games/slots.png");
         File horseRace = new File("src/main/resources/app/Assets/HomePage/Games/horseracing.png");
@@ -66,10 +77,11 @@ public class HomeController {
         Scene scene = new Scene(homeFXML.load(), 3200, 2400);
         stage.setTitle("Casino Royale");
         stage.setScene(scene);
-        stage.show();
+
     }
 
     public void playBlackJack(ActionEvent actionEvent) throws IOException {
+
 
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/app/casinoroyale/View/Games/Playroom-bet-view.fxml"));
         Scene betViewScene = new Scene(fxmlLoader.load());
@@ -80,6 +92,7 @@ public class HomeController {
         stage.setTitle("Blackjack Game");
         stage.setScene(betViewScene);
         stage.show();
+
     }
 
     public void playRoulette(ActionEvent actionEvent) throws IOException {
@@ -87,7 +100,6 @@ public class HomeController {
         Scene scene = new Scene(fxmlLoader.load(), 3200, 2400);
         stage.setTitle("Roulette");
         stage.setScene(scene);
-        stage.show();
     }
 
     public void playHorseRacing(ActionEvent actionEvent) throws IOException {
@@ -95,7 +107,6 @@ public class HomeController {
         Scene scene = new Scene(fxmlLoader.load(), 3200, 2400);
         stage.setTitle("Horse Racing");
         stage.setScene(scene);
-        stage.show();
     }
 
     public void playSlots(ActionEvent actionEvent) throws IOException {
@@ -103,7 +114,6 @@ public class HomeController {
         Scene scene = new Scene(fxmlLoader.load(), 2600, 2400);
         stage.setTitle("Slots");
         stage.setScene(scene);
-        stage.show();
     }
 
     public static Stage getPrimaryStage() {

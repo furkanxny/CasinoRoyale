@@ -48,12 +48,12 @@
 
         <Pane fx:id="draggablePane" layoutX="17.0" layoutY="21.0" prefHeight="153.0" prefWidth="1419.0">
             <children>
+            <ImageView fx:id="infoButtonImg" fitHeight="84.0" fitWidth="80.0" layoutX="1139.0" layoutY="48.0" onMouseClicked="#infoButtonDisplay" onMouseEntered="#highlightRoundButton" onMouseExited="#unHighlightRoundButton" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Assets/Roulette/images/btn_toolbar.png" />
+               </image>
+            </ImageView>
                 <ImageView fx:id="goBack" fitHeight="84.0" fitWidth="80.0" layoutX="1301.0" layoutY="48.0" onMouseClicked="#goBack" onMouseEntered="#highlightRoundButton" onMouseExited="#unHighlightRoundButton" pickOnBounds="true" preserveRatio="true">
-                    <image>
-                        <Image url="@../../../Assets/Roulette/images/btn_toolbar.png" />
-                    </image>
-                </ImageView>
-                <ImageView fx:id="minimize" fitHeight="84.0" fitWidth="80.0" layoutX="1210.0" layoutY="48.0" onMouseClicked="#minimize" onMouseEntered="#highlightRoundButton" onMouseExited="#unHighlightRoundButton" pickOnBounds="true" preserveRatio="true">
                     <image>
                         <Image url="@../../../Assets/Roulette/images/btn_toolbar.png" />
                     </image>
@@ -61,11 +61,6 @@
                 <Label disable="true" layoutX="1325.0" layoutY="23.0" prefHeight="119.0" prefWidth="44.0" style="-fx-opacity: 1;" text="x" textFill="#ffd454">
                     <font>
                         <Font size="56.0" />
-                    </font>
-                </Label>
-                <Label disable="true" layoutX="1234.0" layoutY="44.0" onMouseClicked="#minimize" prefHeight="38.0" prefWidth="29.0" style="-fx-opacity: 1;" text="-" textFill="#ffd454">
-                    <font>
-                        <Font size="68.0" />
                     </font>
                 </Label>
                 <Label layoutX="33.0" layoutY="40.0" text="Balance" textFill="#ffd353">
@@ -83,12 +78,7 @@
                         <Font size="26.0" />
                     </font>
                 </Label>
-                <ImageView fx:id="nextImg" fitHeight="84.0" fitWidth="80.0" layoutX="1123.0" layoutY="48.0" onMouseClicked="#nextImage" onMouseEntered="#highlightRoundButton" onMouseExited="#unHighlightRoundButton" pickOnBounds="true" preserveRatio="true">
-                    <image>
-                        <Image url="@../../../Assets/Roulette/images/btn_toolbar.png" />
-                    </image>
-                </ImageView>
-                <Label disable="true" layoutX="1148.0" layoutY="52.0" onMouseClicked="#minimize" prefHeight="38.0" prefWidth="29.0" style="-fx-opacity: 1;" text="?" textFill="#ffd454">
+                <Label disable="true" layoutX="1164.0" layoutY="50.0" onMouseClicked="#minimize" prefHeight="38.0" prefWidth="29.0" style="-fx-opacity: 1;" text="?" textFill="#ffd454">
                     <font>
                         <Font size="57.0" />
                     </font>
@@ -442,10 +432,6 @@
         <Pane fx:id="paneStreet10" layoutX="1246.0" layoutY="458.0" prefHeight="61.0" prefWidth="56.0" translateX="1.0" />
         <Pane fx:id="paneStreet11" layoutX="1302.0" layoutY="458.0" prefHeight="61.0" prefWidth="56.0" />
         <Pane fx:id="paneStreet12" layoutX="1358.0" layoutY="458.0" prefHeight="61.0" prefWidth="56.0" translateX="1.0" />
-        <ImageView fx:id="imgViewTutorial" fitHeight="866.0" fitWidth="1558.0" onMouseClicked="#nextImage" pickOnBounds="true" preserveRatio="true" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0">
-            <image>
-                <Image url="@../../../Assets/Roulette/images/roulette/tutorial/1.png" />
-            </image></ImageView>
         <Label layoutX="40.0" layoutY="192.0" text="Winnings" textFill="#ffd353">
             <font>
                 <Font size="21.0" />
