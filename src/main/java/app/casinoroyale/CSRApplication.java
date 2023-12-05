@@ -17,21 +17,11 @@ public class CSRApplication extends Application {
     @Override
     public void start(Stage primaryStage) throws IOException {
 
-        // Print the URL to the console before loading
         URL resource = getClass().getResource("/app/casinoroyale/View/Dashboards/HomePage.fxml");
-
-        System.out.println(resource);
-
-        //print url of pictures, make sure they load
-        URL resource3 = getClass().getResource("/app/Assets/HorseRacing/images/background.png");
-        System.out.println(resource3);
-
-        URL resource2 = getClass().getResource("/app/Assets/Roulette/images/background.png");
-        System.out.println(resource2); // Print the URL to the console before loading
 
 
         if (resource == null) {
-            throw new IOException("Cannot load resource: /app/casinoroyale/View/Dashboards/HomePage.fxml");
+            throw new IOException("Cannot load resource: /app/casinoroyale/View/Dashboards/LoginPage.fxml");
         }
 
         FXMLLoader fxmlLoader = new FXMLLoader(resource);

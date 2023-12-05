@@ -54,30 +54,30 @@ public class BankController {
         });
     }
 
-    @FXML
-    private void showWithdrawDialog(ActionEvent event) {
-        TextInputDialog withdrawDialog = new TextInputDialog();
-        withdrawDialog.setTitle("Withdraw Money");
-        withdrawDialog.setHeaderText("Enter the amount to withdraw:");
-        Optional<String> withdrawResult = withdrawDialog.showAndWait();
-        withdrawResult.ifPresent(amount -> {
-            try {
-                double amountDouble = Double.parseDouble(amount);
-                if (Player.getInstance().canWithdraw(amountDouble)) {
-                    Player.getInstance().withdraw(amountDouble);
-                    Alert withdrawAlert = new Alert(Alert.AlertType.INFORMATION);
-                    withdrawAlert.setTitle("Withdrawal Successful");
-                    withdrawAlert.setHeaderText(null);
-                    withdrawAlert.setContentText("Successfully withdrawn: " + amountDouble);
-                    withdrawAlert.showAndWait();
-                } else {
-                    showErrorMessage("Insufficient funds or invalid amount");
-                }
-            } catch (NumberFormatException e) {
-                showErrorMessage("Invalid input. Please enter a valid number.");
-            }
-        });
-    }
+//    @FXML
+//    private void showWithdrawDialog(ActionEvent event) {
+//        TextInputDialog withdrawDialog = new TextInputDialog();
+//        withdrawDialog.setTitle("Withdraw Money");
+//        withdrawDialog.setHeaderText("Enter the amount to withdraw:");
+//        Optional<String> withdrawResult = withdrawDialog.showAndWait();
+//        withdrawResult.ifPresent(amount -> {
+//            try {
+//                double amountDouble = Double.parseDouble(amount);
+//                if (Player.getInstance().canWithdraw(amountDouble)) {
+//                    Player.getInstance().withdraw(amountDouble);
+//                    Alert withdrawAlert = new Alert(Alert.AlertType.INFORMATION);
+//                    withdrawAlert.setTitle("Withdrawal Successful");
+//                    withdrawAlert.setHeaderText(null);
+//                    withdrawAlert.setContentText("Successfully withdrawn: " + amountDouble);
+//                    withdrawAlert.showAndWait();
+//                } else {
+//                    showErrorMessage("Insufficient funds or invalid amount");
+//                }
+//            } catch (NumberFormatException e) {
+//                showErrorMessage("Invalid input. Please enter a valid number.");
+//            }
+//        });
+//    }
 
     private void showErrorMessage(String message) {
         Alert errorAlert = new Alert(Alert.AlertType.ERROR);

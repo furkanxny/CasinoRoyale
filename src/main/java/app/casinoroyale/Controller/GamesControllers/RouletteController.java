@@ -1,7 +1,9 @@
 package app.casinoroyale.Controller.GamesControllers;
 import app.casinoroyale.CSRApplication;
+import app.casinoroyale.Controller.HomeController;
 import app.casinoroyale.Model.DataModels.GameModels.RouletteModel.Bet;
 import app.casinoroyale.Model.DataModels.GameModels.RouletteModel.Roulette;
+import app.casinoroyale.Model.DataModels.GameModels.SlotsModel.SlotGameView;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -10,6 +12,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.Bounds;
 import javafx.scene.Node;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -22,6 +25,8 @@ import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 import app.casinoroyale.Model.DataModels.UserModels.Player;
+
+import java.io.File;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
@@ -36,25 +41,30 @@ import javafx.animation.Timeline;
 
 import java.io.IOException;
 
+import static app.casinoroyale.Model.DataModels.GameModels.RouletteModel.Roulette.infoButton;
+
 public class RouletteController implements Initializable{
 
-    private app.casinoroyale.Controller.HomeController HomeController;
+    private app.casinoroyale.Controller.HomeController homeController;
 
+    private Stage stage;
     public RouletteController(){
+       this.homeController = new HomeController();
+       this.stage = new Stage();
     }
     @FXML
     private void playBlackJack(ActionEvent event) throws IOException {
-        HomeController.playBlackJack(event);
+        homeController.playBlackJack(event);
     } @FXML
     private void playHorseRacing(ActionEvent event) throws IOException {
-        HomeController.playHorseRacing(event);
+        homeController.playHorseRacing(event);
     }@FXML
     private void playSlots(ActionEvent event) throws IOException {
-        HomeController.playSlots(event);
+        homeController.playSlots(event);
     }
     @FXML
     private void homeDash(ActionEvent event) throws IOException {
-        HomeController.homeDash(event);
+        homeController.homeDash(event);
     }
 
 
@@ -73,7 +83,8 @@ public class RouletteController implements Initializable{
     //Label that hovers over a placed chip.
     private final Label lblChipHover = new Label();
 
-    private ImageView selectedImageView;
+    @FXML
+    private ImageView selectedImageView, infoButtonImage;
     @FXML
     private ImageView imgViewTutorial, goBack, minimize, nextImg;
 
@@ -82,7 +93,6 @@ public class RouletteController implements Initializable{
     private double chipXOrigin, chipYOrigin;
     private int index;
 
-    private Stage stage;
 
     private final boolean infoOpened = false;
 
@@ -588,6 +598,12 @@ public class RouletteController implements Initializable{
     public void goBack(MouseEvent event) {
         Platform.exit();
     }
+    @FXML
+    public void infoButtonDisplay(MouseEvent event) {
+        infoButton();
+    }
+
+
 
     /**
      * Opens the step by step tutorial.
