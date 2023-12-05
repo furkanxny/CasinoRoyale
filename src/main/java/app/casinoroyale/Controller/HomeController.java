@@ -16,14 +16,8 @@ import java.io.IOException;
 public class HomeController {
 
 
-    private final BlackJackPlayer blackJackPlayer;
+    private final BlackJackPlayer blackJackPlayer = new BlackJackPlayer();
     private static Stage primaryStage;
-    private Stage stage;
-
-    public HomeController() {
-        this.blackJackPlayer = new BlackJackPlayer();
-    }
-
 
     private Stage stage = new Stage();
 
