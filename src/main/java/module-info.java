@@ -4,7 +4,6 @@ module app.casinoroyale {
     requires javafx.graphics; // Include if you are using classes from javafx.graphics
     requires javafx.base; // Include if you are using classes from javafx.base
 
-    requires org.kordamp.bootstrapfx.core;
     requires google.cloud.firestore;
     requires firebase.admin;
     requires com.google.auth.oauth2;
@@ -26,4 +25,5 @@ module app.casinoroyale {
 
     exports app.casinoroyale.Controller.GamesControllers;
     opens app.casinoroyale.Controller.GamesControllers to javafx.fxml, javafx.base;
+    opens app.casinoroyale.Controller.GamesControllers.BlackJackController to javafx.fxml, javafx.base;
 }
