@@ -15,8 +15,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
-import com.google.cloud.Service;
-import java.io.IOException;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -93,15 +92,22 @@ public class PrimaryController {
             {
                 System.out.println("Outing data from firabase database....");
                 listOfUsers.clear();
-                for (QueryDocumentSnapshot document : documents)
-                {
-                    outputTextArea.setText(outputTextArea.getText()+ document.getData().get("Name")+ " , Age: "+
-                            document.getData().get("Age")+ " \n ");
-                    System.out.println(document.getId() + " => " + document.getData().get("Name"));
-                    person  = new Person(String.valueOf(document.getData().get("Name")),
-                            Integer.parseInt(document.getData().get("Age").toString()));
+                StringBuilder outputText = new StringBuilder();
+
+                for (QueryDocumentSnapshot document : documents) {
+                    String name = String.valueOf(document.getData().get("Name")); // Ensure field name matches
+                    String email = String.valueOf(document.getData().get("email")); // Ensure field name matches
+                    String password = String.valueOf(document.getData().get("password")); // Ensure field name matches
+                    int age = document.getData().get("Age") != null ? ((Long) document.getData().get("Age")).intValue() : 0; // Handle null and cast to int
+                    double balance = document.getData().get("balance") != null ? Double.parseDouble(document.getData().get("balance").toString()) : 0.0; // Handle null and parse to double
+
+                    outputText.append(name).append(" , Age: ").append(age).append("\n");
+                    person = new Person();
                     listOfUsers.add(person);
                 }
+
+                outputTextArea.setText(outputText.toString());
+
             }
             else
             {
