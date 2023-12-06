@@ -1,8 +1,12 @@
 package app.casinoroyale;
 
+import app.casinoroyale.Controller.FirebaseControllers.FirestoreContext;
 import app.casinoroyale.Controller.HomeController;
+import com.google.cloud.firestore.Firestore;
+import com.google.firebase.auth.FirebaseAuth;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
@@ -13,7 +17,13 @@ import java.io.IOException;
 import java.net.URL;
 
 public class CSRApplication extends Application {
-    private static Stage stage;
+    public static Scene scene;
+    public static Stage stage;
+
+    public static Firestore fstore;
+    public static FirebaseAuth fauth;
+    private final FirestoreContext contxtFirebase = new FirestoreContext();
+
 
     @Override
     public void start(Stage primaryStage) throws IOException {
