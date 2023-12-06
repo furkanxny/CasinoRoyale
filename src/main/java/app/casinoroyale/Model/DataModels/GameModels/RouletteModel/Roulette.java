@@ -108,6 +108,7 @@ public class Roulette  {
                         "    LINE (Six numbers): 5 to 1\n\n" +
                         "    DOZEN/BET COLUMN (12 numbers): 2 to 1\n" +
                         "    EVEN/ODD, RED/BLACK, 1-18/19-36: 1 to 1\n\n" +
+                        "    IF YOU ARE TO PLACE BET ON A WINNING ROLL, YOU WILL RECEIVE YOUR BET + WINNINGS \n\n" +
                         "    ************************** TIPS FOR BEGINNERS **************************\n" +
                         "\n    - Start with outside bets like Red/Black or Even/Odd for better odds.\n" +
                         "    - Manage your bankroll and avoid betting more than you can afford to lose.\n" +

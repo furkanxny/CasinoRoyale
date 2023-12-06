@@ -6,6 +6,7 @@ import java.util.*;
 import app.casinoroyale.Model.DataModels.GameModels.SlotsModel.*;
 import app.casinoroyale.Model.DataModels.GameModels.SlotsModel.SlotGame;
 import app.casinoroyale.Model.DataModels.UserModels.Player;
+import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
@@ -32,11 +33,15 @@ public class SlotsController {
     File[] fileArray = new File[14];
     private HomeController HomeController;
     ArrayList<String> resultArrList = new ArrayList<>();
-    Bet bet1 = new Bet(-3);
+    Bet bet1 = new Bet(-4);
     private int executionCount = 0;
-    private final int totalExecutions = 10;
+    private final int totalExecutions = 5;
+    private int jackpotImagesCounter = 1;
+    private int jackpotSignCounter = 1;
     private Timeline timeline;
     private boolean canSpin = true;
+
+    private Image[] flashImages = new Image[2];
 
 
     @Deprecated
@@ -63,18 +68,40 @@ public class SlotsController {
                 this.i21, this.i22, this.i23, this.i24, this.i25, this.i26, this.i27, this.i28, this.i29, this.i30, this.i31,
                 this.i32, this.i33, this.i34, this.i35};
         initializeImages();
-        initailizeBetHistoryTF();
+        initializeBetHistoryTF();
         InitializeSetImages();
         InitializeButtonImages();
         setTextLabelInitialiaze();
-        initializeSlotsW();
-        initializeJackpotImages();
+        //initializeSlotsW();
+        //initializeJackpotImages();
         initializeWelcomeLabel();
+        setUpTimeline();
+        setUpTimeline2();
+        initialJackpotImageSetUp();
     }
 
-    public void initailizeBetHistoryTF() {  //Initialize the betHistoryTF to beginning prompt.
+    public void initialJackpotImageSetUp(){
+        if(jackpotImagesCounter == 1)
+        for (int i = 0; i < 35; i++) {
+            jackpotArray[i].setImage(pngsArry[7]);
+        }
+    }
+
+    public void setUpTimeline2(){
+        Timeline timeline1 = new Timeline(new KeyFrame(Duration.millis(5000), e -> initializeJackpotImages()));
+        timeline1.setCycleCount(Timeline.INDEFINITE);
+        timeline1.play();
+    }
+
+    public void setUpTimeline(){
+        Timeline tLine = new Timeline(new KeyFrame(Duration.millis(400  ), e -> initializeSlotsW()));
+        tLine.setCycleCount(Timeline.INDEFINITE);
+        tLine.play();
+    }
+
+    public void initializeBetHistoryTF() {  //Initialize the betHistoryTF to beginning prompt.
         SlotGame.displayBalanceAmount(textLabel);
-        lastBetLabel.setText("$3");
+        lastBetLabel.setText("$4");
     }
 
     public void setTextLabelInitialiaze() {
@@ -86,14 +113,32 @@ public class SlotsController {
     }
 
     private void initializeSlotsW() {
+
+        File s2File = new File("src/main/resources/app/Assets/Slots/css/casinoPlay.png");
         File sFile = new File("src/main/resources/app/Assets/Slots/css/slotsTitle.png");
         Image sImage = new Image(sFile.toURI().toString());
-        jackpotImageView.setImage(sImage);
+        Image s2Image = new Image(s2File.toURI().toString());
+        flashImages[0] = sImage;
+        if(jackpotSignCounter%2 == 0) {
+            jackpotImageView.setImage(sImage);
+        }
+        else {jackpotImageView.setImage(s2Image);}
+      jackpotSignCounter++;
+
     }
     private void initializeJackpotImages() {
-        for (int i = 0; i < 35; i++) {
-            jackpotArray[i].setImage(pngsArry[7]);
-        }}
+
+        if (jackpotImagesCounter % 2 == 0 ) {
+            for (int i = 0; i < 35; i++) {
+                jackpotArray[i].setImage(pngsArry[7]);
+            }
+        } else {
+            for (int i = 0; i < 35; i++) {
+                jackpotArray[i].setImage(pngsArry[12]);
+            }
+        }
+        jackpotImagesCounter++;
+    }
 
     private void initializeImages() {
         int i;
@@ -143,13 +188,20 @@ public class SlotsController {
     }
 
     public void attrb(){
-        lastBetLabel.setText("$3");
+        lastBetLabel.setText("$4");
         welcomeLabel.setText("");
     }
 
+//
+//    public void blinkJackpotSign(){
+//        flashImages[1] = sImage
+//        jackpotImageView.setImage();
+//    }
+
+
     public void spin() {
         if(!canSpin){
-            System.out.println("Wait 2 sec!");
+            System.out.println("Wait 1.2 sec!");
             return;
         }
 
@@ -179,14 +231,11 @@ public class SlotsController {
         timeline.setCycleCount(totalExecutions);
         timeline.play();
 
-        new Timeline(new KeyFrame(Duration.seconds(2), e -> canSpin = true)).play();
-
+        new Timeline(new KeyFrame(Duration.millis(1200), e -> canSpin = true)).play();
     }
 
     @FXML
-    public void infoButtonHandler() {
-        SlotGameView.infoButton();
-    }
+    public void infoButtonHandler() {SlotGameView.infoButton();}
     @FXML
     void exitButtonHandler() {
         SlotGameView.exitButton();
