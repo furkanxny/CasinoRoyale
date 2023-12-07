@@ -36,4 +36,7 @@ public class LoginController {
             primaryController.readFirebase();
             homeController.registerDash(event);
     }
+
+
+
 }
