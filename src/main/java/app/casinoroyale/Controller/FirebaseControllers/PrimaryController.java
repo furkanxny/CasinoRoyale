@@ -75,11 +75,6 @@ public class PrimaryController {
     }
 
 
-    @FXML
-    void readButtonClicked(ActionEvent event) {
-        readFirebase();
-    }
-
 
     @FXML
     void writeButtonClicked(ActionEvent event) {

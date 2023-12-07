@@ -18,7 +18,7 @@ module app.casinoroyale {
     exports app.casinoroyale;
     exports app.casinoroyale.Controller.FirebaseControllers;
     opens app.casinoroyale to javafx.fxml, javafx.base;
-    opens app.casinoroyale.Controller.FirebaseControllers to javafx.graphics;
+    opens app.casinoroyale.Controller.FirebaseControllers to javafx.graphics, javafx.fxml, javafx.base;
 
     exports app.casinoroyale.Controller;
     opens app.casinoroyale.Controller to javafx.fxml, javafx.base;
