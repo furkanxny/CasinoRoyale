@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "casinoroyale-a9819",
+  "private_key_id": "881ef155333524aa42f2022c0e58c2bc71173be3",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCu3i1oBZwDIFb5\nN7GPCkiwxZemFzeMkAjA4hMeS87jNi+RPHg/YT96iu1S9V9UK4s5HuxrtU+mDHqi\nmRtaq3KkvDt7my0Ck1pRAewcFd9Gtz7sDCnmEeC7yXSc5c0TUi9INYG/WHTEouXn\nPe77Yg3Q4FiPKS3zOlFXtOeE4FLkMDK6ONZ6Wte4MazfvI9xXnFP7f/Fw0oPDkAC\nCR5VRiP+Kn7dpGx0ocLv+ijOhe0IG4dNxc/mbyirgom/RLEeEil4xENzYVwRaVJA\nusasHQ+DrgAXpiI7aq4vas9rkrjfx1fzu6EhYlX+8BzIKVVIRiga4r9+6OUrya/4\nxdN+kzvjAgMBAAECggEASgOaHmw5Y41dorBzBAMrTz7i+BbdmS4htlo6E1ms4Li/\nm26HyvPDZX/GAZX/2mVv0SaIlPIyGysvAQFi9ZaZuKY/WwsMGwn5cU4p/J05WvoW\ntNxVI58viuwy4nHVwjbH8n1LRI0RJ2V3f8/UBiyzglRix317iHaHlWLpl3FHRHN5\nLhaxPK75R38jTnp03wwaH7vvPCHcXZCbukKr+PwviZAzNCi8TJWWZJGtcriMQnk0\nL1rpaoq8eWOQYs9WEBlQiHLRkVZgjr0JozqEjmL9ifNT6NXzwvLzQ6VHLXr/g1Wi\nKxh2B9htQtPNEh7jip0+C3fwMHxV1i5nWfISUInTuQKBgQDzuL2zeg57VYslYRLu\n+Jv800gA5laOyYV+bTXbko2zBZsEkSJyDCgSm94KhobXEJMRFuxtVH6vq6PZ/Sgo\nO2VeO7PIwpo4ET2HO3rRFE/ma4I4ngxfP77b0PppVZ4+JGUaqLKLpwUTREFxYoNq\nt451Qq4Lgy6O/ca/mAKIBzkd7wKBgQC3rW9LBfs4i5YC6oqMyoS9akE1Dg6xn54Z\nkhu2793gx/tnBpAFMZeb6a6EEngMiOlQFabnuGBRPYS5uNRr4AN5l8DcjVuiY6AQ\ndMeK+Pn8Y+eKyMuCUTUGjYBZEOe5pGcIp3BAnsSdK4E8liorVpPdsmnrgnScBOdg\nadS5yrl1TQKBgQCC7eEDNPPor+jjeMXaGTZ7WOmaiiM/6+TKKVNAlPeIj99aUbmm\neP9iF9ft4Z04lg/bo2v5w+WW6+dHKSfUjSwEtp/7nweITUK3jm2JOpc92s2HKujM\nlosqvZZ41eT/zz99VdktCtnAIu/hQKIGx3tBZUPorV1qtcx6iuf5OaAmgwKBgQCB\nEsmQqQVfOQgTyInQYkhhaxejlttQiuBpC7maFnmPCjlqrrvqSm1FzTMr8GaYOGXs\nNyrwzyowLNDmSjJMFEGc4r1Ov69TMDs9FTNcP5Y8fGArsOsCCtr+XdWBwVV1qUgW\nVsOVRXzZDcdlsgi0J8UFF+lC7IvRT8jggb5RSVqGSQKBgDZx6jhS6RBurAdtf4C4\npXot+3LJXZfBk2sVLRi+LEiwRuu2WTniGjYTpD7Ye1GJYDZYXlcCyPaHPkU1ANKk\n/3mk0N+4SThkpsXKpkc6vG1G6MNb4pYRNzE5tMHSCFUgTZF2ENMKlpM6yc5BxXp1\nmqp+AFg2unGz7fiyv2qMqgfZ\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-md5t0@casinoroyale-a9819.iam.gserviceaccount.com",
+  "client_id": "110300577674885099889",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-md5t0%40casinoroyale-a9819.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}

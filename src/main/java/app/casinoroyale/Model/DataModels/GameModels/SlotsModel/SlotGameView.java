@@ -81,9 +81,9 @@ public class SlotGameView {
                         "\n $4           DIOMAND      PUMPKIN    GUN    **************            THIS IS FOR $3 BETS "+
                         "\n                                                                                    **************$6 BETS ARE DOUBLE THE PAYOUT"+
 
-                        "\n $5           DRAGON     HOTDOGS   KING     **************"+
+                        "\n $5           DRAGON     HOTDOGS        **************"+
                         "\n                                                                                    **************$9 BETS ARE TRIPLE THE PAYOUT" +
-                        "\n $20          SEVEN                                                  **************"
+                        "\n $20          SEVEN              KING                                    **************"
         );
         alert.showAndWait();
     }

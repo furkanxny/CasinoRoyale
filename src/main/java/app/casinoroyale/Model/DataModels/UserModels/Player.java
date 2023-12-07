@@ -9,19 +9,23 @@
 
 package app.casinoroyale.Model.DataModels.UserModels;
 
-public class Player {
+import app.casinoroyale.Controller.FirebaseControllers.Person;
+
+public class Player extends Person {
+    public static final Person person = null;
     private static Player instance = null;
    
-    private double accountBalance = 1000;
+    private double accountBalance;
     
     
     /**
      * Private constructor due to the use of the singleton-pattern.
      */
-    private Player() {
-        
+
+    public Player() {
+        super();
     }
-    
+
     /**
      * If there is no player-object, it gets created, otherwise it just returns the aforementioned object.
      * @return Player object

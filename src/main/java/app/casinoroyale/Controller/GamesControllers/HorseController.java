@@ -83,13 +83,13 @@ public class HorseController {
         Alert instructionAlert = new Alert(Alert.AlertType.INFORMATION);
         instructionAlert.setTitle("How to Play");
         instructionAlert.setHeaderText("Instructions for Horse Racing Game");
-        instructionAlert.setContentText(
-                """
-                        1. Select a horse from the dropdown menu.
-                        2. Enter the amount you wish to bet in the text field.
-                        3. Click 'Start Race' to begin the race.
-                        4. Watch the horses race! If your horse wins, you will receive a payout based on the odds."""
-        );
+//        instructionAlert.setContentText(
+//                """
+//                        1. Select a horse from the dropdown menu.
+//                        2. Enter the amount you wish to bet in the text field.
+//                        3. Click 'Start Race' to begin the race.
+//                        4. Watch the horses race! If your horse wins, you will receive a payout based on the odds."""
+//        );
 
         instructionAlert.getDialogPane().setMinHeight(Region.USE_PREF_SIZE);
         instructionAlert.showAndWait();

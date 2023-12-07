@@ -41,18 +41,18 @@ public class PlayroomBetController {
         Alert instructionAlert = new Alert(Alert.AlertType.INFORMATION);
         instructionAlert.setTitle("How to Play");
         instructionAlert.setHeaderText("Instructions for BlackJack Game");
-        instructionAlert.setContentText(
-                """
-             1. Choose a starting bet amount for your blackjack hand.
-             2. Click 'Deal' to receive your initial two cards.
-             3. Decide whether to 'Hit' to get another card or 'Stand' to keep your current hand.
-             4. Utilize 'Double Down' if you're feeling confident.
-             5. Continue making strategic decisions until you decide to 'Stand' or until you exceed a total of 21 points, resulting in a bust.
-             6. If you win the round, your payout will be added to your balance.
-             7. Enjoy the excitement of playing blackjack and aim to beat the dealer!"""
-
-
-        );
+//        instructionAlert.setContentText(
+//                """
+//             1. Choose a starting bet amount for your blackjack hand.
+//             2. Click 'Deal' to receive your initial two cards.
+//             3. Decide whether to 'Hit' to get another card or 'Stand' to keep your current hand.
+//             4. Utilize 'Double Down' if you're feeling confident.
+//             5. Continue making strategic decisions until you decide to 'Stand' or until you exceed a total of 21 points, resulting in a bust.
+//             6. If you win the round, your payout will be added to your balance.
+//             7. Enjoy the excitement of playing blackjack and aim to beat the dealer!"""
+//
+//
+//        );
 
         instructionAlert.getDialogPane().setMinHeight(Region.USE_PREF_SIZE);
         instructionAlert.showAndWait();
