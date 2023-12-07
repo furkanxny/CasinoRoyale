@@ -248,14 +248,14 @@
                     <menus>
                         <Menu mnemonicParsing="false" text="Casino Royale">
                             <items>
-                                <MenuItem fx:id="homeDash" mnemonicParsing="false" text="Home" />
+                                <MenuItem fx:id="homeDash" onAction="#homeDash" mnemonicParsing="false" text="Home" />
                             </items>
                         </Menu>
                         <Menu mnemonicParsing="false" text="Games">
                             <items>
-                                <MenuItem mnemonicParsing="false" text="Black Jack" />
-                                <MenuItem mnemonicParsing="false" text="Roulette" />
-                                <MenuItem mnemonicParsing="false" text="Horse Racing" />
+                                <MenuItem mnemonicParsing="false" onAction="#playBlackJack" text="Black Jack" />
+                                <MenuItem mnemonicParsing="false" onAction="#playRoulatte"  text="Roulette" />
+                                <MenuItem mnemonicParsing="false" onAction="#playHorseRacing" text="Horse Racing" />
                             </items>
                         </Menu>
                         <Menu mnemonicParsing="false" text="Sports">

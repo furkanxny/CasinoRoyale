@@ -31,7 +31,6 @@ public class SlotsController {
     Image[] pngsArry = new Image[15];
     ImageView[] jackpotArray = new ImageView[35];
     File[] fileArray = new File[14];
-    private HomeController HomeController;
     ArrayList<String> resultArrList = new ArrayList<>();
     Bet bet1 = new Bet(-4);
     private int executionCount = 0;
@@ -44,9 +43,6 @@ public class SlotsController {
     private Image[] flashImages = new Image[2];
 
 
-    @Deprecated
-    private void playBlackJack(ActionEvent event) throws IOException {
-        this.HomeController.playBlackJack(event);
     }
 
     @Deprecated
