@@ -1,7 +1,7 @@
 package app.casinoroyale.Controller;
 
-import app.casinoroyale.Model.DataModels.GameModels.BlackJackModel.role.BlackJackPlayer;
 import app.casinoroyale.Controller.GamesControllers.BlackJackController.PlayroomBetController;
+import app.casinoroyale.Model.DataModels.UserModels.Player;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -16,8 +16,14 @@ import java.io.IOException;
 
 public class HomeController {
 
+
+    private final Player player;
+    private static Stage primaryStage;
+
+    private Stage stage = new Stage();
+
     private final BlackJackPlayer blackJackPlayer;
-    private static Stage primaryStage; // Use the primary stage for all scene changes
+
 
     @FXML
     private ImageView slotsImageView;
@@ -36,7 +42,7 @@ public class HomeController {
     }
 
     public HomeController(){
-        this.blackJackPlayer = new BlackJackPlayer();
+        this.player = new Player();
     }
 
     public static void setPrimaryStage(Stage stage) {
@@ -93,7 +99,7 @@ public class HomeController {
 
         // Get the controller and pass the blackJackPlayer to it
         PlayroomBetController betController = fxmlLoader.getController();
-        betController.loadContents(blackJackPlayer);
+        betController.loadContents(Player.getInstance());
 
         // Set the scene on the primary stage
         primaryStage.setTitle("Blackjack Game");
