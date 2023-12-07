@@ -41,9 +41,8 @@ public class SlotsController {
     private boolean canSpin = true;
 
     private Image[] flashImages = new Image[2];
+    private app.casinoroyale.Controller.HomeController HomeController;
 
-
-    }
 
     @Deprecated
     private void playRoulette(ActionEvent event) throws IOException {
