@@ -44,7 +44,7 @@ public class CSRApplication extends Application {
         FirebaseApp.initializeApp(options);
 
 
-        URL resource = getClass().getResource("/app/casinoroyale/View/Dashboards/HomePage.fxml");
+        URL resource = getClass().getResource("/app/casinoroyale/View/Dashboards/LoginPage.fxml");
         if (resource == null) {
             throw new IOException("Cannot load resource: /app/casinoroyale/View/Dashboards/LoginPage.fxml");
         }

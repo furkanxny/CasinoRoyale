@@ -79,6 +79,14 @@ public class HomeController {
         changeScene("/app/casinoroyale/View/Dashboards/HomePage.fxml", "Casino Royale");
     }
 
+    public void loginDash(ActionEvent actionEvent) throws IOException {
+        changeScene("/app/casinoroyale/View/Dashboards/LoginPane.fxml", "Casino Royale");
+    }
+
+    public void registerDash(ActionEvent actionEvent) throws IOException {
+        changeScene("/app/casinoroyale/View/Dashboards/RegisterPane.fxml", "Casino Royale");
+    }
+
     public void playBlackJack(ActionEvent actionEvent) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/app/casinoroyale/View/Games/playroom-bet-view.fxml"));
         Scene blackjackScene = new Scene(fxmlLoader.load(), screenWidth * 0.8, screenHeight * 0.8);

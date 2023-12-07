@@ -1,6 +1,7 @@
 package app.casinoroyale.Controller.FirebaseControllers;
 
 import app.casinoroyale.CSRApplication;
+import app.casinoroyale.Controller.HomeController;
 import com.google.api.core.ApiFuture;
 import com.google.cloud.firestore.DocumentReference;
 import com.google.cloud.firestore.QueryDocumentSnapshot;
@@ -15,6 +16,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 import java.util.HashMap;
 import java.util.List;
@@ -23,11 +25,21 @@ import java.util.UUID;
 import java.util.concurrent.ExecutionException;
 
 public class PrimaryController {
+    private app.casinoroyale.Controller.HomeController homeController;
+    private Stage stage;
     @FXML
     private TextField ageTextField;
 
     @FXML
     private TextField nameTextField;
+    @FXML
+    private TextField emailTextField;
+
+    @FXML
+    private TextField passwordTextField;
+    @FXML
+    private TextField startingBalanceTextField;
+
 
     @FXML
     private TextArea outputTextArea;
@@ -52,8 +64,11 @@ public class PrimaryController {
         return listOfUsers;
     }
 
+    public PrimaryController(){
+        this.homeController = new HomeController();
+        this.stage = new Stage();
+    }
     void initialize() {
-
         AccessDataView accessDataViewModel = new AccessDataView();
         nameTextField.textProperty().bindBidirectional(accessDataViewModel.userNameProperty());
         writeButton.disableProperty().bind(accessDataViewModel.isWritePossibleProperty().not());
@@ -63,11 +78,6 @@ public class PrimaryController {
     @FXML
     void readButtonClicked(ActionEvent event) {
         readFirebase();
-    }
-
-    @FXML
-    void registerButtonClicked(ActionEvent event) {
-        registerUser();
     }
 
 
@@ -101,7 +111,7 @@ public class PrimaryController {
                     int age = document.getData().get("Age") != null ? ((Long) document.getData().get("Age")).intValue() : 0; // Handle null and cast to int
                     double balance = document.getData().get("balance") != null ? Double.parseDouble(document.getData().get("balance").toString()) : 0.0; // Handle null and parse to double
 
-                    outputText.append(name).append(" , Age: ").append(age).append("\n");
+                    outputText.append(name).append(" , Age: ").append(age).append("\n").append(" , email:").append(email).append(" , password:").append(password).append(" , balance:").append(balance);
                     person = new Person();
                     listOfUsers.add(person);
                 }
@@ -123,36 +133,19 @@ public class PrimaryController {
         return key;
     }
 
-    public boolean registerUser() {
-        UserRecord.CreateRequest request = new UserRecord.CreateRequest()
-                .setEmail("user@example.com")
-                .setEmailVerified(false)
-                .setPassword("secretPassword")
-                .setPhoneNumber("+11234567890")
-                .setDisplayName("John Doe")
-                .setDisabled(false);
-
-        UserRecord userRecord;
-        try {
-            userRecord = CSRApplication.fauth.createUser(request);
-            System.out.println("Successfully created new user: " + userRecord.getUid());
-            return true;
-
-        } catch (FirebaseAuthException ex) {
-            // Logger.getLogger(FirestoreContext.class.getName()).log(Level.SEVERE, null, ex);
-            return false;
-        }
-
-    }
-
     public void addData() {
 
-        DocumentReference docRef = CSRApplication.fstore.collection("Persons").document(UUID.randomUUID().toString());
-        // Add document data  with id "alovelace" using a hashmap
+        DocumentReference docRef = CSRApplication.fstore.collection("CasinoPersons").document(UUID.randomUUID().toString());
         Map<String, Object> data = new HashMap<>();
         data.put("Name", nameTextField.getText());
         data.put("Age", Integer.parseInt(ageTextField.getText()));
+        data.put("email", emailTextField.getText());
+        data.put("Password", passwordTextField.getText());
+        data.put("Balance", Double.parseDouble(startingBalanceTextField.getText()));
         //asynchronously write data
         ApiFuture<WriteResult> result = docRef.set(data);
+    }
+
+    public void signInButtonHandler(ActionEvent actionEvent) {
     }
 }
