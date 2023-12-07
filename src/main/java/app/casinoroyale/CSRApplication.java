@@ -2,7 +2,10 @@ package app.casinoroyale;
 
 import app.casinoroyale.Controller.FirebaseControllers.FirestoreContext;
 import app.casinoroyale.Controller.HomeController;
+import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.firestore.Firestore;
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.FirebaseOptions;
 import com.google.firebase.auth.FirebaseAuth;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -13,6 +16,7 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.net.URL;
 
@@ -21,16 +25,16 @@ public class CSRApplication extends Application {
     public static Stage stage;
 
     public static Firestore fstore;
-    public static FirebaseAuth fauth;
+
     private final FirestoreContext contxtFirebase = new FirestoreContext();
 
 
     @Override
     public void start(Stage primaryStage) throws IOException {
 
-        URL resource = getClass().getResource("/app/casinoroyale/View/Dashboards/HomePage.fxml");
+        fstore = contxtFirebase.firebase();
 
-
+        URL resource = getClass().getResource("/app/casinoroyale/View/Dashboards/LoginPage.fxml");
         if (resource == null) {
             throw new IOException("Cannot load resource: /app/casinoroyale/View/Dashboards/LoginPage.fxml");
         }
@@ -38,9 +42,7 @@ public class CSRApplication extends Application {
         FXMLLoader fxmlLoader = new FXMLLoader(resource);
         AnchorPane root = fxmlLoader.load();
 
-        HomeController controller = fxmlLoader.getController();
-        controller.setStage(primaryStage);
-
+        HomeController.setPrimaryStage(primaryStage); // Set the primary stage in HomeController
 
         javafx.geometry.Rectangle2D screenSize = Screen.getPrimary().getBounds();
         double screenWidth = screenSize.getWidth();
@@ -50,11 +52,5 @@ public class CSRApplication extends Application {
         primaryStage.setTitle("Casino Royale");
         primaryStage.setScene(scene);
         primaryStage.show();
-    }
-    public static Stage getStage() {
-        return stage;
-    }
-    public static void main(String[] args) {
-        launch();
     }
 }

@@ -8,7 +8,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="42436b1b-9b1f-4ddc-8c1d-3a6bc1aed41d" name="Changes" comment="Second push test.">
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/casinoroyale/Controller/FirebaseControllers/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/casinoroyale/Controller/FirebaseControllers/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/casinoroyale/Controller/FirebaseControllers/PrimaryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/casinoroyale/Controller/FirebaseControllers/PrimaryController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

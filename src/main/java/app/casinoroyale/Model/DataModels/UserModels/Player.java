@@ -9,29 +9,38 @@
 
 package app.casinoroyale.Model.DataModels.UserModels;
 
+
 import app.casinoroyale.Model.DataModels.GameModels.BlackJackModel.deck.Deck;
 import app.casinoroyale.Model.DataModels.GameModels.BlackJackModel.game.Chip;
 import app.casinoroyale.Model.DataModels.GameModels.BlackJackModel.role.Cardholder;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
+import app.casinoroyale.Controller.FirebaseControllers.Person;
 
 public class Player extends Cardholder {
 
+
+
+
+    public static final Person person = null;
     private static Player instance = null;
     private double bet;
    
-    private double accountBalance = 1000;
+    private double accountBalance;
     
     
     /**
      * Private constructor due to the use of the singleton-pattern.
      */
-    public Player() {
 
+
+
+    public Player() {
+        super();
     }
 
-    
+
     /**
      * If there is no player-object, it gets created, otherwise it just returns the aforementioned object.
      * @return Player object
