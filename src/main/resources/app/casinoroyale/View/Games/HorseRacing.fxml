@@ -97,7 +97,7 @@
                   <ImageView fx:id="finishLine" fitHeight="381.0" fitWidth="28.0" layoutX="908.0" layoutY="-69.0" pickOnBounds="true" preserveRatio="true" />
                </children>
             </Pane>
-            <Label fx:id="balanceLabel" layoutX="545.0" layoutY="33.0" prefHeight="51.0" prefWidth="101.0" text="Balance: " />
+            <Label fx:id="balanceLabel" layoutX="545.0" layoutY="33.0" prefHeight="51.0" prefWidth="101.0" style="-fx-background-color: white;" text="Balance: " />
             <Button fx:id="showInstructions" layoutX="661.0" layoutY="33.0" mnemonicParsing="false" onAction="#showInstructions" prefHeight="34.0" prefWidth="150.0" text="How To Play" />
 
 
