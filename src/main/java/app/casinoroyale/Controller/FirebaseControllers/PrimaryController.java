@@ -18,6 +18,7 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -77,8 +78,9 @@ public class PrimaryController {
 
 
     @FXML
-    void writeButtonClicked(ActionEvent event) {
+    void writeButtonClicked(ActionEvent event) throws IOException {
         addData();
+        homeController.loginDash(event);
     }
 
 
