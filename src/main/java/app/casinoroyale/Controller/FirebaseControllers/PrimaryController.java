@@ -130,7 +130,7 @@ public class PrimaryController {
 
     public void addData() {
 
-        DocumentReference docRef = CSRApplication.fstore.collection("CasinoPersons").document(UUID.randomUUID().toString());
+        DocumentReference docRef = CSRApplication.fstore.collection("Persons").document(UUID.randomUUID().toString());
         Map<String, Object> data = new HashMap<>();
         data.put("Name", nameTextField.getText());
         data.put("Age", Integer.parseInt(ageTextField.getText()));

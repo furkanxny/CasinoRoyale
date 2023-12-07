@@ -25,22 +25,14 @@ public class CSRApplication extends Application {
     public static Stage stage;
 
     public static Firestore fstore;
-    public static FirebaseAuth fauth;
+
     private final FirestoreContext contxtFirebase = new FirestoreContext();
 
 
     @Override
     public void start(Stage primaryStage) throws IOException {
-        URL key = getClass().getResource("/app/Firebase/key.json");
-        FileInputStream serviceAccount =
-                new FileInputStream(key.getFile());
 
-        FirebaseOptions options = new FirebaseOptions.Builder()
-                .setCredentials(GoogleCredentials.fromStream(serviceAccount))
-                .build();
-
-        FirebaseApp.initializeApp(options);
-
+        fstore = contxtFirebase.firebase();
 
         URL resource = getClass().getResource("/app/casinoroyale/View/Dashboards/LoginPage.fxml");
         if (resource == null) {

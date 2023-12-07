@@ -15,7 +15,7 @@
             <TextField fx:id="emailTextField" layoutX="612.0" layoutY="230.0" prefHeight="66.0" prefWidth="281.0" promptText="Email" />
             <TextField fx:id="passwordTextField" layoutX="612.0" layoutY="311.0" prefHeight="66.0" prefWidth="281.0" promptText="Password" />
             <TextField fx:id="startingBalanceTextField" layoutX="610.0" layoutY="388.0" prefHeight="66.0" prefWidth="281.0" promptText="Starting Balance" />
-            <Button layoutX="804.0" layoutY="506.0" mnemonicParsing="false" onAction="#addData" text="Register" />
+            <Button fx:id="writeButton" layoutX="804.0" layoutY="506.0" mnemonicParsing="false" onAction="#writeButtonClicked" text="Register" />
             <RadioButton layoutX="634.0" layoutY="473.0" mnemonicParsing="false" text="I agree to Terms of Use and Privacy Policy" />
          </children>
       </AnchorPane>
