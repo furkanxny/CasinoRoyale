@@ -41,6 +41,8 @@ public class SlotsController {
     private boolean canSpin = true;
 
     private Image[] flashImages = new Image[2];
+    private app.casinoroyale.Controller.HomeController HomeController;
+
 
 
     private app.casinoroyale.Controller.HomeController homeController;
@@ -49,6 +51,7 @@ public class SlotsController {
     public SlotsController(){
         this.homeController = new HomeController();
         this.stage = new Stage();
+
     }
     @FXML
     private void playBlackJack(ActionEvent event) throws IOException {
