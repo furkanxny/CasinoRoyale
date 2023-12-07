@@ -1,9 +1,10 @@
 package app.casinoroyale.Controller.GamesControllers.BlackJackController;
 
+
 import app.casinoroyale.Controller.HomeController;
 import app.casinoroyale.Model.DataModels.GameModels.BlackJackModel.game.Chip;
 import app.casinoroyale.Model.DataModels.GameModels.BlackJackModel.game.Game;
-import app.casinoroyale.Model.DataModels.GameModels.BlackJackModel.role.BlackJackPlayer;
+import app.casinoroyale.Model.DataModels.UserModels.Player;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -14,10 +15,11 @@ import javafx.scene.layout.Region;
 import javafx.scene.text.Text;
 
 import java.io.IOException;
+import java.text.DecimalFormat;
 
 public class PlayroomBetController {
 
-    BlackJackPlayer blackJackPlayer;
+    Player player;
 
     Game game;
 
@@ -33,33 +35,66 @@ public class PlayroomBetController {
     /**
      * Initialize a new game for the player.
      *
-     * @param blackJackPlayer player to been shown on the UI as well as who plays the game
+     * @param Player player to been shown on the UI as well as who plays the game
      */
 
+
+    private final app.casinoroyale.Controller.HomeController HomeController = new HomeController();
+
+
+
+
+    @FXML
+    private void playHorseRacing(ActionEvent event) throws IOException {
+        HomeController.playHorseRacing(event);
+    } @FXML
+    private void playRoulette(ActionEvent event) throws IOException {
+        HomeController.playRoulette(event);
+    }@FXML
+    private void playSlots(ActionEvent event) throws IOException {
+        HomeController.playSlots(event);
+    }
+    @FXML
+    private void homeDash(ActionEvent event) throws IOException {
+        HomeController.homeDash(event);
+    }
     @FXML
     private void showInstructions(ActionEvent event) {
         Alert instructionAlert = new Alert(Alert.AlertType.INFORMATION);
         instructionAlert.setTitle("How to Play");
         instructionAlert.setHeaderText("Instructions for BlackJack Game");
-//        instructionAlert.setContentText(
-//                """
-//             1. Choose a starting bet amount for your blackjack hand.
-//             2. Click 'Deal' to receive your initial two cards.
-//             3. Decide whether to 'Hit' to get another card or 'Stand' to keep your current hand.
-//             4. Utilize 'Double Down' if you're feeling confident.
-//             5. Continue making strategic decisions until you decide to 'Stand' or until you exceed a total of 21 points, resulting in a bust.
-//             6. If you win the round, your payout will be added to your balance.
-//             7. Enjoy the excitement of playing blackjack and aim to beat the dealer!"""
-//
-//
-//        );
+        instructionAlert.setContentText(
+                        "1. Choose a starting bet amount for your blackjack hand.\n" +
+                        "2. Click 'Deal' to receive your initial two cards.\n" +
+                        "3. Decide whether to 'Hit' to get another card or 'Stand' to keep your current hand.\n" +
+                        "4. Utilize 'Double Down' if you're feeling confident.\n" +
+                        "5. Continue making strategic decisions until you decide to 'Stand' or until you exceed a total of 21 points, resulting in a bust.\n" +
+                        "6. If you win the round, your payout will be added to your balance.\n" +
+                        "7. Enjoy the excitement of playing blackjack and aim to beat the dealer!"
+        );
 
         instructionAlert.getDialogPane().setMinHeight(Region.USE_PREF_SIZE);
         instructionAlert.showAndWait();
     }
-    public void loadContents(BlackJackPlayer blackJackPlayer) {
-        this.blackJackPlayer = blackJackPlayer;
-        this.game = new Game(blackJackPlayer);
+
+    public void updateBalanceText(double balance) {
+        DecimalFormat formatter = new DecimalFormat("\t$###,###");
+        txtBalance.setText(formatter.format(balance));
+    }
+    public void loadContents(Player player) {
+        this.player = player;
+
+        // Load the player's current balance
+        player.getAccountBalance();  // You need to update this line based on how you load the balance
+
+        // Only create a new game if it hasn't been created yet
+        if (this.game == null) {
+            this.game = new Game(player);
+        }
+
+        // Update balance text on UI
+        updateBalanceText(player.getAccountBalance());
+
         updateScene();
     }
 
@@ -68,6 +103,11 @@ public class PlayroomBetController {
      */
     @FXML
     protected void onBet10ChipClicked() {
+        if (player.getAccountBalance() < 10) {
+            showInsufficientFundsAlert();
+            return;
+        }
+
         System.out.println("Add a $10 chip to the bet");
         game.increaseBet(new Chip(10));
         updateScene();
@@ -78,6 +118,11 @@ public class PlayroomBetController {
      */
     @FXML
     protected void onBet20ChipClicked() {
+        if (player.getAccountBalance() < 20) {
+            showInsufficientFundsAlert();
+            return;
+        }
+
         System.out.println("Add a $20 chip to the bet");
         game.increaseBet(new Chip(20));
         updateScene();
@@ -88,6 +133,11 @@ public class PlayroomBetController {
      */
     @FXML
     protected void onBet50ChipClicked() {
+        if (player.getAccountBalance() < 50) {
+            showInsufficientFundsAlert();
+            return;
+        }
+
         System.out.println("Add a $50 chip to the bet");
         game.increaseBet(new Chip(50));
         updateScene();
@@ -98,9 +148,23 @@ public class PlayroomBetController {
      */
     @FXML
     protected void onBet100ChipClicked() {
+        if (player.getAccountBalance() < 100) {
+            showInsufficientFundsAlert();
+            return;
+        }
+
         System.out.println("Add a $100 chip to the bet");
         game.increaseBet(new Chip(100));
         updateScene();
+    }
+
+    private void showInsufficientFundsAlert() {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Insufficient Funds");
+        alert.setHeaderText(null);
+        alert.setContentText("Cannot bet. Insufficient funds.");
+
+        alert.showAndWait();
     }
 
     /**
@@ -119,11 +183,23 @@ public class PlayroomBetController {
      */
     @FXML
     protected void onDealButtonClick() {
+        if (game.getCurrentBetValue() > player.getAccountBalance()) {
+            showInsufficientFundsAlert();
+            return;
+        }
+
         System.out.println("Bet Dealt Game Start");
-        blackJackPlayer.deal(game.getChips());
+        player.deal(game.getChips());
         game.start();
+
+        // Update balance immediately after dealing
+        player.getAccountBalance();  // You need to update this line based on how you update the balance
+
         switchToGameScene();
     }
+
+
+
 
     /**
      * Update player's balance in the scene.
@@ -137,8 +213,9 @@ public class PlayroomBetController {
             btnDeal.setDisable(false);
         }
         txtBetValue.setText(game.getCurrentBetValueFormatted());
-        txtBalance.setText(blackJackPlayer.getBalanceFormatted());
+        txtBalance.setText("$" + player.getAccountBalance());  // Adjust this line based on how you get the balance
     }
+
 
     private void switchToGameScene() {
         try {
@@ -149,10 +226,14 @@ public class PlayroomBetController {
             HomeController.getPrimaryStage().getScene().setRoot(root);
 
             PlayroomGameController gameController = fxmlLoader.getController();
-            gameController.loadContents(blackJackPlayer, game);
+
+            // Pass the existing player and game objects to the PlayroomGameController
+            gameController.loadContents(player, game);
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
+
+
 }
 
