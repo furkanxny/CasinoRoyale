@@ -2,6 +2,7 @@ package app.casinoroyale.Controller;
 
 import app.casinoroyale.CSRApplication;
 import app.casinoroyale.Controller.FirebaseControllers.Person;
+import app.casinoroyale.Controller.FirebaseControllers.PrimaryController;
 import com.google.api.core.ApiFuture;
 import com.google.cloud.firestore.QueryDocumentSnapshot;
 import com.google.cloud.firestore.QuerySnapshot;
@@ -28,15 +29,17 @@ public class LoginController {
     public LoginController(){
         this.homeController = new HomeController();
         this.stage = new Stage();
+        this.primaryController = new PrimaryController();
     }
 
 
     @FXML
     public void registerButtonHandler(ActionEvent event) throws IOException{
-            primaryController.readFirebase();
             homeController.registerDash(event);
     }
 
 
-
+    public void signInButtonHandler(ActionEvent actionEvent) {
+        primaryController.readFirebase();
+    }
 }

@@ -5,6 +5,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
 
 <AnchorPane prefHeight="766.0" prefWidth="1500.0" style="-fx-background-color: FFFDD0;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.casinoroyale.Controller.FirebaseControllers.PrimaryController">
    <children>
@@ -17,6 +18,8 @@
             <TextField fx:id="startingBalanceTextField" layoutX="610.0" layoutY="388.0" prefHeight="66.0" prefWidth="281.0" promptText="Starting Balance" />
             <Button fx:id="writeButton" layoutX="804.0" layoutY="506.0" mnemonicParsing="false" onAction="#writeButtonClicked" text="Register" />
             <RadioButton layoutX="634.0" layoutY="473.0" mnemonicParsing="false" text="I agree to Terms of Use and Privacy Policy" />
+            <Button fx:id="loginViewButton" layoutX="413.0" layoutY="507.0" mnemonicParsing="false" onAction="#signInButtonHandler" text="Login" />
+            <Text layoutX="354.0" layoutY="468.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Have an account? Login here." />
          </children>
       </AnchorPane>
    </children>

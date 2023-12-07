@@ -52,7 +52,7 @@ public class PrimaryController {
     private Button registerButton;
 
     @FXML
-    private Button switchSecondaryViewButton;
+    private Button loginViewButton;
 
     @FXML
     private Button writeButton;
@@ -143,6 +143,7 @@ public class PrimaryController {
         ApiFuture<WriteResult> result = docRef.set(data);
     }
 
-    public void signInButtonHandler(ActionEvent actionEvent) {
+    public void signInButtonHandler(ActionEvent actionEvent) throws IOException{
+        homeController.loginDash(actionEvent);
     }
 }
