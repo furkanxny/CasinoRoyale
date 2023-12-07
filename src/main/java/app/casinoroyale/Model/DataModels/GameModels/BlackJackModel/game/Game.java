@@ -2,7 +2,7 @@ package app.casinoroyale.Model.DataModels.GameModels.BlackJackModel.game;
 
 import app.casinoroyale.Model.DataModels.GameModels.BlackJackModel.deck.Deck;
 import app.casinoroyale.Model.DataModels.GameModels.BlackJackModel.role.Dealer;
-import app.casinoroyale.Model.DataModels.GameModels.BlackJackModel.role.BlackJackPlayer;
+import app.casinoroyale.Model.DataModels.UserModels.Player;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
@@ -13,34 +13,33 @@ import java.util.ArrayList;
  */
 public class Game {
 
-    private final BlackJackPlayer blackJackPlayer;                /* Player object will be passed from the Controller */
-    private final Dealer dealer;                /* Each game has a new dealer. */
-    private final Deck deck;                    /* Each game uses a new deck of card. */
-    private final ArrayList<Chip> chips;        /* Stores a set of chips the player bet on this game. */
-    private GameStatus gameStatus;              /* Game status. */
+    private final Player player;
+    private final Dealer dealer;
+    private final Deck deck;
+    private final ArrayList<Chip> chips;
+    private GameStatus gameStatus;
 
-    /**
-     * When a player join the Game, a new Deck, a new Dealer is prepared.
-     * The betting box is cleared for the player.
-     * @param blackJackPlayer to play the game.
-     */
-    public Game(BlackJackPlayer blackJackPlayer) {
+    public Game(Player player) {
         this.deck = new Deck();
         this.dealer = new Dealer();
         this.chips = new ArrayList<>();
-        this.blackJackPlayer = blackJackPlayer;
+        this.player = player;
         this.gameStatus = GameStatus.CONTINUE;
+
+
     }
 
     /**
      * Game start. Shuffle the deck. Dealer and player draw 2 cards each from the deck.
      */
+
     public void start() {
         deck.shuffle();
         dealer.takeCard(deck);
         dealer.takeCard(deck);
-        blackJackPlayer.takeCard(deck);
-        blackJackPlayer.takeCard(deck);
+        player.takeCard(deck);
+        player.takeCard(deck);
+
     }
 
     /**
@@ -57,6 +56,17 @@ public class Game {
     public void clearBet() {
         chips.clear();
     }
+
+    public void reset() {
+        player.reset();  // Add a reset method in the Player class
+        dealer.clearHand();
+        player.clearHand();
+        chips.clear();
+        gameStatus = GameStatus.CONTINUE;
+    }
+
+
+
 
     /**
      * Calculate current bet value.
@@ -79,7 +89,7 @@ public class Game {
      * Update gameStatus based on whether player has busted.
      */
     public void checkAfterHit() {
-        if (blackJackPlayer.getTotalPoints() > 21)
+        if (player.getTotalPoints() > 21)
             gameStatus = GameStatus.PLAYER_BUSTED;
         else
             gameStatus = GameStatus.CONTINUE;
@@ -90,23 +100,23 @@ public class Game {
      */
     public void checkAfterStand() {
         if (dealer.getTotalPoints() > 21) {
-            if (blackJackPlayer.getTotalPoints() == 21 && blackJackPlayer.getHand().size() == 2)
+            if (player.getTotalPoints() == 21 && player.getHand().size() == 2)
                 gameStatus = GameStatus.PLAYER_BLACKJACK;
             else
                 gameStatus = GameStatus.PLAYER_WIN;
         } else if (dealer.getTotalPoints() == 21) {
-            if (blackJackPlayer.getTotalPoints() == 21 && blackJackPlayer.getHand().size() == 2)
+            if (player.getTotalPoints() == 21 && player.getHand().size() == 2)
                 gameStatus = GameStatus.PLAYER_BLACKJACK;
-            else if (blackJackPlayer.getTotalPoints() == 21)
+            else if (player.getTotalPoints() == 21)
                 gameStatus = GameStatus.PUSH;
             else
                 gameStatus = GameStatus.DEALER_WIN;
-        } else if (dealer.getTotalPoints() > blackJackPlayer.getTotalPoints()) {
+        } else if (dealer.getTotalPoints() > player.getTotalPoints()) {
             gameStatus = GameStatus.DEALER_WIN;
-        } else if (dealer.getTotalPoints() == blackJackPlayer.getTotalPoints()) {
+        } else if (dealer.getTotalPoints() == player.getTotalPoints()) {
             gameStatus = GameStatus.PUSH;
         } else {
-            if (blackJackPlayer.getTotalPoints() == 21 && blackJackPlayer.getHand().size() == 2)
+            if (player.getTotalPoints() == 21 && player.getHand().size() == 2)
                 gameStatus = GameStatus.PLAYER_BLACKJACK;
             else
                 gameStatus = GameStatus.PLAYER_WIN;
@@ -118,16 +128,18 @@ public class Game {
      * Reward player according to gameStatus and player's previous bet.
      */
     private void rewardPlayer() {
+        double originalBet = player.getBet();
+
         if (getGameStatus() == GameStatus.PLAYER_BLACKJACK) {
-            blackJackPlayer.setBalance(blackJackPlayer.getBalance() + blackJackPlayer.getBet() * 3);
-        }
-        else if (getGameStatus() == GameStatus.PUSH) {
-            blackJackPlayer.setBalance(blackJackPlayer.getBalance() + blackJackPlayer.getBet());
-        }
-        else if (getGameStatus() == GameStatus.PLAYER_WIN) {
-            blackJackPlayer.setBalance(blackJackPlayer.getBalance() + blackJackPlayer.getBet() * 2);
+            player.setAccountBalance(player.getAccountBalance() + originalBet * 3);
+        } else if (getGameStatus() == GameStatus.PUSH) {
+            player.setAccountBalance(player.getAccountBalance() + originalBet);
+        } else if (getGameStatus() == GameStatus.PLAYER_WIN) {
+            player.setAccountBalance(player.getAccountBalance() + originalBet * 2);
         }
     }
+
+
 
     public GameStatus getGameStatus() {
         return gameStatus;

@@ -20,6 +20,7 @@ import com.google.firebase.cloud.FirestoreClient;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.URL;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -32,7 +33,6 @@ import static com.google.auth.oauth2.ServiceAccountCredentials.fromStream;
  * @author JavaFX App
  */
 public class FirestoreContext {
-
 
     public Firestore firebase() {
         try {

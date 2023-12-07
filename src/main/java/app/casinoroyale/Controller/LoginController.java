@@ -1,7 +1,11 @@
 package app.casinoroyale.Controller;
 
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
+
+import java.io.IOException;
 
 public class LoginController {
     @javafx.fxml.FXML
@@ -9,6 +13,13 @@ public class LoginController {
     @javafx.fxml.FXML
     private TextField passwordTF;
 
+    private app.casinoroyale.Controller.HomeController homeController;
+
+    private Stage stage;
+    public LoginController(){
+        this.homeController = new HomeController();
+        this.stage = new Stage();
+    }
     public void signInButtonHandler(ActionEvent event) {
 //        String email = emailTF.getText();
 //        String password = passwordTF.getText();
@@ -23,7 +34,8 @@ public class LoginController {
 //                });
     }
 
-    public void registerButtonHandler(ActionEvent event) {
-        //switch to RegisterPage.fxml if user doesn't have an account yet.
+    @FXML
+    public void registerButtonHandler(ActionEvent event) throws IOException{
+            homeController.registerDash(event);
     }
 }
