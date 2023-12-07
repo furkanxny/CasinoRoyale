@@ -55,10 +55,12 @@ public class RouletteController implements Initializable{
     @FXML
     private void playBlackJack(ActionEvent event) throws IOException {
         homeController.playBlackJack(event);
-    } @FXML
+    }
+    @FXML
     private void playHorseRacing(ActionEvent event) throws IOException {
         homeController.playHorseRacing(event);
-    }@FXML
+    }
+    @FXML
     private void playSlots(ActionEvent event) throws IOException {
         homeController.playSlots(event);
     }

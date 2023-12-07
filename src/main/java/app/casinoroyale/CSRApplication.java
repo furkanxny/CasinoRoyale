@@ -31,8 +31,6 @@ public class CSRApplication extends Application {
 
     @Override
     public void start(Stage primaryStage) throws IOException {
-
-        System.out.println(getClass().getResource("/app/Firebase/key.json"));
         URL key = getClass().getResource("/app/Firebase/key.json");
         FileInputStream serviceAccount =
                 new FileInputStream(key.getFile());
@@ -52,7 +50,6 @@ public class CSRApplication extends Application {
         FXMLLoader fxmlLoader = new FXMLLoader(resource);
         AnchorPane root = fxmlLoader.load();
 
-        HomeController controller = fxmlLoader.getController();
         HomeController.setPrimaryStage(primaryStage); // Set the primary stage in HomeController
 
         javafx.geometry.Rectangle2D screenSize = Screen.getPrimary().getBounds();

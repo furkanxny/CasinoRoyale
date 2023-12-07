@@ -80,11 +80,11 @@ public class HomeController {
     }
 
     public void loginDash(ActionEvent actionEvent) throws IOException {
-        changeScene("/app/casinoroyale/View/Dashboards/LoginPane.fxml", "Casino Royale");
+        changeScene("/app/casinoroyale/View/Dashboards/LoginPage.fxml", "Casino Royale");
     }
 
     public void registerDash(ActionEvent actionEvent) throws IOException {
-        changeScene("/app/casinoroyale/View/Dashboards/RegisterPane.fxml", "Casino Royale");
+        changeScene("/app/casinoroyale/View/Dashboards/RegisterPage.fxml", "Casino Royale");
     }
 
     public void playBlackJack(ActionEvent actionEvent) throws IOException {
