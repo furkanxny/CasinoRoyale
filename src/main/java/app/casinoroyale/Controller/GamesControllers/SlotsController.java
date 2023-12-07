@@ -48,6 +48,7 @@ public class SlotsController {
     private app.casinoroyale.Controller.HomeController homeController;
 
     private Stage stage;
+
     public SlotsController(){
         this.homeController = new HomeController();
         this.stage = new Stage();

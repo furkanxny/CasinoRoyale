@@ -98,6 +98,9 @@ public class Player extends Cardholder {
         return formatter.format(accountBalance);
     }
 
+    public void setAccountBalanceFromFirebase(Double balance){
+        this.accountBalance  = balance;
+    }
 
     public double getAccountBalance() {
         return accountBalance;
