@@ -22,7 +22,6 @@ public class HomeController {
 
     private Stage stage = new Stage();
 
-    private final BlackJackPlayer blackJackPlayer;
 
 
     @FXML
