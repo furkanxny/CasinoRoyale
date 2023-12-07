@@ -43,21 +43,21 @@ public class SlotsController {
 
     private Image[] flashImages = new Image[2];
 
-
-    @Deprecated
+    @FXML
     private void playBlackJack(ActionEvent event) throws IOException {
-        this.HomeController.playBlackJack(event);
+        HomeController.playBlackJack(event);
+    } @FXML
+    private void playHorseRacing(ActionEvent event) throws IOException {
+        HomeController.playHorseRacing(event);
+    }@FXML
+    private void playRoulatte(ActionEvent event) throws IOException {
+        HomeController.playSlots(event);
     }
-
-    @Deprecated
-    private void playRoulette(ActionEvent event) throws IOException {
-        this.HomeController.playRoulette(event);
-    }
-
-    @Deprecated
+    @FXML
     private void homeDash(ActionEvent event) throws IOException {
-        this.HomeController.homeDash(event);
+        HomeController.homeDash(event);
     }
+
 
     @FXML
     public void initialize() {
