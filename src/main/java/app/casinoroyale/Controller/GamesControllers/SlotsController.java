@@ -6,7 +6,6 @@ import java.util.*;
 import app.casinoroyale.Model.DataModels.GameModels.SlotsModel.*;
 import app.casinoroyale.Model.DataModels.GameModels.SlotsModel.SlotGame;
 import app.casinoroyale.Model.DataModels.UserModels.Player;
-import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
@@ -14,6 +13,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.stage.Stage;
 import javafx.util.Duration;
 
 public class SlotsController {
@@ -44,16 +44,31 @@ public class SlotsController {
     private app.casinoroyale.Controller.HomeController HomeController;
 
 
-    @Deprecated
-    private void playRoulette(ActionEvent event) throws IOException {
-        this.HomeController.playRoulette(event);
-    }
 
-    @Deprecated
+    private app.casinoroyale.Controller.HomeController homeController;
+
+    private Stage stage;
+    public SlotsController(){
+        this.homeController = new HomeController();
+        this.stage = new Stage();
+
+    }
+    @FXML
+    private void playBlackJack(ActionEvent event) throws IOException {
+        homeController.playBlackJack(event);
+    }
+    @FXML
+    private void playHorseRacing(ActionEvent event) throws IOException {
+        homeController.playHorseRacing(event);
+    }
+    @FXML
+    private void playRoulatte(ActionEvent event) throws IOException {
+        homeController.playRoulette(event);
+    }
+    @FXML
     private void homeDash(ActionEvent event) throws IOException {
-        this.HomeController.homeDash(event);
+        homeController.homeDash(event);
     }
-
     @FXML
     public void initialize() {
         Player player = Player.getInstance();
