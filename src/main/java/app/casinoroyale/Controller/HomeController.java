@@ -1,7 +1,7 @@
 package app.casinoroyale.Controller;
 
-import app.casinoroyale.Model.DataModels.GameModels.BlackJackModel.role.BlackJackPlayer;
 import app.casinoroyale.Controller.GamesControllers.BlackJackController.PlayroomBetController;
+import app.casinoroyale.Model.DataModels.UserModels.Player;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -16,8 +16,13 @@ import java.io.IOException;
 
 public class HomeController {
 
-    private final BlackJackPlayer blackJackPlayer;
-    private static Stage primaryStage; // Use the primary stage for all scene changes
+
+    private final Player player;
+    private static Stage primaryStage;
+
+    private Stage stage = new Stage();
+
+
 
     @FXML
     private ImageView slotsImageView;
@@ -36,7 +41,7 @@ public class HomeController {
     }
 
     public HomeController(){
-        this.blackJackPlayer = new BlackJackPlayer();
+        this.player = new Player();
     }
 
     public static void setPrimaryStage(Stage stage) {
@@ -79,13 +84,21 @@ public class HomeController {
         changeScene("/app/casinoroyale/View/Dashboards/HomePage.fxml", "Casino Royale");
     }
 
+    public void loginDash(ActionEvent actionEvent) throws IOException {
+        changeScene("/app/casinoroyale/View/Dashboards/LoginPage.fxml", "Casino Royale");
+    }
+
+    public void registerDash(ActionEvent actionEvent) throws IOException {
+        changeScene("/app/casinoroyale/View/Dashboards/RegisterPage.fxml", "Casino Royale");
+    }
+
     public void playBlackJack(ActionEvent actionEvent) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/app/casinoroyale/View/Games/playroom-bet-view.fxml"));
         Scene blackjackScene = new Scene(fxmlLoader.load(), screenWidth * 0.8, screenHeight * 0.8);
 
         // Get the controller and pass the blackJackPlayer to it
         PlayroomBetController betController = fxmlLoader.getController();
-        betController.loadContents(blackJackPlayer);
+        betController.loadContents(Player.getInstance());
 
         // Set the scene on the primary stage
         primaryStage.setTitle("Blackjack Game");

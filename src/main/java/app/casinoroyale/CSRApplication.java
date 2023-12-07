@@ -25,24 +25,14 @@ public class CSRApplication extends Application {
     public static Stage stage;
 
     public static Firestore fstore;
-    public static FirebaseAuth fauth;
+
     private final FirestoreContext contxtFirebase = new FirestoreContext();
 
 
     @Override
     public void start(Stage primaryStage) throws IOException {
 
-        System.out.println(getClass().getResource("/app/Firebase/key.json"));
-        URL key = getClass().getResource("/app/Firebase/key.json");
-        FileInputStream serviceAccount =
-                new FileInputStream(key.getFile());
-
-        FirebaseOptions options = new FirebaseOptions.Builder()
-                .setCredentials(GoogleCredentials.fromStream(serviceAccount))
-                .build();
-
-        FirebaseApp.initializeApp(options);
-
+        fstore = contxtFirebase.firebase();
 
         URL resource = getClass().getResource("/app/casinoroyale/View/Dashboards/HomePage.fxml");
         if (resource == null) {
@@ -52,7 +42,6 @@ public class CSRApplication extends Application {
         FXMLLoader fxmlLoader = new FXMLLoader(resource);
         AnchorPane root = fxmlLoader.load();
 
-        HomeController controller = fxmlLoader.getController();
         HomeController.setPrimaryStage(primaryStage); // Set the primary stage in HomeController
 
         javafx.geometry.Rectangle2D screenSize = Screen.getPrimary().getBounds();

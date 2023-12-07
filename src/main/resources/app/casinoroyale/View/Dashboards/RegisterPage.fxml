@@ -3,35 +3,21 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
 
-<BorderPane prefHeight="400.0" prefWidth="640.0" style="-fx-background-color: D9D9D9;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.casinoroyale.Controller.RegisterController">
-   <center>
-      <Pane prefHeight="434.0" prefWidth="494.0" BorderPane.alignment="CENTER">
+<AnchorPane prefHeight="766.0" prefWidth="1500.0" style="-fx-background-color: FFFDD0;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.casinoroyale.Controller.FirebaseControllers.PrimaryController">
+   <children>
+      <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="766.0" prefWidth="1500.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" VBox.vgrow="ALWAYS">
          <children>
-            <TextField fx:id="userNameTF" alignment="CENTER" layoutX="220.0" layoutY="60.0" prefHeight="30.0" prefWidth="200.0" promptText="User Name" />
-            <TextField fx:id="emailTF" alignment="CENTER" layoutX="220.0" layoutY="110.0" prefHeight="30.0" prefWidth="200.0" promptText="Email" />
-            <TextField fx:id="password1TF" alignment="CENTER" layoutX="220.0" layoutY="160.0" prefHeight="30.0" prefWidth="200.0" promptText="Password" />
-            <TextField fx:id="password2TF" alignment="CENTER" layoutX="220.0" layoutY="210.0" prefHeight="30.0" prefWidth="200.0" promptText="Password Confirmation" />
-            <Button layoutX="289.0" layoutY="277.0" mnemonicParsing="false" onAction="#registerButtonHandler" text="Register" />
-            <Text layoutX="461.0" layoutY="268.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Already have an account?" />
-            <Button layoutX="504.0" layoutY="277.0" mnemonicParsing="false" onAction="#signInButtonHandler" text="Sign In" />
-            <RadioButton fx:id="terms" layoutX="195.0" layoutY="255.0" mnemonicParsing="false" text="Terms of Service and Privacy Policy" />
+            <TextField fx:id="nameTextField" layoutX="616.0" layoutY="70.0" prefHeight="66.0" prefWidth="281.0" promptText="Name" />
+            <TextField fx:id="ageTextField" layoutX="616.0" layoutY="151.0" prefHeight="66.0" prefWidth="281.0" promptText="Age" />
+            <TextField fx:id="emailTextField" layoutX="612.0" layoutY="230.0" prefHeight="66.0" prefWidth="281.0" promptText="Email" />
+            <TextField fx:id="passwordTextField" layoutX="612.0" layoutY="311.0" prefHeight="66.0" prefWidth="281.0" promptText="Password" />
+            <TextField fx:id="startingBalanceTextField" layoutX="610.0" layoutY="388.0" prefHeight="66.0" prefWidth="281.0" promptText="Starting Balance" />
+            <Button fx:id="writeButton" layoutX="804.0" layoutY="506.0" mnemonicParsing="false" onAction="#writeButtonClicked" text="Register" />
+            <RadioButton layoutX="634.0" layoutY="473.0" mnemonicParsing="false" text="I agree to Terms of Use and Privacy Policy" />
          </children>
-      </Pane>
-   </center>
-   <top>
-      <Pane prefHeight="54.0" prefWidth="640.0" BorderPane.alignment="CENTER">
-         <children>
-            <Text layoutX="213.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="REGISTIRATION">
-               <font>
-                  <Font name="Impact" size="36.0" />
-               </font>
-            </Text>
-         </children>
-      </Pane>
-   </top>
-</BorderPane>
+      </AnchorPane>
+   </children>
+</AnchorPane>
