@@ -45,8 +45,6 @@ public class CSRApplication extends Application {
 
 
         URL resource = getClass().getResource("/app/casinoroyale/View/Dashboards/HomePage.fxml");
-
-
         if (resource == null) {
             throw new IOException("Cannot load resource: /app/casinoroyale/View/Dashboards/LoginPage.fxml");
         }
@@ -55,8 +53,7 @@ public class CSRApplication extends Application {
         AnchorPane root = fxmlLoader.load();
 
         HomeController controller = fxmlLoader.getController();
-        controller.setStage(primaryStage);
-
+        HomeController.setPrimaryStage(primaryStage); // Set the primary stage in HomeController
 
         javafx.geometry.Rectangle2D screenSize = Screen.getPrimary().getBounds();
         double screenWidth = screenSize.getWidth();
@@ -66,11 +63,5 @@ public class CSRApplication extends Application {
         primaryStage.setTitle("Casino Royale");
         primaryStage.setScene(scene);
         primaryStage.show();
-    }
-    public static Stage getStage() {
-        return stage;
-    }
-    public static void main(String[] args) {
-        launch();
     }
 }
