@@ -50,7 +50,7 @@ public class CSRApplication extends Application {
         double screenWidth = screenSize.getWidth();
         double screenHeight = screenSize.getHeight();
 
-        Scene scene = new Scene(root, screenWidth * 0.8, screenHeight * 0.8);
+        Scene scene = new Scene(root, screenWidth * 0.6, screenHeight * 0.6);
         primaryStage.setTitle("Casino Royale");
         primaryStage.setScene(scene);
         primaryStage.show();
