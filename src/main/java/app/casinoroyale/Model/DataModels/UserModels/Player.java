@@ -26,7 +26,7 @@ public class Player extends Cardholder {
     public static final Person person = null;
     private static Player instance = null;
     private double bet;
-   
+   public String name;
     private double accountBalance;
     
     
@@ -72,6 +72,10 @@ public class Player extends Cardholder {
     }
 
 
+    public String getName(){return name;}
+    public void setName(String name) {
+        this.name = name;
+    }
 
     public void hit(Deck deck) {
         takeCard(deck);
@@ -101,7 +105,6 @@ public class Player extends Cardholder {
     public void setAccountBalanceFromFirebase(Double balance){
         this.accountBalance  = balance;
     }
-
     public double getAccountBalance() {
         return accountBalance;
     }
