@@ -1,10 +1,10 @@
-/*  
+/*
  *  © Copyright yannickhuggler.com
  *
  *  [Project Title]     Roulette
  *  [Description]       The king of all casino-games implemented in JavaFX.
  *  [Authors]           Yannick Huggler
- *  [Version]           Version 1.0      
+ *  [Version]           Version 1.0
  */
 
 package app.casinoroyale.Model.DataModels.UserModels;
@@ -87,7 +87,6 @@ public class Player extends Cardholder {
         DecimalFormat formatter = new DecimalFormat("\t$###,###");
         return formatter.format(accountBalance);
     }
-
     public void setAccountBalanceFromFirebase(Double balance){
         this.accountBalance  = balance;
     }
@@ -95,8 +94,32 @@ public class Player extends Cardholder {
         return accountBalance;
     }
 
+
     public void setAccountBalance(double balance) {
-        this.accountBalance = balance;
+        this.accountBalance += balance;
+    }
+
+    /**
+     * Checks if the player can withdraw the specified amount.
+     * @param amount The amount to check for withdrawal.
+     * @return true if withdrawal is possible, false otherwise.
+     */
+    public boolean canWithdraw(double amount) {
+        return amount > 0 && this.accountBalance >= amount;
+    }
+
+    /**
+     * Withdraws the specified amount from the player's account balance.
+     * @param amount The amount to withdraw.
+     */
+    public void withdraw(double amount) {
+        if (canWithdraw(amount)) {
+            setAccountBalance(-amount); // Negative value to deduct from balance
+        } else {
+            // Handle the case where withdrawal is not possible
+            // This could be throwing an exception or logging an error
+            throw new IllegalArgumentException("Cannot withdraw the specified amount. Insufficient funds or invalid amount.");
+        }
     }
 
 

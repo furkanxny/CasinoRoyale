@@ -1,11 +1,15 @@
 package app.casinoroyale.Controller.GamesControllers;
+import app.casinoroyale.CSRApplication;
+import app.casinoroyale.Controller.FirebaseControllers.PrimaryController;
 import app.casinoroyale.Controller.HomeController;
+import app.casinoroyale.Model.DataModels.UserModels.Player;
 import java.io.File;
 import java.io.IOException;
 import java.util.*;
 import app.casinoroyale.Model.DataModels.GameModels.SlotsModel.*;
 import app.casinoroyale.Model.DataModels.GameModels.SlotsModel.SlotGame;
 import app.casinoroyale.Model.DataModels.UserModels.Player;
+import com.google.cloud.firestore.Firestore;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
@@ -15,6 +19,8 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+
+
 
 public class SlotsController {
     @FXML
@@ -41,18 +47,22 @@ public class SlotsController {
     private boolean canSpin = true;
 
     private Image[] flashImages = new Image[2];
-    private app.casinoroyale.Controller.HomeController HomeController;
 
 
+
+    private app.casinoroyale.Controller.FirebaseControllers.PrimaryController primaryController;
+    private app.casinoroyale.Controller.LoginController loginController;
 
     private app.casinoroyale.Controller.HomeController homeController;
+    private Firestore firestore;
 
     private Stage stage;
 
     public SlotsController(){
         this.homeController = new HomeController();
         this.stage = new Stage();
-
+        this.primaryController = new PrimaryController();
+        firestore = CSRApplication.fstore;
     }
     @FXML
     private void playBlackJack(ActionEvent event) throws IOException {
@@ -249,6 +259,9 @@ public class SlotsController {
     public void infoButtonHandler() {SlotGameView.infoButton();}
     @FXML
     void exitButtonHandler() {
+        Player player = Player.getInstance();
+        primaryController.updateBalance(player.getAccountBalance());
+        System.out.println(player.getAccountBalance());
         SlotGameView.exitButton();
     }
 }

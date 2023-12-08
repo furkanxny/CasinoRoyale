@@ -68,7 +68,10 @@ public class RouletteController implements Initializable{
     private void homeDash(ActionEvent event) throws IOException {
         homeController.homeDash(event);
     }
-
+    @FXML
+    private void launchBank(ActionEvent event) throws IOException {
+        homeController.launchBank(event);
+    }
 
     /**
      * FXML Declarations

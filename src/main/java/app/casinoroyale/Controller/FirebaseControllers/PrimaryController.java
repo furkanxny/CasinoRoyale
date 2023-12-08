@@ -2,13 +2,9 @@ package app.casinoroyale.Controller.FirebaseControllers;
 
 import app.casinoroyale.CSRApplication;
 import app.casinoroyale.Controller.HomeController;
+import app.casinoroyale.Controller.LoginController;
 import com.google.api.core.ApiFuture;
-import com.google.cloud.firestore.DocumentReference;
-import com.google.cloud.firestore.QueryDocumentSnapshot;
-import com.google.cloud.firestore.QuerySnapshot;
-import com.google.cloud.firestore.WriteResult;
-import com.google.firebase.auth.FirebaseAuthException;
-import com.google.firebase.auth.UserRecord;
+import com.google.cloud.firestore.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -19,14 +15,14 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.UUID;
+import java.util.*;
 import java.util.concurrent.ExecutionException;
 
 public class PrimaryController {
+
+
     private app.casinoroyale.Controller.HomeController homeController;
+
     private Stage stage;
     @FXML
     private TextField ageTextField;
@@ -60,14 +56,28 @@ public class PrimaryController {
     private boolean key;
     private final ObservableList<Person> listOfUsers = FXCollections.observableArrayList();
     private Person person;
+    private Firestore firestore;
+    private LoginController LG;
+    private app.casinoroyale.Controller.LoginController loginController;
+
+    private static String ID;
+
+    public void setID(String ID){
+        this.ID = ID;
+    }
+    private static String personEmail;
 
     public ObservableList<Person> getListOfUsers() {
         return listOfUsers;
     }
 
     public PrimaryController(){
+
+        //LG = new LoginController();
         this.homeController = new HomeController();
         this.stage = new Stage();
+        firestore = CSRApplication.fstore;
+
     }
     void initialize() {
         AccessDataView accessDataViewModel = new AccessDataView();
@@ -83,6 +93,28 @@ public class PrimaryController {
         homeController.loginDash(event);
     }
 
+    public boolean updateBalance(double newBalance) {
+        // Reference to the specific document in the Firestore collection
+        DocumentReference docRef = CSRApplication.fstore.collection("Persons")
+                .document(ID);
+
+        // Prepare the update data
+        Map<String, Object> updates = new HashMap<>();
+        updates.put("Balance", newBalance);
+
+        // Perform the update operation
+        ApiFuture<WriteResult> writeResult = docRef.update(updates);
+        try {
+            // Block on response
+            writeResult.get();
+            return true; // Update successful
+        } catch (InterruptedException | ExecutionException e) {
+            e.printStackTrace();
+            return false; // Update failed
+        }
+    }
+
+
 
     public boolean readFirebase()
     {
@@ -95,12 +127,14 @@ public class PrimaryController {
         try
         {
             documents = future.get().getDocuments();
+
             if(documents.size()>0)
             {
                 System.out.println("Outing data from firabase database....");
                 listOfUsers.clear();
                 for (QueryDocumentSnapshot document : documents)
                 {
+
                     System.out.println(document.getId() + " => " + document.getData().get("Name"));
                     person  = new Person(
                             String.valueOf(document.getData().get("Name")),
@@ -108,8 +142,10 @@ public class PrimaryController {
                             String.valueOf(document.getData().get("Password")),
                             Integer.parseInt(document.getData().get("Age").toString()),
                             Double.parseDouble(document.getData().get("Balance").toString())
+
                     );
                     listOfUsers.add(person);
+
                 }
             }
             else

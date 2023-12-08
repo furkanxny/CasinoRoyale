@@ -33,9 +33,7 @@
                 </Menu>
                 <Menu mnemonicParsing="false" text="Bank">
                     <items>
-                        <MenuItem mnemonicParsing="false" text="Deposit" />
-                        <MenuItem mnemonicParsing="false" text="Withdrawl" />
-                        <MenuItem mnemonicParsing="false" text="P/L" />
+                        <MenuItem mnemonicParsing="false" onAction="#launchBank" text="Bank" />
                     </items>
                 </Menu>
             </menus>

@@ -49,7 +49,15 @@ public class HomeController {
 
     private void changeScene(String fxmlPath, String title) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(fxmlPath));
-        Scene scene = new Scene(fxmlLoader.load(), screenWidth * 0.8, screenHeight * 0.8);
+        Scene scene = new Scene(fxmlLoader.load(), screenWidth * 1, screenHeight * 1);
+        primaryStage.setTitle(title);
+        primaryStage.setScene(scene);
+        primaryStage.show();
+    }
+
+    private void changeSceneLogin(String fxmlPath, String title) throws IOException{
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(fxmlPath));
+        Scene scene = new Scene(fxmlLoader.load(), screenWidth * 0.6, screenHeight * 0.6);
         primaryStage.setTitle(title);
         primaryStage.setScene(scene);
         primaryStage.show();
@@ -61,6 +69,7 @@ public class HomeController {
         File horseRace = new File("src/main/resources/app/Assets/HomePage/Games/horseracing.png");
         File blackJack = new File("src/main/resources/app/Assets/HomePage/Games/blackjack.png");
         File casino = new File("src/main/resources/app/Assets/HomePage/Casino/casino.png");
+
 
         Image rouletteImage = new Image(roulette.toURI().toString());
         Image slotsImage = new Image(slots.toURI().toString());
@@ -84,16 +93,16 @@ public class HomeController {
     }
 
     public void loginDash(ActionEvent actionEvent) throws IOException {
-        changeScene("/app/casinoroyale/View/Dashboards/LoginPage.fxml", "Casino Royale");
+        changeSceneLogin("/app/casinoroyale/View/Dashboards/LoginPage.fxml", "Casino Royale");
     }
 
     public void registerDash(ActionEvent actionEvent) throws IOException {
-        changeScene("/app/casinoroyale/View/Dashboards/RegisterPage.fxml", "Casino Royale");
+        changeSceneLogin("/app/casinoroyale/View/Dashboards/RegisterPage.fxml", "Casino Royale");
     }
 
     public void playBlackJack(ActionEvent actionEvent) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/app/casinoroyale/View/Games/playroom-bet-view.fxml"));
-        Scene blackjackScene = new Scene(fxmlLoader.load(), screenWidth * 0.8, screenHeight * 0.8);
+        Scene blackjackScene = new Scene(fxmlLoader.load(), screenWidth * 1, screenHeight * 1);
 
         // Get the controller and pass the blackJackPlayer to it
         PlayroomBetController betController = fxmlLoader.getController();
@@ -115,6 +124,10 @@ public class HomeController {
 
     public void playSlots(ActionEvent actionEvent) throws IOException {
         changeScene("/app/casinoroyale/View/Games/Slots.fxml", "Slots");
+    }
+
+    public void launchBank(ActionEvent actionEvent) throws IOException {
+        changeScene("/app/casinoroyale/View/Dashboards/Bank.fxml", "Bank");
     }
 
     public static Stage getPrimaryStage() {
