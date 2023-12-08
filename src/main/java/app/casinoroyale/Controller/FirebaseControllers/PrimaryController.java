@@ -13,7 +13,6 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
@@ -25,13 +24,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 import java.util.concurrent.ExecutionException;
-interface regexMatcher {
-    String regexUserName = "\b[A-Z][a-zA-Z]+";
-    String regexEmail = "[a-z0-9]+@[a-z0-9]+.[0-z]{2,6}";
-    String regexPassword = "^(?=.[0-9])(?=.[a-z])(?=.[A-Z])(?=.[!@#&()–[{}]:;',?/*~$^+=<>]).{8,20}$";
 
-}
-public class PrimaryController implements regexMatcher{
+public class PrimaryController {
     private app.casinoroyale.Controller.HomeController homeController;
     private Stage stage;
     @FXML
@@ -62,7 +56,6 @@ public class PrimaryController implements regexMatcher{
 
     @FXML
     private Button writeButton;
-
 
     private boolean key;
     private final ObservableList<Person> listOfUsers = FXCollections.observableArrayList();
@@ -135,25 +128,6 @@ public class PrimaryController implements regexMatcher{
     }
 
     public void addData() {
-        String name = nameTextField.getText();
-        int age = Integer.parseInt(ageTextField.getText());
-        String email = emailTextField.getText();
-        String password = passwordTextField.getText();
-        double balance = Double.parseDouble(startingBalanceTextField.getText());
-        System.out.println(name + " " + age + " " + email + " "+ password + " " + balance);
-
-        if (!name.matches(regexUserName) ||
-                !password.matches(regexPassword) ||
-                age < 18 ||
-                !email.matches(regexEmail) || // regexEmail should be a string pattern for email validation
-                balance >= 1000) {
-            Alert requirementsAlert = new Alert(Alert.AlertType.ERROR);
-            requirementsAlert.setTitle("REGISTER ERROR");
-            requirementsAlert.setHeaderText("REGISTER ERROR");
-            requirementsAlert.setContentText("You are missing at least one of the requirements");
-            requirementsAlert.showAndWait();
-            return;
-        }
 
         DocumentReference docRef = CSRApplication.fstore.collection("Persons").document(UUID.randomUUID().toString());
         Map<String, Object> data = new HashMap<>();
@@ -162,23 +136,8 @@ public class PrimaryController implements regexMatcher{
         data.put("email", emailTextField.getText());
         data.put("Password", passwordTextField.getText());
         data.put("Balance", Double.parseDouble(startingBalanceTextField.getText()));
+        //asynchronously write data
         ApiFuture<WriteResult> result = docRef.set(data);
-//
-//        try {
-//        // Wait for the operation to complete
-//        WriteResult writeResult = result.get();
-//
-//        // If success, get() will return without throwing an exception
-//        System.out.println("Write successful with timestamp: " + writeResult.getUpdateTime());
-//
-//    } catch (InterruptedException e) {
-//        // Handle if the thread was interrupted during get()
-//        System.err.println("InterruptedException occurred: " + e.getMessage());
-//        Thread.currentThread().interrupt();
-//    } catch (ExecutionException e) {
-//        // Handle if the write operation failed
-//        System.err.println("Write failed: " + e.getMessage());
-//    }
     }
 
     public void signInButtonHandler(ActionEvent actionEvent) throws IOException{
