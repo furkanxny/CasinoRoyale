@@ -95,8 +95,9 @@ public class Player extends Cardholder {
         return accountBalance;
     }
 
+
     public void setAccountBalance(double balance) {
-        this.accountBalance = balance;
+        this.accountBalance += balance;
     }
 
 
