@@ -31,11 +31,6 @@ public class Player extends Cardholder {
         super();
     }
 
-
-    /**
-     * If there is no player-object, it gets created, otherwise it just returns the aforementioned object.
-     * @return Player object
-     */
     public static Player getInstance() {
         if (instance == null) {
             instance = new Player();
@@ -99,11 +94,7 @@ public class Player extends Cardholder {
     public double getAccountBalance() {
         return accountBalance;
     }
-    
-    /**
-     * Adds the difference of balance to the player's account balance.
-     * @param difference 
-     */
+
     public void setAccountBalance(double balance) {
         this.accountBalance = balance;
     }
