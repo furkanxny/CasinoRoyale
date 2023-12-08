@@ -49,7 +49,7 @@ public class HomeController {
 
     private void changeScene(String fxmlPath, String title) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(fxmlPath));
-        Scene scene = new Scene(fxmlLoader.load(), screenWidth * 0.8, screenHeight * 0.8);
+        Scene scene = new Scene(fxmlLoader.load(), screenWidth * 1, screenHeight * 1);
         primaryStage.setTitle(title);
         primaryStage.setScene(scene);
         primaryStage.show();
@@ -101,7 +101,7 @@ public class HomeController {
 
     public void playBlackJack(ActionEvent actionEvent) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/app/casinoroyale/View/Games/playroom-bet-view.fxml"));
-        Scene blackjackScene = new Scene(fxmlLoader.load(), screenWidth * 0.8, screenHeight * 0.8);
+        Scene blackjackScene = new Scene(fxmlLoader.load(), screenWidth * 1, screenHeight * 1);
 
         // Get the controller and pass the blackJackPlayer to it
         PlayroomBetController betController = fxmlLoader.getController();
