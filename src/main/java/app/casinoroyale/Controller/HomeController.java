@@ -58,6 +58,7 @@ public class HomeController {
         File blackJack = new File("src/main/resources/app/Assets/HomePage/Games/blackjack.png");
         File casino = new File("src/main/resources/app/Assets/HomePage/Casino/casino.png");
 
+
         Image rouletteImage = new Image(roulette.toURI().toString());
         Image slotsImage = new Image(slots.toURI().toString());
         Image horseRaceImage = new Image(horseRace.toURI().toString());
@@ -103,6 +104,10 @@ public class HomeController {
 
     public void playSlots(ActionEvent actionEvent) throws IOException {
         changeScene("/app/casinoroyale/View/Games/Slots.fxml", "Slots");
+    }
+
+    public void launchBank(ActionEvent actionEvent) throws IOException {
+        changeScene("/app/casinoroyale/View/Dashboards/Bank.fxml", "Bank");
     }
 
     public static Stage getPrimaryStage() {
