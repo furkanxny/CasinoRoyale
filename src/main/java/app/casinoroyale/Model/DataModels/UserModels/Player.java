@@ -87,7 +87,6 @@ public class Player extends Cardholder {
         DecimalFormat formatter = new DecimalFormat("\t$###,###");
         return formatter.format(accountBalance);
     }
-
     public void setAccountBalanceFromFirebase(Double balance){
         this.accountBalance  = balance;
     }

@@ -3,6 +3,7 @@ package app.casinoroyale.Controller;
 import app.casinoroyale.CSRApplication;
 import app.casinoroyale.Controller.FirebaseControllers.Person;
 import app.casinoroyale.Controller.FirebaseControllers.PrimaryController;
+import app.casinoroyale.Controller.GamesControllers.SlotsController;
 import app.casinoroyale.Model.DataModels.UserModels.Player;
 import com.google.api.core.ApiFuture;
 import com.google.cloud.firestore.Firestore;
@@ -39,7 +40,6 @@ public class LoginController {
     }
     public boolean loginUser(String email, String password) {
         ApiFuture<QuerySnapshot> future = firestore.collection("Persons").whereEqualTo("email", email).get();
-
         try {
             List<QueryDocumentSnapshot> documents = future.get().getDocuments();
             if (!documents.isEmpty()) {
@@ -61,12 +61,12 @@ public class LoginController {
         String name = document.getString("Name");
         String email = document.getString("Email");
         double balance = document.getDouble("Balance");
-
         Player player = Player.getInstance();
 
         player.setName(name);
         player.setAccountBalanceFromFirebase(balance);
     }
+
 
 
 
@@ -81,7 +81,6 @@ public class LoginController {
         primaryController.readFirebase();
         String email = emailTF.getText();
         String password = passwordTF.getText();
-
         if (loginUser(email, password)) {
             System.out.println("LOGGED IN");
             homeController.homeDash(actionEvent);
@@ -93,4 +92,5 @@ public class LoginController {
             requirementsAlert.showAndWait();
         }
     }
+
 }
