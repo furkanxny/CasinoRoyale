@@ -111,10 +111,10 @@ public class Player extends Cardholder {
     
     /**
      * Adds the difference of balance to the player's account balance.
-     * @param difference 
+     * @param balance
      */
     public void setAccountBalance(double balance) {
-        this.accountBalance = balance;
+        this.accountBalance += balance;
     }
 
 
