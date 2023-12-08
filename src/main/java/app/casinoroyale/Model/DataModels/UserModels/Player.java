@@ -20,21 +20,12 @@ import app.casinoroyale.Controller.FirebaseControllers.Person;
 
 public class Player extends Cardholder {
 
-
-
-
     public static final Person person = null;
     private static Player instance = null;
     private double bet;
-   public String name;
+
+    public String name;
     private double accountBalance;
-    
-    
-    /**
-     * Private constructor due to the use of the singleton-pattern.
-     */
-
-
 
     public Player() {
         super();
