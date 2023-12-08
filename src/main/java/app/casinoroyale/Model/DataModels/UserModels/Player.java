@@ -20,31 +20,17 @@ import app.casinoroyale.Controller.FirebaseControllers.Person;
 
 public class Player extends Cardholder {
 
-
-
-
     public static final Person person = null;
     private static Player instance = null;
     private double bet;
-   
+
+    public String name;
     private double accountBalance;
-    
-    
-    /**
-     * Private constructor due to the use of the singleton-pattern.
-     */
-
-
 
     public Player() {
         super();
     }
 
-
-    /**
-     * If there is no player-object, it gets created, otherwise it just returns the aforementioned object.
-     * @return Player object
-     */
     public static Player getInstance() {
         if (instance == null) {
             instance = new Player();
@@ -72,6 +58,10 @@ public class Player extends Cardholder {
     }
 
 
+    public String getName(){return name;}
+    public void setName(String name) {
+        this.name = name;
+    }
 
     public void hit(Deck deck) {
         takeCard(deck);
@@ -98,20 +88,16 @@ public class Player extends Cardholder {
         return formatter.format(accountBalance);
     }
 
-
+    public void setAccountBalanceFromFirebase(Double balance){
+        this.accountBalance  = balance;
+    }
     public double getAccountBalance() {
         return accountBalance;
     }
-    
-    /**
-     * Adds the difference of balance to the player's account balance.
-     * @param difference 
-     */
+
     public void setAccountBalance(double balance) {
         this.accountBalance = balance;
     }
 
 
-    
-    
 }

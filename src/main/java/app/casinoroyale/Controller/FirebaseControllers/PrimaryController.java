@@ -52,7 +52,7 @@ public class PrimaryController {
     private Button registerButton;
 
     @FXML
-    private Button switchSecondaryViewButton;
+    private Button loginViewButton;
 
     @FXML
     private Button writeButton;
@@ -99,22 +99,18 @@ public class PrimaryController {
             {
                 System.out.println("Outing data from firabase database....");
                 listOfUsers.clear();
-                StringBuilder outputText = new StringBuilder();
-
-                for (QueryDocumentSnapshot document : documents) {
-                    String name = String.valueOf(document.getData().get("Name")); // Ensure field name matches
-                    String email = String.valueOf(document.getData().get("email")); // Ensure field name matches
-                    String password = String.valueOf(document.getData().get("password")); // Ensure field name matches
-                    int age = document.getData().get("Age") != null ? ((Long) document.getData().get("Age")).intValue() : 0; // Handle null and cast to int
-                    double balance = document.getData().get("balance") != null ? Double.parseDouble(document.getData().get("balance").toString()) : 0.0; // Handle null and parse to double
-
-                    outputText.append(name).append(" , Age: ").append(age).append("\n").append(" , email:").append(email).append(" , password:").append(password).append(" , balance:").append(balance);
-                    person = new Person();
+                for (QueryDocumentSnapshot document : documents)
+                {
+                    System.out.println(document.getId() + " => " + document.getData().get("Name"));
+                    person  = new Person(
+                            String.valueOf(document.getData().get("Name")),
+                            String.valueOf(document.getData().get("Email")),
+                            String.valueOf(document.getData().get("Password")),
+                            Integer.parseInt(document.getData().get("Age").toString()),
+                            Double.parseDouble(document.getData().get("Balance").toString())
+                    );
                     listOfUsers.add(person);
                 }
-
-                outputTextArea.setText(outputText.toString());
-
             }
             else
             {
@@ -128,6 +124,7 @@ public class PrimaryController {
             ex.printStackTrace();
         }
         return key;
+
     }
 
     public void addData() {
@@ -143,6 +140,7 @@ public class PrimaryController {
         ApiFuture<WriteResult> result = docRef.set(data);
     }
 
-    public void signInButtonHandler(ActionEvent actionEvent) {
+    public void signInButtonHandler(ActionEvent actionEvent) throws IOException{
+        homeController.loginDash(actionEvent);
     }
 }

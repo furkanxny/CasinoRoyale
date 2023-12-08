@@ -23,7 +23,6 @@ public class HomeController {
     private Stage stage = new Stage();
 
 
-
     @FXML
     private ImageView slotsImageView;
     @FXML

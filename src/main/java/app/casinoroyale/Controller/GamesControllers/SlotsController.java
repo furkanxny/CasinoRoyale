@@ -6,7 +6,6 @@ import java.util.*;
 import app.casinoroyale.Model.DataModels.GameModels.SlotsModel.*;
 import app.casinoroyale.Model.DataModels.GameModels.SlotsModel.SlotGame;
 import app.casinoroyale.Model.DataModels.UserModels.Player;
-import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
@@ -14,6 +13,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.stage.Stage;
 import javafx.util.Duration;
 
 public class SlotsController {
@@ -31,7 +31,6 @@ public class SlotsController {
     Image[] pngsArry = new Image[15];
     ImageView[] jackpotArray = new ImageView[35];
     File[] fileArray = new File[14];
-    private HomeController HomeController;
     ArrayList<String> resultArrList = new ArrayList<>();
     Bet bet1 = new Bet(-4);
     private int executionCount = 0;
@@ -42,23 +41,35 @@ public class SlotsController {
     private boolean canSpin = true;
 
     private Image[] flashImages = new Image[2];
+    private app.casinoroyale.Controller.HomeController HomeController;
 
 
-    @Deprecated
+
+    private app.casinoroyale.Controller.HomeController homeController;
+
+    private Stage stage;
+
+    public SlotsController(){
+        this.homeController = new HomeController();
+        this.stage = new Stage();
+
+    }
+    @FXML
     private void playBlackJack(ActionEvent event) throws IOException {
-        this.HomeController.playBlackJack(event);
+        homeController.playBlackJack(event);
     }
-
-    @Deprecated
-    private void playRoulette(ActionEvent event) throws IOException {
-        this.HomeController.playRoulette(event);
+    @FXML
+    private void playHorseRacing(ActionEvent event) throws IOException {
+        homeController.playHorseRacing(event);
     }
-
-    @Deprecated
+    @FXML
+    private void playRoulatte(ActionEvent event) throws IOException {
+        homeController.playRoulette(event);
+    }
+    @FXML
     private void homeDash(ActionEvent event) throws IOException {
-        this.HomeController.homeDash(event);
+        homeController.homeDash(event);
     }
-
     @FXML
     public void initialize() {
         Player player = Player.getInstance();
