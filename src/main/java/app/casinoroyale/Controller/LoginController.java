@@ -47,6 +47,8 @@ public class LoginController {
                     String storedPassword = document.getString("Password");
                     if (storedPassword != null && storedPassword.equals(password)) {
                         initializePlayerWithPersonData(document);
+                        primaryController.setID(document.getId());
+
                         return true;
                     }
                 }
