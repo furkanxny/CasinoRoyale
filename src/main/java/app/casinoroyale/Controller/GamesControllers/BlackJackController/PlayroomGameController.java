@@ -12,7 +12,7 @@ import app.casinoroyale.Controller.HomeController;
 import app.casinoroyale.Model.DataModels.GameModels.BlackJackModel.deck.Card;
 import app.casinoroyale.Model.DataModels.GameModels.BlackJackModel.game.Game;
 import app.casinoroyale.Model.DataModels.GameModels.BlackJackModel.game.GameStatus;
-import app.casinoroyale.Model.DataModels.GameModels.BlackJackModel.role.BlackJackPlayer;
+import app.casinoroyale.Model.DataModels.UserModels.Player;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -22,7 +22,7 @@ import java.util.Objects;
 
 public class PlayroomGameController  {
 
-    BlackJackPlayer blackJackPlayer;
+    Player player;
     Game game;
 
     @FXML
@@ -91,13 +91,13 @@ public class PlayroomGameController  {
     /**
      * Load player and game into the view.
      *
-     * @param blackJackPlayer player to been shown on the UI as well as who plays the game
+     * @param player player to been shown on the UI as well as who plays the game
      * @param game   the game which player has started
      */
-    public void loadContents(BlackJackPlayer blackJackPlayer, Game game) {
+    public void loadContents(Player player, Game game) {
         // Initialize the game object
         this.game = game; // or obtain reference through some other means
-        this.blackJackPlayer = blackJackPlayer;
+        this.player = player;
 
         // Other initialization code
 
@@ -124,7 +124,7 @@ public class PlayroomGameController  {
     @FXML
     protected void onHitButtonClick() {
         System.out.println("Player Hit");
-        blackJackPlayer.hit(game.getDeck());
+        player.hit(game.getDeck());
         game.checkAfterHit();
 
         updateScene();
@@ -138,8 +138,8 @@ public class PlayroomGameController  {
     protected void onDoubleButtonClick() {
         System.out.println("Player Double");
 
-        blackJackPlayer.doubleDeal();
-        blackJackPlayer.hit(game.getDeck());
+        player.doubleDeal();
+        player.hit(game.getDeck());
         game.checkAfterHit();
 
         if (game.getGameStatus() == GameStatus.CONTINUE) {
@@ -177,7 +177,7 @@ public class PlayroomGameController  {
         );
 
         /* Update player's hand. */
-        Iterator<Card> playerHand = blackJackPlayer.getHand().iterator();
+        Iterator<Card> playerHand = player.getHand().iterator();
         for (ImageView img : imgPlayerCards) {
             if (playerHand.hasNext()) {
                 String url = playerHand.next().getImageUrl();
@@ -215,10 +215,10 @@ public class PlayroomGameController  {
         }
 
         /* Update player's balance. */
-        txtBalance.setText(blackJackPlayer.getBalanceFormatted());
+        txtBalance.setText(player.getAccountBalanceFormatted());
 
         /* Update player's point. */
-        txtPlayerPoint.setText(String.valueOf(blackJackPlayer.getTotalPoints()));
+        txtPlayerPoint.setText(String.valueOf(player.getTotalPoints()));
 
         /* Update dealer's point. Hide dealer's point banner if dealer have 2 cards. */
         if (game.getDealer().getHand().size() == 2 && game.getGameStatus() == GameStatus.CONTINUE) {
@@ -270,12 +270,24 @@ public class PlayroomGameController  {
                 btnNewGame.setVisible(true);
                 break;
             case CONTINUE:
-                if (blackJackPlayer.getHand().size() > 2)
+                if (player.getHand().size() > 2) {
                     btnDouble.setDisable(true);
+                }
+
+                // Disable the new game button if the player's balance is less than $0
+                if (player.getAccountBalance() < 0) {
+                    btnNewGame.setDisable(true);
+                }
         }
     }
 
+
+
+
+
     private void switchToBetScene() {
+        game.reset();
+
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/app/casinoroyale/View/Games/playroom-bet-view.fxml"));
             Parent root = fxmlLoader.load();
@@ -283,12 +295,17 @@ public class PlayroomGameController  {
             // Assuming HomeController is properly initialized and has a reference to the primaryStage
             HomeController.getPrimaryStage().getScene().setRoot(root);
 
-            BlackJackPlayer blackJackPlayer = new BlackJackPlayer();  // You may need to adjust this instantiation
             PlayroomBetController betController = fxmlLoader.getController();
-            betController.loadContents(blackJackPlayer);
+
+            // Pass the existing player object to the bet controller
+            betController.loadContents(Player.getInstance());  // Use a fresh instance of Player
+
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
+
+
+
 }
 

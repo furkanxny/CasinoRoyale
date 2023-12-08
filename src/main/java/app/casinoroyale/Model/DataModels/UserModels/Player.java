@@ -99,5 +99,28 @@ public class Player extends Cardholder {
         this.accountBalance += balance;
     }
 
+    /**
+     * Checks if the player can withdraw the specified amount.
+     * @param amount The amount to check for withdrawal.
+     * @return true if withdrawal is possible, false otherwise.
+     */
+    public boolean canWithdraw(double amount) {
+        return amount > 0 && this.accountBalance >= amount;
+    }
+
+    /**
+     * Withdraws the specified amount from the player's account balance.
+     * @param amount The amount to withdraw.
+     */
+    public void withdraw(double amount) {
+        if (canWithdraw(amount)) {
+            setAccountBalance(-amount); // Negative value to deduct from balance
+        } else {
+            // Handle the case where withdrawal is not possible
+            // This could be throwing an exception or logging an error
+            throw new IllegalArgumentException("Cannot withdraw the specified amount. Insufficient funds or invalid amount.");
+        }
+    }
+
 
 }

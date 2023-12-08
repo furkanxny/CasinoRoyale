@@ -1,13 +1,10 @@
 package app.casinoroyale.Controller.FirebaseControllers;
 
 import app.casinoroyale.CSRApplication;
+import app.casinoroyale.Controller.HomeController;
+import app.casinoroyale.Controller.LoginController;
 import com.google.api.core.ApiFuture;
-import com.google.cloud.firestore.DocumentReference;
-import com.google.cloud.firestore.QueryDocumentSnapshot;
-import com.google.cloud.firestore.QuerySnapshot;
-import com.google.cloud.firestore.WriteResult;
-import com.google.firebase.auth.FirebaseAuthException;
-import com.google.firebase.auth.UserRecord;
+import com.google.cloud.firestore.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -15,19 +12,31 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.UUID;
+import java.io.IOException;
+import java.util.*;
 import java.util.concurrent.ExecutionException;
 
 public class PrimaryController {
+
+
+    private app.casinoroyale.Controller.HomeController homeController;
+
+    private Stage stage;
     @FXML
     private TextField ageTextField;
 
     @FXML
     private TextField nameTextField;
+    @FXML
+    private TextField emailTextField;
+
+    @FXML
+    private TextField passwordTextField;
+    @FXML
+    private TextField startingBalanceTextField;
+
 
     @FXML
     private TextArea outputTextArea;
@@ -39,7 +48,7 @@ public class PrimaryController {
     private Button registerButton;
 
     @FXML
-    private Button switchSecondaryViewButton;
+    private Button loginViewButton;
 
     @FXML
     private Button writeButton;
@@ -47,34 +56,64 @@ public class PrimaryController {
     private boolean key;
     private final ObservableList<Person> listOfUsers = FXCollections.observableArrayList();
     private Person person;
+    private Firestore firestore;
+    private LoginController LG;
+    private app.casinoroyale.Controller.LoginController loginController;
+
+    private static String ID;
+
+    public void setID(String ID){
+        this.ID = ID;
+    }
+    private static String personEmail;
 
     public ObservableList<Person> getListOfUsers() {
         return listOfUsers;
     }
 
-    void initialize() {
+    public PrimaryController(){
 
+        //LG = new LoginController();
+        this.homeController = new HomeController();
+        this.stage = new Stage();
+        firestore = CSRApplication.fstore;
+
+    }
+    void initialize() {
         AccessDataView accessDataViewModel = new AccessDataView();
         nameTextField.textProperty().bindBidirectional(accessDataViewModel.userNameProperty());
         writeButton.disableProperty().bind(accessDataViewModel.isWritePossibleProperty().not());
     }
 
 
-    @FXML
-    void readButtonClicked(ActionEvent event) {
-        readFirebase();
-    }
 
     @FXML
-    void registerButtonClicked(ActionEvent event) {
-        registerUser();
-    }
-
-
-    @FXML
-    void writeButtonClicked(ActionEvent event) {
+    void writeButtonClicked(ActionEvent event) throws IOException {
         addData();
+        homeController.loginDash(event);
     }
+
+    public boolean updateBalance(double newBalance) {
+        // Reference to the specific document in the Firestore collection
+        DocumentReference docRef = CSRApplication.fstore.collection("Persons")
+                .document(ID);
+
+        // Prepare the update data
+        Map<String, Object> updates = new HashMap<>();
+        updates.put("Balance", newBalance);
+
+        // Perform the update operation
+        ApiFuture<WriteResult> writeResult = docRef.update(updates);
+        try {
+            // Block on response
+            writeResult.get();
+            return true; // Update successful
+        } catch (InterruptedException | ExecutionException e) {
+            e.printStackTrace();
+            return false; // Update failed
+        }
+    }
+
 
 
     public boolean readFirebase()
@@ -88,26 +127,26 @@ public class PrimaryController {
         try
         {
             documents = future.get().getDocuments();
+
             if(documents.size()>0)
             {
                 System.out.println("Outing data from firabase database....");
                 listOfUsers.clear();
-                StringBuilder outputText = new StringBuilder();
+                for (QueryDocumentSnapshot document : documents)
+                {
 
-                for (QueryDocumentSnapshot document : documents) {
-                    String name = String.valueOf(document.getData().get("Name")); // Ensure field name matches
-                    String email = String.valueOf(document.getData().get("email")); // Ensure field name matches
-                    String password = String.valueOf(document.getData().get("password")); // Ensure field name matches
-                    int age = document.getData().get("Age") != null ? ((Long) document.getData().get("Age")).intValue() : 0; // Handle null and cast to int
-                    double balance = document.getData().get("balance") != null ? Double.parseDouble(document.getData().get("balance").toString()) : 0.0; // Handle null and parse to double
+                    System.out.println(document.getId() + " => " + document.getData().get("Name"));
+                    person  = new Person(
+                            String.valueOf(document.getData().get("Name")),
+                            String.valueOf(document.getData().get("Email")),
+                            String.valueOf(document.getData().get("Password")),
+                            Integer.parseInt(document.getData().get("Age").toString()),
+                            Double.parseDouble(document.getData().get("Balance").toString())
 
-                    outputText.append(name).append(" , Age: ").append(age).append("\n");
-                    person = new Person();
+                    );
                     listOfUsers.add(person);
+
                 }
-
-                outputTextArea.setText(outputText.toString());
-
             }
             else
             {
@@ -121,38 +160,23 @@ public class PrimaryController {
             ex.printStackTrace();
         }
         return key;
-    }
-
-    public boolean registerUser() {
-        UserRecord.CreateRequest request = new UserRecord.CreateRequest()
-                .setEmail("user@example.com")
-                .setEmailVerified(false)
-                .setPassword("secretPassword")
-                .setPhoneNumber("+11234567890")
-                .setDisplayName("John Doe")
-                .setDisabled(false);
-
-        UserRecord userRecord;
-        try {
-            userRecord = CSRApplication.fauth.createUser(request);
-            System.out.println("Successfully created new user: " + userRecord.getUid());
-            return true;
-
-        } catch (FirebaseAuthException ex) {
-            // Logger.getLogger(FirestoreContext.class.getName()).log(Level.SEVERE, null, ex);
-            return false;
-        }
 
     }
 
     public void addData() {
 
         DocumentReference docRef = CSRApplication.fstore.collection("Persons").document(UUID.randomUUID().toString());
-        // Add document data  with id "alovelace" using a hashmap
         Map<String, Object> data = new HashMap<>();
         data.put("Name", nameTextField.getText());
         data.put("Age", Integer.parseInt(ageTextField.getText()));
+        data.put("email", emailTextField.getText());
+        data.put("Password", passwordTextField.getText());
+        data.put("Balance", Double.parseDouble(startingBalanceTextField.getText()));
         //asynchronously write data
         ApiFuture<WriteResult> result = docRef.set(data);
+    }
+
+    public void signInButtonHandler(ActionEvent actionEvent) throws IOException{
+        homeController.loginDash(actionEvent);
     }
 }

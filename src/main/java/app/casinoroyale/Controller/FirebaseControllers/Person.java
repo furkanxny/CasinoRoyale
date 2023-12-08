@@ -21,6 +21,9 @@ public class Person {
     public Person() {
 
     }
+    public Person(String name, String email, String password, int age, double balance) {
+
+    }
 
     public String getName() {
         return Name;
