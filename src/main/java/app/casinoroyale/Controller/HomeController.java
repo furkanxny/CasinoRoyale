@@ -55,6 +55,14 @@ public class HomeController {
         primaryStage.show();
     }
 
+    private void changeSceneLogin(String fxmlPath, String title) throws IOException{
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(fxmlPath));
+        Scene scene = new Scene(fxmlLoader.load(), screenWidth * 0.6, screenHeight * 0.6);
+        primaryStage.setTitle(title);
+        primaryStage.setScene(scene);
+        primaryStage.show();
+    }
+
     public void initializeImages() {
         File roulette = new File("src/main/resources/app/Assets/HomePage/Games/roulette.png");
         File slots = new File("src/main/resources/app/Assets/HomePage/Games/slots.png");
@@ -84,11 +92,11 @@ public class HomeController {
     }
 
     public void loginDash(ActionEvent actionEvent) throws IOException {
-        changeScene("/app/casinoroyale/View/Dashboards/LoginPage.fxml", "Casino Royale");
+        changeSceneLogin("/app/casinoroyale/View/Dashboards/LoginPage.fxml", "Casino Royale");
     }
 
     public void registerDash(ActionEvent actionEvent) throws IOException {
-        changeScene("/app/casinoroyale/View/Dashboards/RegisterPage.fxml", "Casino Royale");
+        changeSceneLogin("/app/casinoroyale/View/Dashboards/RegisterPage.fxml", "Casino Royale");
     }
 
     public void playBlackJack(ActionEvent actionEvent) throws IOException {
