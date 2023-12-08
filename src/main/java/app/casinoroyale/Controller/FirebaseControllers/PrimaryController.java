@@ -60,6 +60,11 @@ public class PrimaryController {
     private LoginController LG;
     private app.casinoroyale.Controller.LoginController loginController;
 
+    private static String ID;
+
+    public void setID(String ID){
+        this.ID = ID;
+    }
     private static String personEmail;
 
     public ObservableList<Person> getListOfUsers() {
@@ -91,7 +96,7 @@ public class PrimaryController {
     public boolean updateBalance(double newBalance) {
         // Reference to the specific document in the Firestore collection
         DocumentReference docRef = CSRApplication.fstore.collection("Persons")
-                .document("46db3c1c-7abc-4f9d-b233-a2d93e6d73aa");
+                .document(ID);
 
         // Prepare the update data
         Map<String, Object> updates = new HashMap<>();
