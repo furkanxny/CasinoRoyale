@@ -162,7 +162,8 @@ public class PrimaryController implements regex{
         isSelected = radioButton.isSelected();
 
         if(nameTextField.getText().matches(regexUserName) && Double.valueOf(ageTextField.getText()) >= 18 &&
-                emailTextField.getText().matches(regexEmail) && isSelected)
+                emailTextField.getText().matches(regexEmail) && isSelected && !passwordTextField.getText().isEmpty() &&
+                !startingBalanceTextField.getText().isEmpty())
 
         {
             System.out.println(isEmail);
