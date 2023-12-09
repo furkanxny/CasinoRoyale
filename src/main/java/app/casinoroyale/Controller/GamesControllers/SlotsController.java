@@ -186,7 +186,7 @@ public class SlotsController {
     private void InitializeButtonImages() {
         File[] dollarPngFileArry = new File[4];
 
-        dollarPngFileArry[0] = new File("src/main/resources/app/Assets/Slots/css/1dollar.png");
+        dollarPngFileArry[0] = new File("src/main/resources/app/Assets/Slots/css/spinButton.png");
         dollarPngFileArry[1] = new File("src/main/resources/app/Assets/Slots/css/spinButton.png");
         dollarPngFileArry[2] = new File("src/main/resources/app/Assets/Slots/css/infoButton.png");
         dollarPngFileArry[3] = new File("src/main/resources/app/Assets/Slots/css/exitButton.png");
