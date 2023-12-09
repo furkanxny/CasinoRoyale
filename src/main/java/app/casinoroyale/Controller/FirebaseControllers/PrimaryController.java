@@ -45,8 +45,14 @@ public class PrimaryController implements regex{
 
     boolean isSelected;
 
+    boolean isExist;
+
+    boolean isRegistered = false;
+
     @FXML
     private Button writeButton;
+
+    private ArrayList<String> registeredEmailArryList = new ArrayList<>();
 
     private boolean key;
     private final ObservableList<Person> listOfUsers = FXCollections.observableArrayList();
@@ -55,7 +61,7 @@ public class PrimaryController implements regex{
     private LoginController LG;
     private app.casinoroyale.Controller.LoginController loginController;
 
-    private String[] emailArry = new String[200];
+    //private String[] emailArry = new String[200];
 
     private static String isEmail;
     private static String ID;
@@ -87,7 +93,9 @@ public class PrimaryController implements regex{
     @FXML
     void writeButtonClicked(ActionEvent event) throws IOException {
         addData();
-        homeController.loginDash(event);
+        if(isRegistered) {
+            homeController.loginDash(event);
+        }
     }
 
     public boolean updateBalance(double newBalance) {
@@ -129,23 +137,30 @@ public class PrimaryController implements regex{
             {
                 System.out.println("Outing data from firabase database....");
                 listOfUsers.clear();
+
                 for (QueryDocumentSnapshot document : documents)
                 {
+                    registeredEmailArryList.add((String) document.getData().get("email"));
+
+
                     System.out.println(document.getId() + " => " + document.getData().get("Name"));
+
                     person  = new Person(
                             String.valueOf(document.getData().get("Name")),
-                            String.valueOf(document.getData().get("Email")),
+                            String.valueOf(document.getData().get("email")),
                             String.valueOf(document.getData().get("Password")),
                             Integer.parseInt(document.getData().get("Age").toString()),
                             Double.parseDouble(document.getData().get("Balance").toString())
 
                     );
                     listOfUsers.add(person);
+
                 }
             }
             else
             {
                 System.out.println("No data");
+
             }
             key=true;
 
@@ -154,19 +169,27 @@ public class PrimaryController implements regex{
         {
             ex.printStackTrace();
         }
+        for(int i = 0; i < registeredEmailArryList.size(); i++){
+        System.out.println(registeredEmailArryList.get(i));}
         return key;
+
+
 
     }
 
     public void addData() {
+        readFirebase();
         isSelected = radioButton.isSelected();
+        isExist = true;
+
+for(int i = 0; i < registeredEmailArryList.size(); i++){
+            if(registeredEmailArryList.get(i).equals(emailTextField.getText())){
+                isExist = false;
+        }}
 
         if(nameTextField.getText().matches(regexUserName) && Double.valueOf(ageTextField.getText()) >= 18 &&
                 emailTextField.getText().matches(regexEmail) && isSelected && !passwordTextField.getText().isEmpty() &&
-                !startingBalanceTextField.getText().isEmpty())
-
-        {
-            System.out.println(isEmail);
+                !startingBalanceTextField.getText().isEmpty() && isExist) {
             DocumentReference docRef = CSRApplication.fstore.collection("Persons").document(UUID.randomUUID().toString());
             Map<String, Object> data = new HashMap<>();
             data.put("Name", nameTextField.getText());
@@ -176,6 +199,8 @@ public class PrimaryController implements regex{
             data.put("Balance", Double.parseDouble(startingBalanceTextField.getText()));
             ApiFuture<WriteResult> result = docRef.set(data);
             System.out.println("User registration is successful");
+            isRegistered = true;
+
 
         }
          else{
@@ -183,7 +208,8 @@ public class PrimaryController implements regex{
             requirementsAlert.setTitle("REGISTER ERROR");
             requirementsAlert.setHeaderText("                                REGISTER ERROR");
             requirementsAlert.setContentText("YOU ARE MISSING AT LEAST ONE OF THE REQUIREMENTS \n\n Minimum Age of 18 Years: Users must be at least 18 years old. " +
-                                             "\n\n" + " Name: Starts with an uppercase letter. No number or special Characters \n\n Example Email: example@domain.com \n\n Terms: You have to accept the Terms of Use and Privacy Policy");
+                                             "\n\n" + " Name: Starts with an uppercase letter. No number or special Characters \n\n Example Email: example@domain.com \n\n" +
+                                                 " Terms: You have to accept the Terms of Use and Privacy Policy \n\n You can't register a existing email!!");
             requirementsAlert.showAndWait();
 
         }
