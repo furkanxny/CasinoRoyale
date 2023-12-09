@@ -24,6 +24,7 @@
                                 <MenuItem mnemonicParsing="false" onAction="#playRoulette" text="Roulette" />
                                 <MenuItem mnemonicParsing="false" onAction="#playHorseRacing" text="Horse Racing" />
                                 <MenuItem mnemonicParsing="false" onAction="#playSlots" text="Slots" />
+
                             </items>
                         </Menu>
                         <Menu mnemonicParsing="false" text="Sports">
@@ -31,10 +32,9 @@
                                 <MenuItem mnemonicParsing="false" text="FootBall" />
                             </items>
                         </Menu>
-                        <Menu mnemonicParsing="false" text="Bank">
+                        <Menu mnemonicParsing="false" text="Financial">
                             <items>
-                                <MenuItem mnemonicParsing="false" text="Deposit" />
-                                <MenuItem mnemonicParsing="false" text="Withdrawl" />
+                                <MenuItem mnemonicParsing="false" onAction="#launchBank" text="Bank" />
                                 <MenuItem mnemonicParsing="false" text="P/L" />
                             </items>
                         </Menu>

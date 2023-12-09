@@ -55,11 +55,10 @@ public class HorseController {
         HomeController.homeDash(event);
     }
 
-
-//    @FXML
-//    private void launchBank(ActionEvent event) throws IOException {
-//        HomeController.launchBank(event);
-//    }
+    @FXML
+    private void launchBank(ActionEvent event) throws IOException {
+        HomeController.launchBank(event);
+    }
 
 
 
