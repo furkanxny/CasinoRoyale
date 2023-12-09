@@ -87,7 +87,7 @@ public class PrimaryController implements regex{
     @FXML
     void writeButtonClicked(ActionEvent event) throws IOException {
         addData();
-       // homeController.loginDash(event);
+        homeController.loginDash(event);
     }
 
     public boolean updateBalance(double newBalance) {
