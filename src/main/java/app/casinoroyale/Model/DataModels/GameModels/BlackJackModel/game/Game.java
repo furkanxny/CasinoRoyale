@@ -131,11 +131,11 @@ public class Game {
         double originalBet = player.getBet();
 
         if (getGameStatus() == GameStatus.PLAYER_BLACKJACK) {
-            player.setAccountBalance(player.getAccountBalance() + originalBet * 3);
+            player.setBlackJackAccountBalance(player.getAccountBalance() + originalBet * 3);
         } else if (getGameStatus() == GameStatus.PUSH) {
-            player.setAccountBalance(player.getAccountBalance() + originalBet);
+            player.setBlackJackAccountBalance(player.getAccountBalance() + originalBet);
         } else if (getGameStatus() == GameStatus.PLAYER_WIN) {
-            player.setAccountBalance(player.getAccountBalance() + originalBet * 2);
+            player.setBlackJackAccountBalance(player.getAccountBalance() + originalBet * 2);
         }
     }
 
