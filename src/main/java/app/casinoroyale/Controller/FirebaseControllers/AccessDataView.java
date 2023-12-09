@@ -17,6 +17,7 @@ public class AccessDataView{
     private final ReadOnlyBooleanWrapper writePossible = new ReadOnlyBooleanWrapper();
 
     public AccessDataView() {
+
         writePossible.bind(userName.isNotEmpty());
     }
 

@@ -45,23 +45,4 @@ public class FirestoreContext {
         }
         return FirestoreClient.getFirestore();
     }
-
-    /*
-    public Firestore firebase() {
-        try {
-            InputStream inputStream = getClass().getResourceAsStream("key.json");
-            ServiceAccountCredentials credentials = ServiceAccountCredentials.fromStream(inputStream);
-
-            FirebaseOptions options = new FirebaseOptions.Builder()
-                    .setCredentials(credentials)
-                    .build();
-            FirebaseApp.initializeApp(options);
-        } catch (IOException ex) {
-            ex.printStackTrace();
-        }
-        return FirestoreClient.getFirestore();
-    }
-    */
-
-
 }
