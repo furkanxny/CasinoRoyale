@@ -9,6 +9,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
@@ -18,7 +19,13 @@ import java.io.IOException;
 import java.util.*;
 import java.util.concurrent.ExecutionException;
 
-public class PrimaryController {
+interface regex{
+    String regexUserName = "\\b[A-Z][a-zA-Z]+";
+    String regexEmail = "[a-z0-9]+@[a-z0-9]+.[0-z]{2,6}";
+    String regexPassword =
+            "  ^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#&()–[{}]:;',?/*~$^+=<>]).{8,20}$\n";
+}
+public class PrimaryController implements regex{
 
 
     private app.casinoroyale.Controller.HomeController homeController;
@@ -90,7 +97,7 @@ public class PrimaryController {
     @FXML
     void writeButtonClicked(ActionEvent event) throws IOException {
         addData();
-        homeController.loginDash(event);
+       // homeController.loginDash(event);
     }
 
     public boolean updateBalance(double newBalance) {
@@ -165,16 +172,33 @@ public class PrimaryController {
 
     public void addData() {
 
-        DocumentReference docRef = CSRApplication.fstore.collection("Persons").document(UUID.randomUUID().toString());
-        Map<String, Object> data = new HashMap<>();
-        data.put("Name", nameTextField.getText());
-        data.put("Age", Integer.parseInt(ageTextField.getText()));
-        data.put("email", emailTextField.getText());
-        data.put("Password", passwordTextField.getText());
-        data.put("Balance", Double.parseDouble(startingBalanceTextField.getText()));
-        //asynchronously write data
-        ApiFuture<WriteResult> result = docRef.set(data);
+        if(nameTextField.getText().matches(regexUserName) && Double.valueOf(ageTextField.getText()) >= 18 &&
+                emailTextField.getText().matches(regexEmail))
+        {
+            DocumentReference docRef = CSRApplication.fstore.collection("Persons").document(UUID.randomUUID().toString());
+            Map<String, Object> data = new HashMap<>();
+            data.put("Name", nameTextField.getText());
+            data.put("Age", Integer.parseInt(ageTextField.getText()));
+            data.put("email", emailTextField.getText());
+            data.put("Password", passwordTextField.getText());
+            data.put("Balance", Double.parseDouble(startingBalanceTextField.getText()));
+            //asynchronously write data
+            ApiFuture<WriteResult> result = docRef.set(data);
+            System.out.println("User registration is successful");
+
+        }
+         else{
+            Alert requirementsAlert = new Alert(Alert.AlertType.ERROR);
+            requirementsAlert.setTitle("REGISTER ERROR");
+            requirementsAlert.setHeaderText("                                REGISTER ERROR");
+            requirementsAlert.setContentText("YOU ARE MISSING AT LEAST ONE OF THE REQUIREMENTS \n\n Minimum Age of 18 Years: Users must be at least 18 years old. " +
+                                             "\n\n" + " Name: Starts with an uppercase letter. No number or special Characters \n\n Example Email: example@domain.com");
+            requirementsAlert.showAndWait();
+
+        }
+
     }
+
 
     public void signInButtonHandler(ActionEvent actionEvent) throws IOException{
         homeController.loginDash(actionEvent);
