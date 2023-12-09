@@ -18,7 +18,7 @@
             <TextField fx:id="passwordTextField" layoutX="275.0" layoutY="250.0" prefHeight="40.0" prefWidth="250.0" promptText="Password" />
             <TextField fx:id="startingBalanceTextField" layoutX="275.0" layoutY="300.0" prefHeight="40.0" prefWidth="250.0" promptText="Starting Balance" />
             <Button fx:id="writeButton" layoutX="289.0" layoutY="383.0" mnemonicParsing="false" onAction="#writeButtonClicked" prefHeight="40.0" prefWidth="150.0" text="Register" />
-            <RadioButton layoutX="226.0" layoutY="353.0" mnemonicParsing="false" text="I agree to Terms of Use and Privacy Policy">
+            <RadioButton fx:id="radioButton" layoutX="226.0" layoutY="353.0" mnemonicParsing="false" text="I agree to Terms of Use and Privacy Policy">
                <font>
                   <Font size="14.0" />
                </font></RadioButton>
