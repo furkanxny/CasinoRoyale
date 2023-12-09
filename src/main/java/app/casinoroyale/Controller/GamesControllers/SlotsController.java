@@ -244,6 +244,8 @@ public class SlotsController {
                 SlotGame.displayWinAmount(aTextLabel);
                 SlotGame.displayBalanceAmount(textLabel);
                 SlotGame.setCounter();
+                Player player = Player.getInstance();
+                primaryController.updateBalance(player.getAccountBalance());
             }
         }));
 
