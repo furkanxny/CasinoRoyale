@@ -1,5 +1,6 @@
 package app.casinoroyale.Model.DataModels.GameModels.BlackJackModel.game;
 
+import app.casinoroyale.Controller.FirebaseControllers.PrimaryController;
 import app.casinoroyale.Model.DataModels.GameModels.BlackJackModel.deck.Deck;
 import app.casinoroyale.Model.DataModels.GameModels.BlackJackModel.role.Dealer;
 import app.casinoroyale.Model.DataModels.UserModels.Player;
@@ -12,6 +13,7 @@ import java.util.ArrayList;
  * A game session is to be destroyed when the game ends.
  */
 public class Game {
+    private app.casinoroyale.Controller.FirebaseControllers.PrimaryController primaryController;
 
     private final Player player;
     private final Dealer dealer;
@@ -20,6 +22,7 @@ public class Game {
     private GameStatus gameStatus;
 
     public Game(Player player) {
+        this.primaryController = new PrimaryController();
         this.deck = new Deck();
         this.dealer = new Dealer();
         this.chips = new ArrayList<>();
@@ -137,6 +140,7 @@ public class Game {
         } else if (getGameStatus() == GameStatus.PLAYER_WIN) {
             player.setBlackJackAccountBalance(player.getAccountBalance() + originalBet * 2);
         }
+        primaryController.updateBalance(player.getAccountBalance());
     }
 
 
