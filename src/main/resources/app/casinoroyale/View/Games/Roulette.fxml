@@ -31,11 +31,6 @@
                         <MenuItem mnemonicParsing="false" onAction="#playSlots" text="Slots" />
                     </items>
                 </Menu>
-                <Menu mnemonicParsing="false" text="Sports">
-                    <items>
-                        <MenuItem mnemonicParsing="false" text="FootBall" />
-                    </items>
-                </Menu>
                 <Menu mnemonicParsing="false" text="Bank">
                     <items>
                         <MenuItem mnemonicParsing="false" onAction="#launchBank" text="Bank" />
