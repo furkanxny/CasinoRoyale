@@ -1,5 +1,6 @@
 package app.casinoroyale.Controller.GamesControllers;
 
+import app.casinoroyale.Controller.FirebaseControllers.PrimaryController;
 import app.casinoroyale.Model.DataModels.GameModels.HorseModel.Horse;
 import app.casinoroyale.Model.DataModels.GameModels.HorseModel.Race;
 import app.casinoroyale.Model.DataModels.UserModels.Player;
@@ -38,6 +39,7 @@ public class HorseController {
    private final app.casinoroyale.Controller.HomeController HomeController = new HomeController();
 
 
+    private app.casinoroyale.Controller.FirebaseControllers.PrimaryController primaryController;
 
 
     @FXML
@@ -70,6 +72,7 @@ public class HorseController {
 
     @FXML
     public void initialize() {
+        this.primaryController = new PrimaryController();
         populateHorses();
         updateComboBox();
         balanceLabel.setText("Balance: $" + balance);
@@ -135,6 +138,7 @@ public class HorseController {
 
         checkFinishLine.setCycleCount(Timeline.INDEFINITE);
         checkFinishLine.playFromStart();
+
     }
 
     private void handleRaceFinish(Horse winner, double betAmount) {
@@ -153,6 +157,8 @@ public class HorseController {
         }
 
         updateBalanceLabel();
+        Player player = Player.getInstance();
+        primaryController.updateBalance(player.getAccountBalance());
         startRace.setDisable(false);
         checkFinishLine.stop();
 

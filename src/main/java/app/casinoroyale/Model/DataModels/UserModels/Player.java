@@ -95,6 +95,9 @@ public class Player extends Cardholder {
     }
 
 
+    public void setBlackJackAccountBalance(double balance) {
+        this.accountBalance = balance;
+    }
     public void setAccountBalance(double balance) {
         this.accountBalance += balance;
     }

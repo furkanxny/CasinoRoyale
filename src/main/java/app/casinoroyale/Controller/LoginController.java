@@ -81,6 +81,7 @@ public class LoginController {
 
     public void signInButtonHandler(ActionEvent actionEvent) throws IOException{
         primaryController.readFirebase();
+        System.out.println();
         String email = emailTF.getText();
         String password = passwordTF.getText();
         if (loginUser(email, password)) {

@@ -13,8 +13,13 @@
 
 <AnchorPane id="AnchorPane" fx:id="mainPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" style="-fx-background-color: purple;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.casinoroyale.Controller.GamesControllers.RouletteController">
     <children>
+      <ImageView fitHeight="861.0" fitWidth="1521.0" layoutX="-5.0" layoutY="-18.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../Assets/Roulette/images/poker-table-felt-background-green-600nw-1519710587%20Large.jpeg" />
+         </image>
+      </ImageView>
 
-        <MenuBar prefHeight="28.0" prefWidth="1440.0">
+        <MenuBar prefHeight="28.0" prefWidth="1516.0">
             <menus>
                 <Menu mnemonicParsing="false" onAction="#homeDash" text="Casino Royale">
                     <MenuItem mnemonicParsing="false" onAction="#homeDash" text="Home" />
@@ -24,11 +29,6 @@
                         <MenuItem mnemonicParsing="false" onAction="#playBlackJack" text="Black Jack" />
                         <MenuItem mnemonicParsing="false" onAction="#playHorseRacing" text="Horse Racing" />
                         <MenuItem mnemonicParsing="false" onAction="#playSlots" text="Slots" />
-                    </items>
-                </Menu>
-                <Menu mnemonicParsing="false" text="Sports">
-                    <items>
-                        <MenuItem mnemonicParsing="false" text="FootBall" />
                     </items>
                 </Menu>
                 <Menu mnemonicParsing="false" text="Bank">
@@ -46,12 +46,12 @@
 
         <Pane fx:id="draggablePane" layoutX="17.0" layoutY="21.0" prefHeight="153.0" prefWidth="1419.0">
             <children>
-            <ImageView fx:id="infoButtonImg" fitHeight="84.0" fitWidth="80.0" layoutX="1139.0" layoutY="48.0" onMouseClicked="#infoButtonDisplay" onMouseEntered="#highlightRoundButton" onMouseExited="#unHighlightRoundButton" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="infoButtonImg" fitHeight="84.0" fitWidth="80.0" layoutX="1139.0" layoutY="48.0" onMouseClicked="#infoButtonDisplay" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../Assets/Roulette/images/btn_toolbar.png" />
                </image>
             </ImageView>
-                <ImageView fx:id="goBack" fitHeight="84.0" fitWidth="80.0" layoutX="1301.0" layoutY="48.0" onMouseClicked="#goBack" onMouseEntered="#highlightRoundButton" onMouseExited="#unHighlightRoundButton" pickOnBounds="true" preserveRatio="true">
+                <ImageView fx:id="goBack" fitHeight="84.0" fitWidth="80.0" layoutX="1301.0" layoutY="48.0" onMouseClicked="#goBack" pickOnBounds="true" preserveRatio="true">
                     <image>
                         <Image url="@../../../Assets/Roulette/images/btn_toolbar.png" />
                     </image>
@@ -76,7 +76,7 @@
                         <Font size="26.0" />
                     </font>
                 </Label>
-                <Label disable="true" layoutX="1164.0" layoutY="50.0" onMouseClicked="#minimize" prefHeight="38.0" prefWidth="29.0" style="-fx-opacity: 1;" text="?" textFill="#ffd454">
+                <Label disable="true" layoutX="1164.0" layoutY="50.0"  prefHeight="38.0" prefWidth="29.0" style="-fx-opacity: 1;" text="?" textFill="#ffd454">
                     <font>
                         <Font size="57.0" />
                     </font>

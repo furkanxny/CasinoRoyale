@@ -8,11 +8,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="42436b1b-9b1f-4ddc-8c1d-3a6bc1aed41d" name="Changes" comment="Second push test.">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_7_23__9_06_PM__Changes_.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/app/Assets/Roulette/images/poker-table-felt-background-green-600nw-1519710587 Large.jpeg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/casinoroyale/Controller/GamesControllers/BlackJackController/PlayroomBetController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/casinoroyale/Controller/GamesControllers/BlackJackController/PlayroomBetController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/app/casinoroyale/Controller/GamesControllers/RouletteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/casinoroyale/Controller/GamesControllers/RouletteController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/casinoroyale/Controller/GamesControllers/SlotsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/casinoroyale/Controller/GamesControllers/SlotsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/casinoroyale/Controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/casinoroyale/Controller/HomeController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/app/casinoroyale/View/Dashboards/Bank.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/app/casinoroyale/View/Dashboards/Bank.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/app/casinoroyale/View/Dashboards/HomePage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/app/casinoroyale/View/Dashboards/HomePage.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/app/casinoroyale/View/Dashboards/LoginPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/app/casinoroyale/View/Dashboards/LoginPage.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/app/casinoroyale/View/Games/HorseRacing.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/app/casinoroyale/View/Games/HorseRacing.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/app/casinoroyale/View/Games/Roulette.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/app/casinoroyale/View/Games/Roulette.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/app/casinoroyale/View/Games/Slots.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/app/casinoroyale/View/Games/Slots.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/app/casinoroyale/View/Games/playroom-bet-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/app/casinoroyale/View/Games/playroom-bet-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,7 +38,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="CS-000" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -42,7 +50,6 @@
     <option name="generalSettings">
       <MavenGeneralSettings>
         <option name="mavenHome" value="Use Maven wrapper" />
-        <option name="useMavenConfig" value="true" />
       </MavenGeneralSettings>
     </option>
   </component>
@@ -63,7 +70,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;CSR-002&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;CSR-003&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/explo/OneDrive/Desktop/Horse Racing Pics&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -86,11 +93,11 @@
       <recent name="$PROJECT_DIR$/src/main/java/app.casinoroyale/Controller/GamesControllers" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources/app/Assets/Roulette/images" />
       <recent name="$PROJECT_DIR$/src/main/resources/app/Firebase" />
       <recent name="$PROJECT_DIR$/src/main/resources/app/casinoroyale/View/Games" />
       <recent name="C:\Users\explo\IdeaProjects\CasinoRoyale\src\main\resources\app\Assets\HorseRacing\images" />
       <recent name="$PROJECT_DIR$/src/main/resources/app.casinoroyale" />
-      <recent name="$PROJECT_DIR$/src/main/java/app/casinoroyale" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />

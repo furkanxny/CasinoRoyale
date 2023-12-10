@@ -2,6 +2,7 @@ package app.casinoroyale.Controller;
 
 import app.casinoroyale.Controller.GamesControllers.BlackJackController.PlayroomBetController;
 import app.casinoroyale.Model.DataModels.UserModels.Player;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -15,14 +16,6 @@ import java.io.File;
 import java.io.IOException;
 
 public class HomeController {
-
-
-    private final Player player;
-    private static Stage primaryStage;
-
-    private Stage stage = new Stage();
-
-
     @FXML
     private ImageView slotsImageView;
     @FXML
@@ -33,6 +26,9 @@ public class HomeController {
     private ImageView blackjackImageView;
     @FXML
     private ImageView casionoImageView;
+    private final Player player;
+    private static Stage primaryStage;
+    private Stage stage = new Stage();
 
     @FXML
     public void initialize() {
@@ -70,7 +66,6 @@ public class HomeController {
         File blackJack = new File("src/main/resources/app/Assets/HomePage/Games/blackjack.png");
         File casino = new File("src/main/resources/app/Assets/HomePage/Casino/casino.png");
 
-
         Image rouletteImage = new Image(roulette.toURI().toString());
         Image slotsImage = new Image(slots.toURI().toString());
         Image horseRaceImage = new Image(horseRace.toURI().toString());
@@ -90,6 +85,10 @@ public class HomeController {
 
     public void homeDash(ActionEvent actionEvent) throws IOException {
         changeScene("/app/casinoroyale/View/Dashboards/HomePage.fxml", "Casino Royale");
+    }
+
+    public void exitGame(ActionEvent actionEvent) throws IOException {
+        Platform.exit();
     }
 
     public void loginDash(ActionEvent actionEvent) throws IOException {

@@ -32,7 +32,6 @@ public class SlotsController {
     @FXML
     private Label aTextLabel, textLabel, historyTF, winText, welcomeLabel, lastBetLabel;
     @FXML
-    private MenuItem homeDash;
     private ImageView[] imageBlocksArry;
     Image[] pngsArry = new Image[15];
     ImageView[] jackpotArray = new ImageView[35];
@@ -45,17 +44,10 @@ public class SlotsController {
     private int jackpotSignCounter = 1;
     private Timeline timeline;
     private boolean canSpin = true;
-
     private Image[] flashImages = new Image[2];
-
-
-
     private app.casinoroyale.Controller.FirebaseControllers.PrimaryController primaryController;
-    private app.casinoroyale.Controller.LoginController loginController;
-
     private app.casinoroyale.Controller.HomeController homeController;
     private Firestore firestore;
-
     private Stage stage;
 
     public SlotsController(){
@@ -63,6 +55,12 @@ public class SlotsController {
         this.stage = new Stage();
         this.primaryController = new PrimaryController();
         firestore = CSRApplication.fstore;
+    }
+
+
+    @FXML
+    void bank(ActionEvent event) throws IOException {
+homeController.launchBank(event);
     }
     @FXML
     private void playBlackJack(ActionEvent event) throws IOException {
@@ -79,6 +77,8 @@ public class SlotsController {
     @FXML
     private void homeDash(ActionEvent event) throws IOException {
         homeController.homeDash(event);
+        Player player = Player.getInstance();
+        primaryController.updateBalance(player.getAccountBalance());
     }
     @FXML
     public void initialize() {
@@ -93,8 +93,6 @@ public class SlotsController {
         InitializeSetImages();
         InitializeButtonImages();
         setTextLabelInitialiaze();
-        //initializeSlotsW();
-        //initializeJackpotImages();
         initializeWelcomeLabel();
         setUpTimeline();
         setUpTimeline2();
@@ -134,7 +132,6 @@ public class SlotsController {
     }
 
     private void initializeSlotsW() {
-
         File s2File = new File("src/main/resources/app/Assets/Slots/css/casinoPlay.png");
         File sFile = new File("src/main/resources/app/Assets/Slots/css/slotsTitle.png");
         Image sImage = new Image(sFile.toURI().toString());
@@ -147,6 +144,7 @@ public class SlotsController {
       jackpotSignCounter++;
 
     }
+
     private void initializeJackpotImages() {
 
         if (jackpotImagesCounter % 2 == 0 ) {
@@ -186,7 +184,7 @@ public class SlotsController {
     private void InitializeButtonImages() {
         File[] dollarPngFileArry = new File[4];
 
-        dollarPngFileArry[0] = new File("src/main/resources/app/Assets/Slots/css/1dollar.png");
+        dollarPngFileArry[0] = new File("src/main/resources/app/Assets/Slots/css/spinButton.png");
         dollarPngFileArry[1] = new File("src/main/resources/app/Assets/Slots/css/spinButton.png");
         dollarPngFileArry[2] = new File("src/main/resources/app/Assets/Slots/css/infoButton.png");
         dollarPngFileArry[3] = new File("src/main/resources/app/Assets/Slots/css/exitButton.png");
@@ -195,17 +193,19 @@ public class SlotsController {
         Image exitImage = new Image(dollarPngFileArry[3].toURI().toString());
         Image spinImage = new Image(dollarPngFileArry[1].toURI().toString());
 
-
         infoButtonImage.setImage(infoImage);
         exitButtonImage.setImage(exitImage);
         buttonImageView1.setImage(spinImage);
-
     }
 
     @FXML
     public void spinButton() {
-        spin();
-        attrb();
+        if(Player.getInstance().getAccountBalance() >= 4 ) {
+            primaryController.updateBalance(Player.getInstance().getAccountBalance());
+            spin();
+            attrb();
+        }
+        else{SlotGameView.insufficientFunds();}
     }
 
     public void attrb(){
@@ -213,19 +213,11 @@ public class SlotsController {
         welcomeLabel.setText("");
     }
 
-//
-//    public void blinkJackpotSign(){
-//        flashImages[1] = sImage
-//        jackpotImageView.setImage();
-//    }
-
-
     public void spin() {
         if(!canSpin){
             System.out.println("Wait 1.2 sec!");
             return;
         }
-
         canSpin = false;
         executionCount = 0;
         Player.getInstance().setAccountBalance(bet1.getAmount());
@@ -244,17 +236,21 @@ public class SlotsController {
                 SlotGame.displayWinAmount(aTextLabel);
                 SlotGame.displayBalanceAmount(textLabel);
                 SlotGame.setCounter();
+                Player player = Player.getInstance();
+                primaryController.updateBalance(player.getAccountBalance());
             }
         }));
 
         timeline.setOnFinished(e -> canSpin = true);
-
         timeline.setCycleCount(totalExecutions);
         timeline.play();
-
         new Timeline(new KeyFrame(Duration.millis(1200), e -> canSpin = true)).play();
     }
 
+    @FXML
+    private void launchBank(ActionEvent event) throws IOException {
+        homeController.launchBank(event);
+    }
     @FXML
     public void infoButtonHandler() {SlotGameView.infoButton();}
     @FXML
