@@ -15,14 +15,6 @@ import java.io.File;
 import java.io.IOException;
 
 public class HomeController {
-
-
-    private final Player player;
-    private static Stage primaryStage;
-
-    private Stage stage = new Stage();
-
-
     @FXML
     private ImageView slotsImageView;
     @FXML
@@ -33,6 +25,9 @@ public class HomeController {
     private ImageView blackjackImageView;
     @FXML
     private ImageView casionoImageView;
+    private final Player player;
+    private static Stage primaryStage;
+    private Stage stage = new Stage();
 
     @FXML
     public void initialize() {
@@ -69,7 +64,6 @@ public class HomeController {
         File horseRace = new File("src/main/resources/app/Assets/HomePage/Games/horseracing.png");
         File blackJack = new File("src/main/resources/app/Assets/HomePage/Games/blackjack.png");
         File casino = new File("src/main/resources/app/Assets/HomePage/Casino/casino.png");
-
 
         Image rouletteImage = new Image(roulette.toURI().toString());
         Image slotsImage = new Image(slots.toURI().toString());
