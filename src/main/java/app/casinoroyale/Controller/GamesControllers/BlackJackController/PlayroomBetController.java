@@ -59,6 +59,10 @@ public class PlayroomBetController {
         HomeController.homeDash(event);
     }
     @FXML
+    private void launchBank(ActionEvent event) throws IOException {
+        HomeController.launchBank(event);
+    }
+    @FXML
     private void showInstructions(ActionEvent event) {
         Alert instructionAlert = new Alert(Alert.AlertType.INFORMATION);
         instructionAlert.setTitle("How to Play");

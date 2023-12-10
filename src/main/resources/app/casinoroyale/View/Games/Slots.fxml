@@ -260,7 +260,9 @@
                         </Menu>
                         <Menu mnemonicParsing="false" text="Bank">
                             <items>
+
                                 <MenuItem fx:id="bank" mnemonicParsing="false" onAction="#bank" text="Bank" />
+
                             </items>
                         </Menu>
                     </menus>

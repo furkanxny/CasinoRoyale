@@ -8,32 +8,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="42436b1b-9b1f-4ddc-8c1d-3a6bc1aed41d" name="Changes" comment="Second push test.">
-      <change beforePath="$PROJECT_DIR$/css/$1 png.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/1dollar.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/Sping button for Slots machine game.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/SpinnButton.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/info-button png.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/infoButton.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/spin.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/icons/0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/icons/1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/icons/10.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/icons/2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/icons/3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/icons/4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/icons/5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/icons/6.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/icons/7.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/icons/8.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/icons/9.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sound/slotSound.mp3" beforeDir="false" />
-
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_7_23__9_06_PM__Changes_.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/app/Assets/Roulette/images/poker-table-felt-background-green-600nw-1519710587 Large.jpeg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/casinoroyale/Controller/GamesControllers/BlackJackController/PlayroomBetController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/casinoroyale/Controller/GamesControllers/BlackJackController/PlayroomBetController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/app/casinoroyale/Controller/GamesControllers/RouletteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/casinoroyale/Controller/GamesControllers/RouletteController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/casinoroyale/Controller/GamesControllers/SlotsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/casinoroyale/Controller/GamesControllers/SlotsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/casinoroyale/Controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/casinoroyale/Controller/HomeController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/app/casinoroyale/View/Dashboards/Bank.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/app/casinoroyale/View/Dashboards/Bank.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/app/casinoroyale/View/Dashboards/HomePage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/app/casinoroyale/View/Dashboards/HomePage.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/app/casinoroyale/View/Dashboards/LoginPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/app/casinoroyale/View/Dashboards/LoginPage.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/app/casinoroyale/View/Games/HorseRacing.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/app/casinoroyale/View/Games/HorseRacing.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/app/casinoroyale/View/Games/Roulette.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/app/casinoroyale/View/Games/Roulette.fxml" afterDir="false" />
-
+      <change beforePath="$PROJECT_DIR$/src/main/resources/app/casinoroyale/View/Games/Slots.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/app/casinoroyale/View/Games/Slots.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/app/casinoroyale/View/Games/playroom-bet-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/app/casinoroyale/View/Games/playroom-bet-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,26 +64,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "CSR-003",
-    "last_opened_file_path": "C:/Users/explo/OneDrive/Desktop/Horse Racing Pics",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;CSR-003&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/explo/OneDrive/Desktop/Horse Racing Pics&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/resources/app.casinoroyale/View/Games" />
@@ -106,11 +93,11 @@
       <recent name="$PROJECT_DIR$/src/main/java/app.casinoroyale/Controller/GamesControllers" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources/app/Assets/Roulette/images" />
       <recent name="$PROJECT_DIR$/src/main/resources/app/Firebase" />
       <recent name="$PROJECT_DIR$/src/main/resources/app/casinoroyale/View/Games" />
       <recent name="C:\Users\explo\IdeaProjects\CasinoRoyale\src\main\resources\app\Assets\HorseRacing\images" />
       <recent name="$PROJECT_DIR$/src/main/resources/app.casinoroyale" />
-      <recent name="$PROJECT_DIR$/src/main/java/app/casinoroyale" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />

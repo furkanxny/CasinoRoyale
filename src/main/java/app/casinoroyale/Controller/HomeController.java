@@ -2,6 +2,7 @@ package app.casinoroyale.Controller;
 
 import app.casinoroyale.Controller.GamesControllers.BlackJackController.PlayroomBetController;
 import app.casinoroyale.Model.DataModels.UserModels.Player;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -84,6 +85,10 @@ public class HomeController {
 
     public void homeDash(ActionEvent actionEvent) throws IOException {
         changeScene("/app/casinoroyale/View/Dashboards/HomePage.fxml", "Casino Royale");
+    }
+
+    public void exitGame(ActionEvent actionEvent) throws IOException {
+        Platform.exit();
     }
 
     public void loginDash(ActionEvent actionEvent) throws IOException {
