@@ -1,11 +1,14 @@
 package app.casinoroyale.Controller;
 
+import app.casinoroyale.CSRApplication;
+import app.casinoroyale.Controller.FirebaseControllers.PrimaryController;
 import app.casinoroyale.Model.DataModels.UserModels.Player;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextInputDialog;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.util.Optional;
@@ -19,6 +22,8 @@ public class BankController {
 
 
     private app.casinoroyale.Controller.HomeController HomeController = new HomeController();
+    private app.casinoroyale.Controller.FirebaseControllers.PrimaryController primaryController;
+
     @FXML
     private void playBlackJack(ActionEvent event) throws IOException {
         HomeController.playBlackJack(event);
@@ -38,6 +43,16 @@ public class BankController {
         HomeController.homeDash(event);
     }
 
+    public BankController(){
+
+        this.primaryController = new PrimaryController();
+
+    }
+    @FXML
+    public void initialize() {
+        this.primaryController = new PrimaryController();
+    }
+
     @FXML
     private void showDepositDialog(ActionEvent event) {
         TextInputDialog depositDialog = new TextInputDialog();
@@ -49,6 +64,7 @@ public class BankController {
                 double amountDouble = Double.parseDouble(amount);
                 // Update the account balance for deposit
                 Player.getInstance().setAccountBalance(amountDouble);
+                primaryController.updateBalance(Player.getInstance().getAccountBalance());
                 Alert depositAlert = new Alert(Alert.AlertType.INFORMATION);
                 depositAlert.setTitle("Deposit Successful");
                 depositAlert.setHeaderText(null);
@@ -72,6 +88,7 @@ public class BankController {
                 if (Player.getInstance().canWithdraw(amountDouble)) {
                     // Update the account balance for withdrawal
                     Player.getInstance().withdraw(amountDouble);
+                    primaryController.updateBalance(Player.getInstance().getAccountBalance());
                     Alert withdrawAlert = new Alert(Alert.AlertType.INFORMATION);
                     withdrawAlert.setTitle("Withdrawal Successful");
                     withdrawAlert.setHeaderText(null);
@@ -92,5 +109,13 @@ public class BankController {
         errorAlert.setHeaderText(null);
         errorAlert.setContentText(message);
         errorAlert.showAndWait();
+    }
+
+    public PrimaryController getPrimaryController() {
+        return primaryController;
+    }
+
+    public void setPrimaryController(PrimaryController primaryController) {
+        this.primaryController = primaryController;
     }
 }

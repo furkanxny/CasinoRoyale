@@ -71,6 +71,8 @@ public class SlotsController {
     @FXML
     private void homeDash(ActionEvent event) throws IOException {
         homeController.homeDash(event);
+        Player player = Player.getInstance();
+        primaryController.updateBalance(player.getAccountBalance());
     }
     @FXML
     public void initialize() {
