@@ -56,6 +56,12 @@ public class SlotsController {
         this.primaryController = new PrimaryController();
         firestore = CSRApplication.fstore;
     }
+
+
+    @FXML
+    void bank(ActionEvent event) throws IOException {
+homeController.launchBank(event);
+    }
     @FXML
     private void playBlackJack(ActionEvent event) throws IOException {
         homeController.playBlackJack(event);
