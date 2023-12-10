@@ -13,7 +13,6 @@ import javafx.beans.property.StringProperty;
 public class AccessDataView{
 
     private final StringProperty userName = new SimpleStringProperty();
-    private final int age=0;
     private final ReadOnlyBooleanWrapper writePossible = new ReadOnlyBooleanWrapper();
 
     public AccessDataView() {
