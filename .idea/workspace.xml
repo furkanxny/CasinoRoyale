@@ -9,21 +9,10 @@
   <component name="ChangeListManager">
     <list default="true" id="42436b1b-9b1f-4ddc-8c1d-3a6bc1aed41d" name="Changes" comment="Second push test.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/casinoroyale/Controller/FirebaseControllers/AccessDataView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/casinoroyale/Controller/FirebaseControllers/AccessDataView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/casinoroyale/Controller/SportsControllers/defaultfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/casinoroyale/Controller/UserController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/casinoroyale/Model/DataModels/GameModels/defaultfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/casinoroyale/Model/DataModels/SportModels/defaultfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/casinoroyale/Model/DataModels/UserModels/UserModel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/casinoroyale/Model/Interfaces/GameInterface/defaultfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/casinoroyale/Model/Interfaces/SportInterface/defaultfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/casinoroyale/Model/Interfaces/UserInterface/UserModel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/casinoroyale/Model/Services/GameServices/GamesServices.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/casinoroyale/Model/Services/GameServices/defaultfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/casinoroyale/Model/Services/SportServices/defaultfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/casinoroyale/Model/Services/UserServices/UserModel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/app/Assets/HorseRacing/default" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/app/casinoroyale/new" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/casinoroyale/Controller/BankController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/casinoroyale/Controller/BankController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/casinoroyale/Controller/RegisterController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/casinoroyale/Model/DataModels/GameModels/GameModel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/casinoroyale/Model/DataModels/UserModels/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/casinoroyale/Model/DataModels/UserModels/Player.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

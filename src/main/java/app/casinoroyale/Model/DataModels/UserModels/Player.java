@@ -71,10 +71,6 @@ public class Player extends Cardholder {
         this.accountBalance = balance;
     }
 
-    public void clearBet() {
-        bet = 0;
-    }
-
     public double getBet() {
         return bet;
     }

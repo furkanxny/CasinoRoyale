@@ -111,11 +111,4 @@ public class BankController {
         errorAlert.showAndWait();
     }
 
-    public PrimaryController getPrimaryController() {
-        return primaryController;
-    }
-
-    public void setPrimaryController(PrimaryController primaryController) {
-        this.primaryController = primaryController;
-    }
 }
