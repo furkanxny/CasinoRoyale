@@ -1,5 +1,6 @@
 package app.casinoroyale.Controller.GamesControllers;
 import app.casinoroyale.CSRApplication;
+import app.casinoroyale.Controller.FirebaseControllers.PrimaryController;
 import app.casinoroyale.Controller.HomeController;
 import app.casinoroyale.Model.DataModels.GameModels.RouletteModel.Bet;
 import app.casinoroyale.Model.DataModels.GameModels.RouletteModel.Roulette;
@@ -29,6 +30,7 @@ import app.casinoroyale.Model.DataModels.UserModels.Player;
 import java.io.File;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 import javafx.animation.FadeTransition;
 import javafx.animation.Interpolator;
@@ -38,6 +40,7 @@ import javafx.animation.ParallelTransition;
 import javafx.animation.RotateTransition;
 import javafx.animation.SequentialTransition;
 import javafx.animation.Timeline;
+import app.casinoroyale.Controller.FirebaseControllers.PrimaryController;
 
 import java.io.IOException;
 
@@ -48,6 +51,8 @@ public class RouletteController implements Initializable{
     private app.casinoroyale.Controller.HomeController homeController;
 
     private Stage stage;
+    private app.casinoroyale.Controller.FirebaseControllers.PrimaryController primaryController;
+
     public RouletteController(){
        this.homeController = new HomeController();
        this.stage = new Stage();
@@ -118,6 +123,8 @@ public class RouletteController implements Initializable{
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        this.primaryController = new PrimaryController();
+
         player = Player.getInstance();
 
         // Adds the label that allows the hovering over the chip to retrieve the bet amount.
@@ -291,7 +298,8 @@ public class RouletteController implements Initializable{
             lblRandomNumber.setText(Integer.toString(Roulette.getInstance().getNumber()));
             lblBalance.setText(Double.toString(player.getAccountBalance()));
             lblWinnings.setText(Integer.toString(Roulette.getInstance().getWinnings()));
-
+            Player player = Player.getInstance();
+            primaryController.updateBalance(player.getAccountBalance());
 
             // Removes all the chips on the screen.
             for(int i = 0; i <chips.size() - 1; i++) {
@@ -523,34 +531,57 @@ public class RouletteController implements Initializable{
     }
 
     public void setChipHoverAction() {
-        chips.get(chips.size() - 1).setOnMouseEntered(e -> {
-            ImageView chip = (ImageView) e.getSource();
-            Bounds chipBounds = chip.localToScene(chip.getBoundsInLocal());
+        // Check if the chips list is empty to avoid IndexOutOfBoundsException
+        if (chips.isEmpty()) {
+            return; // Early return if the chips list is empty
+        }
 
-            if (!(chipBounds.getMinX() == chipXOrigin) && !(chipBounds.getMinY() == chipYOrigin && !e.isDragDetect())) {
-                int index = chips.indexOf(chip);
-                lblChipHover.setMinWidth(76);
-                lblChipHover.setMaxWidth(100);
+        // Set the hover action for each chip in the list
+        for (ImageView chip : chips) {
+            chip.setOnMouseEntered(e -> {
+                ImageView currentChip = (ImageView) e.getSource();
+                Bounds chipBounds = currentChip.localToScene(currentChip.getBoundsInLocal());
 
+                if (!(chipBounds.getMinX() == chipXOrigin) && !(chipBounds.getMinY() == chipYOrigin && !e.isDragDetect())) {
+                    int index = chips.indexOf(currentChip);
 
-                lblChipHover.setVisible(true);
-                lblChipHover.setText(String.valueOf(Roulette.getInstance().getBets().get(index).getBet()));
+                    // Check if the index is valid for the bets list
+                    List<Bet> bets = Roulette.getInstance().getBets();
+                    System.out.println("newb bets" + bets.size()+ " bet "+ bets.get(index).getBet()  +  " index" + bets.indexOf(currentChip));
+                    if (index >= 0 && index < bets.size()) {
+                        lblChipHover.setText(String.valueOf(bets.get(index).getBet()));
+                    } else {
+                        lblChipHover.setText("Invalid bet"); // or handle the error as appropriate
+                    }
 
-                lblChipHover.setFont(new Font(32));
-                lblChipHover.setStyle("-fx-background-color: #bf4722; -fx-text-fill: #ffd454; -fx-padding: 10px");
-                chipBounds = chip.localToScene(chip.getBoundsInLocal());
-                lblChipHover.setLayoutX((chipBounds.getMinX() + chipBounds.getMaxX()) / 2 - (lblChipHover.getWidth() / 2));
-                lblChipHover.setLayoutY(chipBounds.getMinY() - 80);
+                    lblChipHover.setMinWidth(76);
+                    lblChipHover.setMaxWidth(100);
+                    lblChipHover.setVisible(true);
+                    lblChipHover.setFont(new Font(32));
+                    lblChipHover.setStyle("-fx-background-color: #bf4722; -fx-text-fill: #ffd454; -fx-padding: 10px");
 
-                lblChipHover.toFront();
+                    // Recalculate bounds in case they have changed
+                    chipBounds = currentChip.localToScene(currentChip.getBoundsInLocal());
 
-            }
-        });
+                    // Calculate the position of lblChipHover dynamically
+                    double layoutX = (chipBounds.getMinX() + chipBounds.getMaxX()) / 2 - (lblChipHover.getWidth() / 2);
+                    double layoutY = chipBounds.getMinY() - lblChipHover.getHeight() - 10; // Adjust Y position above the chip
 
-        chips.get(chips.size() - 1).setOnMouseExited(e -> {
-            lblChipHover.setVisible(false);
-        });
+                    // Set the position of lblChipHover
+                    lblChipHover.setLayoutX(layoutX);
+                    lblChipHover.setLayoutY(layoutY);
+
+                    lblChipHover.toFront();
+                }
+            });
+
+            chip.setOnMouseExited(e -> {
+                lblChipHover.setVisible(false);
+            });
+        }
     }
+
+
 
     /**
      * Initializes the label number array list
@@ -588,19 +619,12 @@ public class RouletteController implements Initializable{
         selectedImageView.setImage(nextImg.getImage());
     }
 
-    @FXML
-    private void unHighlightRoundButton(MouseEvent event) {
-        selectedImageView.setImage(minimize.getImage());
-    }
 
-
-    @FXML
-    private void minimize(MouseEvent event) {
-        stage.setIconified(true);
-    }
 
     @FXML
     public void goBack(MouseEvent event) {
+        Player player = Player.getInstance();
+        primaryController.updateBalance(player.getAccountBalance());
         Platform.exit();
     }
     @FXML

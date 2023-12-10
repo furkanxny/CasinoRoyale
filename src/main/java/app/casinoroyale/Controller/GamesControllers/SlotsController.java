@@ -195,6 +195,7 @@ public class SlotsController {
     @FXML
     public void spinButton() {
         if(Player.getInstance().getAccountBalance() >= 4 ) {
+            primaryController.updateBalance(Player.getInstance().getAccountBalance());
             spin();
             attrb();
         }
@@ -240,6 +241,10 @@ public class SlotsController {
         new Timeline(new KeyFrame(Duration.millis(1200), e -> canSpin = true)).play();
     }
 
+    @FXML
+    private void launchBank(ActionEvent event) throws IOException {
+        homeController.launchBank(event);
+    }
     @FXML
     public void infoButtonHandler() {SlotGameView.infoButton();}
     @FXML
