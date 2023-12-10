@@ -207,10 +207,38 @@ for(int i = 0; i < registeredEmailArryList.size(); i++){
             Alert requirementsAlert = new Alert(Alert.AlertType.ERROR);
             requirementsAlert.setTitle("REGISTER ERROR");
             requirementsAlert.setHeaderText("                                REGISTER ERROR");
-            requirementsAlert.setContentText("YOU ARE MISSING AT LEAST ONE OF THE REQUIREMENTS \n\n Minimum Age of 18 Years: Users must be at least 18 years old. " +
-                                             "\n\n" + " Name: Starts with an uppercase letter. No number or special Characters \n\n Example Email: example@domain.com \n\n" +
-                                                 " Terms: You have to accept the Terms of Use and Privacy Policy \n\n You can't register a existing email!!");
+            ArrayList<String> errorMessages = new ArrayList<>();
+
+
+            if(nameTextField.getText().matches(regexUserName) == false){
+                errorMessages.add("Invalid or Empty Name!!");
+            }
+            if(Double.valueOf(ageTextField.getText()) >= 18 == false ){
+                errorMessages.add("You Have To Be Older Than 18!!");
+            }
+            if(emailTextField.getText().matches(regexEmail) == false){
+                errorMessages.add("Invalid Email Or Empty Email. Exp: example@domain.com");
+            }
+            if(passwordTextField.getText().isEmpty() || startingBalanceTextField.getText().isEmpty()){
+                errorMessages.add("Password And Balance Can't Be Empty!!");
+            }
+            if(!isExist){
+                errorMessages.add("This Email Already Exist, Please Enter A Different One!!");
+            }
+            if(!isSelected){
+                errorMessages.add("Please Accept The Terms Of Use And Privacy Policy.");
+            }
+            StringBuffer strBfr = new StringBuffer();
+
+            Iterator<String> iterator1 = errorMessages.iterator();
+
+            while (iterator1.hasNext()) {
+                strBfr.append(iterator1.next() + "\n");
+            }
+
+            requirementsAlert.setContentText(strBfr.toString());
             requirementsAlert.showAndWait();
+
 
         }
 

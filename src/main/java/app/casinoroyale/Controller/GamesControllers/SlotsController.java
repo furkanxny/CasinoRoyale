@@ -204,8 +204,11 @@ public class SlotsController {
 
     @FXML
     public void spinButton() {
-        spin();
-        attrb();
+        if(Player.getInstance().getAccountBalance() >= 4 ) {
+            spin();
+            attrb();
+        }
+        else{SlotGameView.insufficientFunds();}
     }
 
     public void attrb(){

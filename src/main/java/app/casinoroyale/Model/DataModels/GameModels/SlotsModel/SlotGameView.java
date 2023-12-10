@@ -88,6 +88,16 @@ public class SlotGameView {
         alert.showAndWait();
     }
 
+    public static void insufficientFunds() {
+        String winningInfo = null;
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("INSUFFICIENT FUNDS");
+        alert.setHeaderText("                                 YOU BROKE!!!");
+        alert.setContentText(
+                "                           YOU GOT NO MONEY LOSER!!! ");
+        alert.showAndWait();
+    }
+
 
     public static void exitButton(){
         Platform.exit();
