@@ -25,3 +25,10 @@ Java 19 SDK or later
 Github
 SceneBuilder with JavaFX
 
+<img width="1440" alt="Screen Shot 2024-04-18 at 12 27 40 PM" src="https://github.com/furkanxny/CasinoRoyale/assets/116584632/15b5f058-46b8-418b-92a4-709923482c4d">
+
+
+<img width="1440" alt="Screen Shot 2024-04-18 at 12 27 58 PM" src="https://github.com/furkanxny/CasinoRoyale/assets/116584632/21920d8a-c75e-4fd3-9f79-a3c1e3a0c6bf">
+
+
+<img width="1440" alt="Screen Shot 2024-04-18 at 12 28 40 PM" src="https://github.com/furkanxny/CasinoRoyale/assets/116584632/dc694694-8d6a-461e-bdb6-a4f0d25b4993">
